@@ -1,52 +1,59 @@
 /**
  * Eventina Organisers — Design System Tokens
- * Phase 1: Tokens Foundation
+ * Phase 1: Tokens Foundation (Light & Fresh Luxury Wedding Theme)
  * 
  * Aesthetic Direction: High-end Event & Luxury Wedding Organisers
- * Primary Palette: Deep Navy & Midnight Charcoal, Champagne Gold, Clean Warm Cream
+ * Primary Palette: Warm Silk Alabaster (#FAF8F5), Petal Linen (#FBF2ED), Pure White (#FFFFFF),
+ *                  Espresso Charcoal (#1E1C1A), Champagne & Antique Gold (#B89242 / #C5A059)
+ * Reference Direction: VLW Global & Q Events and Weddings (Light, luminous, warm editorial)
  * WCAG AA compliant contrast ratios throughout
  */
 
 :root {
   /* ==========================================================================
-     1. COLOR SYSTEM
+     1. COLOR SYSTEM (Light & Fresh Luxury Wedding Palette)
      ========================================================================== */
 
-  /* Deep Navy & Midnight Charcoal (Primary Brand Dark & Structural Surfaces) */
-  --color-navy-950: #070C16; /* Deepest Midnight Base */
-  --color-navy-900: #0D1627; /* Rich Header, Footer & Dark Hero Background */
-  --color-navy-850: #121D32; /* Elevated Dark Surface */
-  --color-navy-800: #17253E; /* Card & Container Surface */
-  --color-navy-700: #223456; /* Subtle Dark Borders & Dividers */
-  --color-navy-600: #304873; /* Muted Dark Accents */
-  --color-navy-500: #426197;
+  /* Luxury Silk Alabaster & Petal Linen (Primary Canvas & Surfaces) */
+  --color-cream-50:  #FAF8F5; /* Warm Silk Alabaster — Main Page Background */
+  --color-cream-100: #FBF2ED; /* Petal Linen — Alternate Sections & Subtle Warm Tint */
+  --color-cream-200: #EFE8E0; /* Hairline Warm Border & Subtle Dividers */
+  --color-cream-300: #E2D7CC;
+  --color-cream-400: #C7B8A8;
 
-  /* Champagne Gold (Primary Luxury Accent) */
+  /* Crisp White & Light Surfaces */
+  --color-surface:      #FFFFFF; /* Pure Crisp White (Cards, Overlays, Floating Nav) */
+  --color-surface-alt:  #FBF2ED; /* Petal Linen Surface */
+  --color-surface-warm: #F7F3EE; /* Subtle Warm Card Surface */
+
+  /* Espresso Charcoal & Velvet Dark Accents (Structural Contrast & Anchors) */
+  --color-navy-950: #141210; /* Deepest Espresso Charcoal */
+  --color-navy-900: #1E1C1A; /* Rich Espresso Base (Headings, Primary Text) */
+  --color-navy-850: #2A2623; /* Elevated Dark Surface (Footer) */
+  --color-navy-800: #38332F; /* Secondary Dark Container */
+  --color-navy-700: #524B45; /* Dark Dividers */
+  --color-navy-600: #6E655D; /* Warm Taupe Accents */
+  --color-navy-500: #8E8379;
+
+  /* Champagne & Antique Gold (Primary Luxury Accent) */
   --color-gold-50:  #FAF6ED; /* Pale Champagne Wash */
   --color-gold-100: #F3EBD8; /* Soft Warm Gold Highlight */
-  --color-gold-200: #E6D5B1; /* Light Gold Tint */
-  --color-gold-300: #D7BC84; /* Subtle Accent */
-  --color-gold-400: #C9A75E; /* Vibrant Champagne Accent */
+  --color-gold-200: #E8D7B5; /* Light Gold Tint */
+  --color-gold-300: #D8BD88; /* Subtle Gold Accent */
+  --color-gold-400: #C5A059; /* Elegant Champagne Gold */
   --color-gold-500: #B89242; /* Primary Brand Gold (Buttons, Highlights) */
-  --color-gold-600: #9B7830; /* Gold Hover & Borders */
-  --color-gold-700: #7E5F20; /* Deep Antique Gold */
+  --color-gold-600: #9B7830; /* Deep Gold for Text on Light (>4.5:1 AA) */
+  --color-gold-700: #7E5F20; /* Antique Bronze Gold */
   --color-gold-800: #5D4412;
-  --color-gold-contrast: #070C16; /* High Contrast Text on Gold Background (>9:1 AA) */
+  --color-gold-contrast: #141210; /* High Contrast Text on Gold Background */
 
-  /* Clean Warm Cream & Ivory (Primary Light Surfaces & Backgrounds) */
-  --color-cream-50:  #FAF8F5; /* Main Page Background */
-  --color-cream-100: #F4EFEB; /* Card Surface & Alternate Section */
-  --color-cream-200: #E9E1D8; /* Light Borders & Dividers */
-  --color-cream-300: #DDD2C4;
-  --color-cream-400: #C2B3A0;
-
-  /* Semantic Text Colors */
-  --color-text-primary:        #0D1627; /* High contrast charcoal on light (>12:1) */
-  --color-text-secondary:      #434E61; /* Readable body copy (>6.5:1) */
-  --color-text-muted:          #6A7588; /* Accessible secondary copy (>4.5:1) */
-  --color-text-inverse:        #FFFFFF; /* Pure white on navy surfaces */
-  --color-text-inverse-muted:  #B2BED4; /* Accessible secondary copy on dark (>6:1) */
-  --color-text-gold:           #C9A75E; /* Text gold on navy surfaces */
+  /* Semantic Text Colors (Optimized for Light Backgrounds) */
+  --color-text-primary:        #1E1C1A; /* Espresso Charcoal (>13:1 on #FAF8F5) */
+  --color-text-secondary:      #5C554E; /* Warm Cashmere Taupe (>5.5:1 on #FAF8F5) */
+  --color-text-muted:          #7E766D; /* Accessible Muted Taupe (>4.5:1 AA) */
+  --color-text-inverse:        #FFFFFF; /* Pure White on dark accents */
+  --color-text-inverse-muted:  #D5CECA; /* Secondary text on dark accents */
+  --color-text-gold:           #9B7830; /* Accessible Gold Text on light */
 
   /* Semantic Feedback & State Colors */
   --color-success:    #1F7A4D;
@@ -62,11 +69,12 @@
   --color-focus-ring: #B89242;
 
   /* ==========================================================================
-     2. TYPOGRAPHY SCALE
+     2. TYPOGRAPHY SCALE (Haute-Couture Editorial System)
      ========================================================================== */
 
   /* Font Families */
-  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-display: 'Cormorant Garamond', Garamond, 'Didot', Georgia, serif;
+  --font-eyebrow: 'Josefin Sans', system-ui, -apple-system, sans-serif;
   --font-body:    'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono:    ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace;
 
