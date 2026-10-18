@@ -1,0 +1,17 @@
+# Hive & Agent harness
+hive/
+palace/
+palace.lock
+palace.pre-056/
+palace.rebuilt-056
+hallways.json
+restore-gate.json
+roster.json
+roster-backups/
+
+# OS / editor
+.DS_Store
+.idea/
+
+# Node
+node_modules/

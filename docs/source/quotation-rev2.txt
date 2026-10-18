@@ -1,0 +1,331 @@
+===== PAGE 1 =====
+Website Development Quotation
+Business Website  |  Finalised Pages
+REVISION 2
+PREPARED FOR
+Eventina Organisers
+DATE
+8 October 2026
+Eventina Organisers  |  Website Quotation  |  Revision 2  |  8 October 2026
+Page 1
+Dear Eventina Organisers team,
+Thank you for confirming the pages you want on your website. This is Revision 2 of our quotation. It
+lists the finalised pages, the confirmed website price, and explains in simple words how the work,
+content, payments and extra services will be handled. A separate page at the end shows exactly what
+has changed since Revision 1.
+PRICE AT A GLANCE
+Item
+What it means
+Cost
+Business Website
+13 finalised pages (see section 1)
+₹15,000
+Analytics Setup
+Tracking set up to count your website
+visitors
+₹3,000
+Admin Dashboard
+Private control panel for your team
+Separate quotation
+Basic SEO (search
+visibility)
+Helps people find you on search engines
+Included
+30 Days Support After
+Launch
+We fix errors in our work for free
+Included
+Domain (website name)
+You have already purchased it
+Already done
+Hosting
+Where your website is stored online
+Included (first year)
+Outside services (if
+needed)
+Informed to you first, paid directly by you
+As needed
+Our Promise to You
+There will be no additional charge without discussing it with you first. Any extra work or cost
+will always be explained and agreed with you before we start.
+
+===== PAGE 2 =====
+Website Development Quotation  |  Revision 2
+Eventina Organisers
+Eventina Organisers  |  Website Quotation  |  Revision 2  |  8 October 2026
+Page 2
+1  Business Website
+ ₹15,000
+The website price of ₹15,000 is confirmed for the finalised pages below. The website will be
+responsive, which means it will display and work properly on mobile phones, tablets and desktop
+computers.
+1. Home
+The first page visitors see, with an introduction to your company
+2. About Us
+Your story and what makes you special
+3. Founders
+Profiles of the founders of the company
+4. Services
+The event services you offer, each shown with images
+5. Artists
+Showcase of the artists you work with, with their images
+6. Portfolio
+Photo showcase of your work across different types of events, such as
+destination weddings and more
+7. Events
+Details of the events you organise
+8. Testimonials
+Client feedback with client images, plus customer reviews from your
+online business listing
+9. Event Locations Map
+A map with pins at the places where you have organised events. When a
+visitor clicks a pin, they see photos of that event
+10. Blogs
+News and updates section (see section 3 about managing blogs)
+11. FAQ
+Answers to the questions customers ask most often
+12. Contact Us
+Contact details, links to your social media handles and a WhatsApp chat
+link
+13. Enquiry Form
+A form for customers to send their event requirements to you
+Enquiry form will collect
+Name • Phone number • Email • Event type • Event date • City • Budget • Service requirements (the
+services needed at the event)
+If you later want additional pages or features beyond this list, we will first discuss the requirement and
+its cost with you before starting that work.
+2  Website Analytics Setup
+ ₹3,000
+In simple words: analytics tells you how many people visit your website, which pages they look at,
+where they come from (search engines, social media, etc.) and which city they are in.
+For ₹3,000 we will:
+  Add the tracking to your website so that your visitors are counted
+ Set up the analytics so that your visitor numbers are recorded and available as reports
+Showing these visitor numbers inside your admin dashboard is part of the admin dashboard quotation and will be
+priced there, when the dashboard is built.
+
+===== PAGE 3 =====
+Website Development Quotation  |  Revision 2
+Eventina Organisers
+Eventina Organisers  |  Website Quotation  |  Revision 2  |  8 October 2026
+Page 3
+3  Admin Dashboard
+ Separate quotation
+In simple words: the admin dashboard is a private, password-protected area where your team can
+manage parts of the website and, over time, other parts of your business.
+Please note
+The admin dashboard is charged separately and its details and pricing will be shared in a separate
+Admin Dashboard quotation. The price in this quotation for the Blogs section (and posts) covers
+building that module on the website. It does not include building the dashboard that is used to write
+and manage the blogs. That dashboard work will be described in the separate quotation.
+4  Website Content
+What we do: while building your website, we will use sample (mock) text and images as
+placeholders, so that you can see how the final website will look and work.
+What you provide: the final content must be given by you. This includes final text, the images for
+services and artists, portfolio and event photos (including photos for the map pins), founder details,
+testimonials with client images, FAQs, your logo and social media links. We will also need access to
+your online business listing, so that your customer reviews can be shown on the website. We will
+replace the sample content with your final content before the website is published.
+5  Updating Website Content
+ Before the admin dashboard is ready: we (the developers) will be responsible for updating the
+content on the website for you.
+ After the admin dashboard is ready: only the things supported by the dashboard modules can
+be updated by your team from the dashboard.
+ Things the dashboard cannot update will still be updated by us. Depending on the change, it will
+be treated either as maintenance or as new development. We will tell you which one it is, and
+discuss any cost with you, before we start.
+6  Search Engine (SEO) Setup
+ Included
+In simple words: SEO means setting up your website so that search engines can understand it and
+show it when people search for event organisers. Basic SEO is included:
+  A clear website structure that search engines can easily read
+ A clear title and short description for each page, so people know what they will find in search results
+ Clearly organised page headings and descriptions for your images, so search engines understand
+your content
+ A list of all your pages given to search engines, so that none of them are missed
+ Basic speed improvements so that your pages load quickly
+Not included: ongoing SEO work such as regular content writing, keyword research, advertising or promotion.
+
+===== PAGE 4 =====
+Website Development Quotation  |  Revision 2
+Eventina Organisers
+Eventina Organisers  |  Website Quotation  |  Revision 2  |  8 October 2026
+Page 4
+7  Website Delivery Time
+ About 2 weeks
+The first version of your website will be ready in approximately 2 weeks. This assumes that you
+provide the required content, images and logo on time and share your feedback during development.
+8  Changes After the First Version
+ Up to 5 included
+After the first version is published, up to 5 small changes are included at no extra cost, such as:
+  Changing text
+ Replacing an image
+ Small layout adjustments
+ Minor corrections
+If you later want to add a new page, introduce a new feature or make a major change to the agreed
+design, we will first discuss the requirement and any extra cost with you before we begin.
+9  Support After Launch
+ 30 days free
+For 30 days after your website is published, any issue or error related to the work delivered under
+the agreed website scope will be fixed free of charge. New features, new pages or changes in
+requirements during this period will be discussed separately.
+10  Domain, Hosting & Outside Services
+Domain (your website address): You have already purchased your domain, and we will connect it to
+the new website. Renewal of the domain is paid by you directly to your domain provider.
+Hosting (where your website is stored online): Hosting is the space on the internet where your
+website is stored, so that people can visit it at any time. Hosting is included in the ₹15,000 for the
+first year. After the first year it will be paid, and the amount will be decided based on your website's
+traffic and resource usage at that time. We will tell you the amount before it is due.
+Outside services: some features, such as showing customer reviews and the event locations map,
+use services from other companies. Your ₹15,000 covers the normal amount of visitors and usage for a
+business website. If at any time you need extra resources, or your website traffic grows beyond that,
+we will inform you of the updated charges first, before making any change, and these charges
+will be paid directly by you.
+If you need a paid service from another company that we do not provide, you will pay that company
+directly. We will inform you before using any such service.
+Ownership: You own your domain name and all the content on your website.
+11  Privacy & Legal Pages
+Since your enquiry form collects customers' details, the website's privacy policy and related legal
+pages will be prepared following the applicable government laws and norms.
+
+===== PAGE 5 =====
+Website Development Quotation  |  Revision 2
+Eventina Organisers
+Eventina Organisers  |  Website Quotation  |  Revision 2  |  8 October 2026
+Page 5
+12  Payment Terms
+50% Advance
+Paid before we start the work
+50% Balance
+Paid before the final website is published
+These payment terms apply to the website and any add-on services agreed with you.
+13  How We Will Work Together
+The project will be completed in clear stages:
+ Step 1
+Pages Finalised ✓ Done
+The website pages have been discussed and confirmed with you.
+ Step 2
+Website Price Confirmed ✓ Done
+The website price is confirmed at ₹15,000 for the finalised pages.
+ Step 3
+Build with Sample Content
+We build the website using sample text and images, so you can review the look and flow.
+This takes about 2 weeks.
+ Step 4
+Final Content & Publish
+You share the final content. We add it, and the website is published after the balance 50%
+payment.
+ Step 5
+Admin Dashboard
+Planned separately. Each dashboard feature is discussed and priced before work begins.
+CURRENT PRICING SUMMARY
+Business Website
+₹15,000
+Analytics Setup
+₹3,000
+Website + Analytics Setup Total
+₹18,000
+Admin Dashboard
+Separate quotation (includes analytics view in the
+dashboard)
+Included at no extra cost
+Basic SEO, 30 days post-launch support, hosting for the
+first year
+Outside services (if needed)
+Informed first, paid directly by you
+Payment
+50% advance, 50% before final publish
+Please Note
+This quotation is based on the pages and requirements finalised with you. Any change in pages or
+features will be discussed first. There will be no additional charge without discussing it with
+you first. All additional work or costs will always be discussed and agreed upon before the work is
+started.
+
+===== PAGE 6 =====
+Website Development Quotation  |  Revision 2
+Eventina Organisers
+Eventina Organisers  |  Website Quotation  |  Revision 2  |  8 October 2026
+Page 6
+What Has Changed Since Revision 1
+This page compares Revision 2 (8 October 2026) with Revision 1 (30 September 2026), so both sides
+can easily track what is different.
+Area
+Revision 1
+Revision 2
+Website pages
+General list of sections (Home, About,
+Services, Events, Client Info, Blog,
+Contact)
+13 finalised pages, listed in section 1
+New pages /
+sections
+-
+Founders, Artists, FAQ, Event Locations
+Map, customer reviews, Enquiry Form
+with fields
+Portfolio &
+Testimonials
+Events / Work Showcase and Client
+Information
+Portfolio for multiple event types;
+Testimonials with client images
+Website price
+Starting from ₹15,000, to be
+confirmed after pages are agreed
+₹15,000 confirmed for the finalised
+pages
+Analytics
+Not included
+New: ₹3,000 for tracking and analytics
+setup. Showing it in the dashboard is
+priced in the dashboard quotation
+Admin Dashboard
+Starting from ₹2,000, with features
+added later
+Moved to a separate quotation. Blog
+price here covers the website module
+only
+Hosting
+Separate, based on requirement
+Included in ₹15,000 for the first year;
+after that, paid based on traffic and
+usage
+Outside services
+Not mentioned
+New: extra charges are informed first
+and paid directly by you
+Ownership
+Not mentioned
+New: you own your domain and
+website content
+Delivery time
+1.5 - 2 weeks
+About 2 weeks
+Payment terms
+Not mentioned
+New: 50% advance, 50% before final
+publish
+Content &
+updates
+Content to be provided on time
+New: sample content during build; final
+content from you; how updates work
+(sections 4 and 5)
+Responsive
+design
+Not mentioned
+New: works on mobile, tablet and
+desktop
+Privacy & legal
+Not mentioned
+New: prepared as per government laws
+and norms
+SEO list
+Included, with setup help for the
+search engine reporting tool
+Still included; list simplified and the
+reporting tool help is no longer listed
+Unchanged
+5 small changes, 30 days support,
+domain connection
+Same as before
