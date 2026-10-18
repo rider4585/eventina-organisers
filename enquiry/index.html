@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Planning Enquiry Form | Eventina Organisers</title>
+  <meta name="description" content="Submit your event planning inquiry to Eventina Organisers. Tell us your date, location, event type, and service requirements for a tailored consultation within 24 hours.">
+  <meta name="theme-color" content="#070C16">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eventina.in/enquiry">
+  <meta property="og:title" content="Event Planning Enquiry Form | Eventina Organisers">
+  <meta property="og:description" content="Plan your royal wedding, corporate gala, or private celebration. Submit your requirements for a bespoke proposal and consultation.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80&auto=format&fit=crop">
+
+  <!-- Google Fonts Preconnect & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Design System Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <!-- Speculation Rules API for instant SPA-feel navigation -->
+  <script type="speculationrules">
+  {
+    "prefetch": [
+      {
+        "source": "list",
+        "urls": ["/", "/about", "/services", "/portfolio", "/events", "/blog", "/contact", "/enquiry"]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Skip to Main Content (Screen Readers & Keyboard Navigation) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Global Header Component -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="/" class="site-logo" aria-label="Eventina Organisers: Return to homepage">
+        <svg class="logo-crest" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="20" cy="20" r="18.5" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3"/>
+          <path d="M20 7L24 16L33 20L24 24L20 33L16 24L7 20L16 16L20 7Z" fill="currentColor" opacity="0.9"/>
+          <circle cx="20" cy="20" r="2.5" fill="#0D1627"/>
+        </svg>
+        <div class="logo-text-group">
+          <span class="logo-brand">Eventina</span>
+          <span class="logo-tagline">Organisers</span>
+        </div>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary navigation">
+        <ul class="nav-desktop-list">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/about" class="nav-link">About Us</a></li>
+          <li><a href="/services" class="nav-link">Services</a></li>
+          <li><a href="/portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="/events" class="nav-link">Events</a></li>
+          <li><a href="/blog" class="nav-link">Blogs</a></li>
+          <li><a href="/contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="/enquiry" class="btn btn-primary btn-sm header-cta-desktop" aria-current="page">
+          <span>Enquire Now</span>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <button type="button" class="nav-toggle-btn" id="nav-toggle-btn" aria-expanded="false" aria-controls="mobile-nav-drawer" aria-label="Open main menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer Backdrop -->
+  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop" aria-hidden="true"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <nav class="mobile-drawer" id="mobile-nav-drawer" aria-label="Mobile navigation" aria-hidden="true" inert>
+    <div class="mobile-drawer-header">
+      <div class="logo-text-group">
+        <span class="logo-brand">Eventina</span>
+        <span class="logo-tagline">Organisers</span>
+      </div>
+      <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <ul class="mobile-nav-list">
+      <li><a href="/" class="mobile-nav-link"><span>Home</span></a></li>
+      <li><a href="/about" class="mobile-nav-link"><span>About Us</span></a></li>
+      <li><a href="/founders" class="mobile-nav-link"><span>Founders</span></a></li>
+      <li><a href="/services" class="mobile-nav-link"><span>Services</span></a></li>
+      <li><a href="/artists" class="mobile-nav-link"><span>Artists</span></a></li>
+      <li><a href="/portfolio" class="mobile-nav-link"><span>Portfolio</span></a></li>
+      <li><a href="/events" class="mobile-nav-link"><span>Events</span></a></li>
+      <li><a href="/testimonials" class="mobile-nav-link"><span>Testimonials</span></a></li>
+      <li><a href="/locations" class="mobile-nav-link"><span>Event Locations</span></a></li>
+      <li><a href="/blog" class="mobile-nav-link"><span>Blogs</span></a></li>
+      <li><a href="/faq" class="mobile-nav-link"><span>FAQ</span></a></li>
+      <li><a href="/contact" class="mobile-nav-link"><span>Contact Us</span></a></li>
+    </ul>
+
+    <div class="mobile-drawer-footer">
+      <a href="/enquiry" class="btn btn-primary" style="width: 100%;" aria-current="page">
+        <span>Plan Your Event</span>
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <div style="font-size: var(--text-xs); color: var(--color-text-inverse-muted); text-align: center; margin-top: 0.5rem;">
+        <p style="margin-bottom: 0.25rem;">Direct Desk: <a href="tel:+919876543210" style="color: var(--color-gold-400);">+91 98765 43210</a></p>
+        <p>Email: <a href="mailto:hello@eventina.in" style="color: var(--color-gold-400);">hello@eventina.in</a></p>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- Page Hero Banner -->
+    <section class="page-hero" aria-labelledby="enquiry-page-title">
+      <div class="page-hero-bg">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80&auto=format&fit=crop" 
+             alt="Luxury banquet hall adorned with ambient golden chandeliers" 
+             width="1600" 
+             height="700">
+      </div>
+      <div class="page-hero-scrim" aria-hidden="true"></div>
+
+      <div class="container page-hero-content">
+        <nav class="breadcrumbs" aria-label="Breadcrumbs">
+          <a href="/">Home</a>
+          <span class="breadcrumbs-separator" aria-hidden="true">/</span>
+          <span class="breadcrumbs-current" aria-current="page">Enquiry Form</span>
+        </nav>
+
+        <h1 id="enquiry-page-title" class="page-hero-title">
+          Plan Your Event With Eventina
+        </h1>
+        <p class="page-hero-lead">
+          Share your celebration vision with our senior event directors. We will review your dates, location, and requirements, and prepare a tailored preliminary consultation and moodboard within 24 hours.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Form Section -->
+    <section class="section" aria-labelledby="form-heading">
+      <div class="container">
+        <div class="grid-2" style="align-items: start; gap: var(--space-8);">
+
+          <!-- Left Column: The Lead Form & Success State -->
+          <div>
+            <!-- Success Card (Revealed after submission) -->
+            <div id="enquiry-success" class="form-success-card" role="region" aria-live="polite">
+              <div class="success-icon-badge" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+
+              <h2 style="font-size: var(--text-2xl); color: var(--color-navy-950); margin-bottom: 0.5rem;">
+                Enquiry Successfully Received
+              </h2>
+              <p style="color: var(--color-text-secondary); max-width: 50ch; margin-inline: auto;">
+                Thank you for entrusting Eventina Organisers. Your enquiry has been assigned to a Senior Event Director.
+              </p>
+
+              <div>
+                <span class="success-ref-pill">
+                  Reference ID: <span id="enquiry-ref-id">EVT-2026-0000</span>
+                </span>
+              </div>
+
+              <!-- Next Steps Timeline -->
+              <div style="text-align: left; background-color: var(--color-cream-50); border: 1px solid var(--color-cream-200); border-radius: var(--radius-lg); padding: var(--space-5); margin-block: var(--space-6);">
+                <strong style="color: var(--color-navy-950); display: block; margin-bottom: var(--space-3); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: var(--tracking-wider);">
+                  Next Steps in Your Planning Journey
+                </strong>
+                <ol style="display: flex; flex-direction: column; gap: var(--space-3); font-size: var(--text-sm); color: var(--color-text-secondary); padding-left: 1.25rem; list-style: decimal;">
+                  <li><strong>Director Review (within 4 hours):</strong> Feasibility check on your preferred date and venue location.</li>
+                  <li><strong>Bespoke Moodboard (within 24 hours):</strong> Preliminary creative deck and estimated line-item budget allocation.</li>
+                  <li><strong>Discovery Consultation:</strong> Direct video or in-person session with our design and technical leads.</li>
+                </ol>
+              </div>
+
+              <div style="display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap;">
+                <a href="https://wa.me/919876543210?text=Hi%20Eventina%2C%20I%20just%20submitted%20my%20enquiry%20form%20online" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn btn-primary">
+                  <span>Chat on WhatsApp Directly</span>
+                </a>
+                <button type="button" id="new-enquiry-btn" class="btn btn-secondary">
+                  <span>Submit Another Enquiry</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- The 8-Field Lead Capture Form -->
+            <form id="enquiry-form" class="form-card" novalidate>
+              <h2 id="form-heading" style="font-size: var(--text-2xl); color: var(--color-navy-950); margin-bottom: var(--space-2);">
+                Event Details & Scope
+              </h2>
+              <p style="font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: var(--space-6);">
+                Please fill out all mandatory fields (<span style="color: var(--color-error);">*</span>) so we can prepare an accurate proposal.
+              </p>
+
+              <!-- 1. Full Name -->
+              <div class="form-group">
+                <label for="client-name" class="form-label">
+                  <span>1. Full Name</span>
+                  <span class="required-indicator" aria-hidden="true">*</span>
+                </label>
+                <input type="text" id="client-name" name="name" class="form-control" placeholder="e.g. Ananya Singhania" required autocomplete="name">
+                <div class="form-error" id="client-name-error" role="alert"></div>
+              </div>
+
+              <!-- 2. Phone & 3. Email (Side-by-side) -->
+              <div class="grid-2" style="gap: var(--space-4);">
+                <div class="form-group">
+                  <label for="client-phone" class="form-label">
+                    <span>2. Phone Number</span>
+                    <span class="required-indicator" aria-hidden="true">*</span>
+                  </label>
+                  <input type="tel" id="client-phone" name="phone" class="form-control" placeholder="+91 98765 43210" required autocomplete="tel">
+                  <div class="form-error" id="client-phone-error" role="alert"></div>
+                </div>
+
+                <div class="form-group">
+                  <label for="client-email" class="form-label">
+                    <span>3. Email Address</span>
+                    <span class="required-indicator" aria-hidden="true">*</span>
+                  </label>
+                  <input type="email" id="client-email" name="email" class="form-control" placeholder="ananya@example.com" required autocomplete="email">
+                  <div class="form-error" id="client-email-error" role="alert"></div>
+                </div>
+              </div>
+
+              <!-- 4. Event Type & 5. Event Date -->
+              <div class="grid-2" style="gap: var(--space-4);">
+                <div class="form-group">
+                  <label for="event-type" class="form-label">
+                    <span>4. Event Type</span>
+                    <span class="required-indicator" aria-hidden="true">*</span>
+                  </label>
+                  <select id="event-type" name="eventType" class="form-select" required>
+                    <option value="" disabled selected>Select event category...</option>
+                    <option value="Destination Wedding">Destination & Royal Wedding</option>
+                    <option value="Corporate Summit">Corporate Summit, Gala or Awards</option>
+                    <option value="Live Entertainment">Live Concert & Artist Production</option>
+                    <option value="Private Milestone">Milestone Birthday / Silver Jubilee Soirée</option>
+                    <option value="Product Launch">Product Reveal / Exhibition</option>
+                    <option value="Other Celebration">Other Bespoke Gathering</option>
+                  </select>
+                  <div class="form-error" id="event-type-error" role="alert"></div>
+                </div>
+
+                <div class="form-group">
+                  <label for="event-date" class="form-label">
+                    <span>5. Event Date (Anticipated)</span>
+                    <span class="required-indicator" aria-hidden="true">*</span>
+                  </label>
+                  <input type="date" id="event-date" name="eventDate" class="form-control" required>
+                  <div class="form-error" id="event-date-error" role="alert"></div>
+                </div>
+              </div>
+
+              <!-- 6. City / Venue & 7. Budget -->
+              <div class="grid-2" style="gap: var(--space-4);">
+                <div class="form-group">
+                  <label for="event-city" class="form-label">
+                    <span>6. City or Destination Venue</span>
+                    <span class="required-indicator" aria-hidden="true">*</span>
+                  </label>
+                  <input type="text" id="event-city" name="city" class="form-control" placeholder="e.g. Udaipur, Bengaluru, Goa, Mumbai" required>
+                  <div class="form-error" id="event-city-error" role="alert"></div>
+                </div>
+
+                <div class="form-group">
+                  <label for="event-budget" class="form-label">
+                    <span>7. Approximate Budget</span>
+                    <span class="required-indicator" aria-hidden="true">*</span>
+                  </label>
+                  <select id="event-budget" name="budget" class="form-select" required>
+                    <option value="" disabled selected>Select budget bracket...</option>
+                    <option value="10L - 25L">₹10 Lakhs – ₹25 Lakhs</option>
+                    <option value="25L - 50L">₹25 Lakhs – ₹50 Lakhs</option>
+                    <option value="50L - 1Cr">₹50 Lakhs – ₹1 Crore</option>
+                    <option value="1Cr - 3Cr">₹1 Crore – ₹3 Crores</option>
+                    <option value="3Cr+">₹3 Crores and Above</option>
+                    <option value="Flexible">Flexible / Open for Proposal</option>
+                  </select>
+                  <div class="form-error" id="event-budget-error" role="alert"></div>
+                </div>
+              </div>
+
+              <!-- 8. Service Requirements (Checkboxes) -->
+              <div class="form-group" style="margin-top: var(--space-2);">
+                <label class="form-label">
+                  <span>8. Service Requirements</span>
+                  <span class="required-indicator" aria-hidden="true">*</span>
+                </label>
+                <div class="form-helper" style="margin-bottom: var(--space-2);">
+                  Select all services you would like Eventina to oversee:
+                </div>
+
+                <div class="checkbox-grid">
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="services" value="weddings">
+                    <span class="checkbox-label">Full Turnkey Planning & Execution</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="services" value="venue">
+                    <span class="checkbox-label">Venue Sourcing & Contract Logistics</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="services" value="decor">
+                    <span class="checkbox-label">Thematic Decor & Floral Scenography</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="services" value="entertainment">
+                    <span class="checkbox-label">Live Artist & Celebrity Booking</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="services" value="corporate">
+                    <span class="checkbox-label">Broadcast Audio-Visual & Stage Tech</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="services" value="hospitality">
+                    <span class="checkbox-label">VIP Hospitality, Airport Concierge & Fleet</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="services" value="catering">
+                    <span class="checkbox-label">Curated Gastronomy & Mixology Curation</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="services" value="photography">
+                    <span class="checkbox-label">High-End Cinematography & Drone Coverage</span>
+                  </label>
+                </div>
+                <div class="form-error" id="services-error" role="alert"></div>
+              </div>
+
+              <!-- Additional Notes / Special Vision -->
+              <div class="form-group" style="margin-top: var(--space-3);">
+                <label for="event-notes" class="form-label">
+                  <span>Special Vision, Guest Count or Venue Notes</span>
+                </label>
+                <textarea id="event-notes" name="notes" class="form-textarea" placeholder="Share any specific themes, favorite artist names, anticipated guest count (e.g. 350 guests), or special considerations..."></textarea>
+              </div>
+
+              <!-- Mandatory Legal / Privacy Consent (Quote §11) -->
+              <div class="form-group" style="margin-top: var(--space-4);">
+                <label class="checkbox-item" style="border: none; padding-inline: 0; background: transparent;">
+                  <input type="checkbox" id="privacy-consent" name="privacyConsent" required>
+                  <span class="checkbox-label" style="font-size: var(--text-xs); color: var(--color-text-secondary);">
+                    I agree to the processing of my contact information in accordance with Eventina's <a href="/privacy" style="color: var(--color-gold-600); text-decoration: underline;" target="_blank">Privacy Policy</a> for the purpose of receiving an event consultation and estimate. <span class="required-indicator" aria-hidden="true">*</span>
+                  </span>
+                </label>
+                <div class="form-error" id="privacy-consent-error" role="alert"></div>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-primary btn-lg" id="enquiry-submit-btn" style="width: 100%; margin-top: var(--space-4);">
+                <span>Submit Event Enquiry</span>
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <!-- Right Column: The Eventina Guarantee & Trust Badges -->
+          <div>
+            <div class="card card-dark" style="padding: var(--space-6); gap: var(--space-4); margin-bottom: var(--space-6);">
+              <h3 style="font-size: var(--text-xl); color: var(--color-gold-400);">
+                The Eventina Planning Standard
+              </h3>
+              <p style="font-size: var(--text-sm); color: var(--color-text-inverse-muted); line-height: var(--leading-relaxed);">
+                Every inquiry is treated with utmost discretion and personal ownership. Here is our promise to you:
+              </p>
+
+              <ul style="display: flex; flex-direction: column; gap: var(--space-4); margin-block: var(--space-2);">
+                <li style="display: flex; gap: var(--space-3); font-size: var(--text-sm);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold-400)" stroke-width="2" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  <div>
+                    <strong style="color: #FFFFFF; display: block;">24-Hour Moodboard Response</strong>
+                    <span style="color: var(--color-text-inverse-muted);">Receive preliminary aesthetic blueprints and cost frameworks within one business day.</span>
+                  </div>
+                </li>
+
+                <li style="display: flex; gap: var(--space-3); font-size: var(--text-sm);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold-400)" stroke-width="2" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                  <div>
+                    <strong style="color: #FFFFFF; display: block;">100% Client Privacy & NDA Guarantee</strong>
+                    <span style="color: var(--color-text-inverse-muted);">Complete discretion for high-profile weddings, celebrity galas, and corporate IP reveals.</span>
+                  </div>
+                </li>
+
+                <li style="display: flex; gap: var(--space-3); font-size: var(--text-sm);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold-400)" stroke-width="2" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7.5" r="4"></circle>
+                    <polyline points="17 11 19 13 23 9"></polyline>
+                  </svg>
+                  <div>
+                    <strong style="color: #FFFFFF; display: block;">Dedicated Senior Event Director</strong>
+                    <span style="color: var(--color-text-inverse-muted);">A single accountable point of contact from first sketch to final applause.</span>
+                  </div>
+                </li>
+
+                <li style="display: flex; gap: var(--space-3); font-size: var(--text-sm);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold-400)" stroke-width="2" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <line x1="6" y1="12" x2="18" y2="12"></line>
+                  </svg>
+                  <div>
+                    <strong style="color: #FFFFFF; display: block;">Transparent Line-Item Costing</strong>
+                    <span style="color: var(--color-text-inverse-muted);">Zero unexpected surcharges or hidden vendor markups; full auditable transparency.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Client Testimonial Card -->
+            <div class="card" style="padding: var(--space-6); background-color: #FFFFFF;">
+              <div style="display: flex; gap: 4px; color: var(--color-gold-500); margin-bottom: var(--space-3);" aria-label="5 out of 5 stars">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <blockquote style="font-family: var(--font-display); font-size: var(--text-md); color: var(--color-navy-950); margin-bottom: var(--space-4); line-height: var(--leading-snug); font-style: italic;">
+                "Eventina brought our 3-day Udaipur destination wedding to life flawlessly. Every vendor was synchronized down to the second, and the floating mandap was beyond magical."
+              </blockquote>
+              <div style="font-size: var(--text-sm); font-weight: var(--weight-semibold); color: var(--color-navy-950);">
+                Vikram &amp; Radhika Chordia
+              </div>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted);">
+                Destination Wedding · Jagmandir Island, Udaipur
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer Component -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="site-logo" aria-label="Eventina Organisers — Return to homepage">
+            <svg class="logo-crest" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="20" cy="20" r="18.5" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3"/>
+              <path d="M20 7L24 16L33 20L24 24L20 33L16 24L7 20L16 16L20 7Z" fill="currentColor" opacity="0.9"/>
+              <circle cx="20" cy="20" r="2.5" fill="#0D1627"/>
+            </svg>
+            <div class="logo-text-group">
+              <span class="logo-brand">Eventina</span>
+              <span class="logo-tagline">Organisers</span>
+            </div>
+          </a>
+          <p>
+            Curating bespoke celebrations, grand destination weddings, and high-impact corporate galas with uncompromising precision and creative passion across India.
+          </p>
+          <div class="footer-social-strip" aria-label="Follow Eventina Organisers on social media">
+            <a href="https://instagram.com" class="social-icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Eventina on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://facebook.com" class="social-icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Eventina on Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://linkedin.com" class="social-icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Eventina on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="https://youtube.com" class="social-icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Eventina on YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="footer-col-title">Company</h2>
+          <ul class="footer-nav-list">
+            <li><a href="/" class="footer-nav-link">Home</a></li>
+            <li><a href="/about" class="footer-nav-link">About Us</a></li>
+            <li><a href="/founders" class="footer-nav-link">Founders</a></li>
+            <li><a href="/services" class="footer-nav-link">Services</a></li>
+            <li><a href="/artists" class="footer-nav-link">Artists</a></li>
+            <li><a href="/portfolio" class="footer-nav-link">Portfolio Showcase</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="footer-col-title">Experiences</h2>
+          <ul class="footer-nav-list">
+            <li><a href="/events" class="footer-nav-link">Event Formats</a></li>
+            <li><a href="/testimonials" class="footer-nav-link">Testimonials & Reviews</a></li>
+            <li><a href="/locations" class="footer-nav-link">Locations Map</a></li>
+            <li><a href="/blog" class="footer-nav-link">Articles & Stories</a></li>
+            <li><a href="/faq" class="footer-nav-link">Frequently Asked Questions</a></li>
+            <li><a href="/enquiry" class="footer-nav-link">Enquiry Form</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="footer-col-title">Get in Touch</h2>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Central Avenue, Commercial District, Bengaluru, Karnataka 560001</span>
+            </li>
+            <li class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <a href="tel:+919876543210">+91 98765 43210</a>
+            </li>
+            <li class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <a href="mailto:hello@eventina.in">hello@eventina.in</a>
+            </li>
+            <li class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Consultations: Mon – Sat, 10:00 AM – 7:30 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; 2026 Eventina Organisers. All rights reserved.
+        </p>
+        <div class="footer-legal-links">
+          <a href="/privacy" class="footer-legal-link">Privacy Policy</a>
+          <a href="/terms" class="footer-legal-link">Terms of Use</a>
+          <a href="/cookies" class="footer-legal-link">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Action -->
+  <a href="https://wa.me/919876543210?text=Hi%20Eventina%20Organisers%2C%20I%20would%20like%20to%20enquire%20about%20event%20planning%20services" 
+     class="whatsapp-float" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat with Eventina Organisers on WhatsApp">
+    <span class="whatsapp-pulse" aria-hidden="true"></span>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+    <span class="whatsapp-float-label">Chat with us</span>
+  </a>
+
+  <!-- Application & Form Scripts -->
+  <script src="/assets/js/app.js" defer></script>
+  <script src="/assets/js/forms.js" defer></script>
+</body>
+</html>
