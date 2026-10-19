@@ -99,7 +99,7 @@ const mobileNavItems = [
 
     <!-- Header Actions -->
     <div class="header-actions">
-      <a href="/enquiry" class="btn btn-primary btn-sm header-cta-desktop">
+      <a href="/enquiry" class="btn btn-primary btn-sm header-cta-desktop" aria-current={normalizedCurrent === '/enquiry' ? 'page' : undefined}>
         <span>Enquire Now</span>
         <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
@@ -159,7 +159,7 @@ const mobileNavItems = [
   </ul>
 
   <div class="mobile-drawer-footer">
-    <a href="/enquiry" class="btn btn-primary" style="width: 100%;">
+    <a href="/enquiry" class="btn btn-primary" style="width: 100%;" aria-current={normalizedCurrent === '/enquiry' ? 'page' : undefined}>
       <span>Plan Your Event</span>
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>

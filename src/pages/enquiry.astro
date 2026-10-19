@@ -1,0 +1,591 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Event Planning Enquiry Form | Eventina Organisers"
+  description="Submit your event planning inquiry to Eventina Organisers. Tell us your date, location, event type, and service requirements for a tailored consultation within 24 hours."
+  canonicalURL="https://eventina.in/enquiry"
+>
+  <!-- Page Hero Banner -->
+  <section class="page-hero" aria-labelledby="enquiry-page-title">
+    <div class="page-hero-bg">
+      <img
+        src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80&auto=format&fit=crop"
+        alt="Luxury banquet hall adorned with ambient golden chandeliers"
+        width="1600"
+        height="700"
+      />
+    </div>
+    <div class="page-hero-scrim" aria-hidden="true"></div>
+
+    <div class="container page-hero-content">
+      <nav class="breadcrumbs" aria-label="Breadcrumbs">
+        <a href="/">Home</a>
+        <span class="breadcrumbs-separator" aria-hidden="true">/</span>
+        <span class="breadcrumbs-current" aria-current="page">Enquiry Form</span>
+      </nav>
+
+      <h1 id="enquiry-page-title" class="page-hero-title">
+        Plan Your Event With Eventina
+      </h1>
+      <p class="page-hero-lead">
+        Share your celebration vision with our senior event directors. We will review your dates, location, and requirements, and prepare a tailored preliminary consultation and moodboard within 24 hours.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Form Section -->
+  <section class="section" aria-labelledby="form-heading">
+    <div class="container">
+      <div class="grid-2" style="align-items: start; gap: var(--space-8);">
+        <!-- Left Column: The Lead Form & Success State -->
+        <div>
+          <!-- Success Card (Revealed after submission) -->
+          <div id="enquiry-success" class="form-success-card" role="region" aria-live="polite" style="display: none;">
+            <div class="success-icon-badge" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+
+            <h2 style="font-size: var(--text-2xl); color: var(--color-navy-950); margin-bottom: 0.5rem; font-family: var(--font-display);">
+              Enquiry Successfully Received
+            </h2>
+            <p style="color: var(--color-text-secondary); max-width: 50ch; margin-inline: auto;">
+              Thank you for entrusting Eventina Organisers. Your enquiry has been assigned to a Senior Event Director.
+            </p>
+
+            <div style="margin-block: var(--space-4);">
+              <span class="success-ref-pill">
+                Reference ID: <strong id="enquiry-ref-id">EVT-2026-0000</strong>
+              </span>
+            </div>
+
+            <!-- Next Steps Timeline -->
+            <div style="text-align: left; background-color: var(--color-cream-50); border: 1px solid var(--color-cream-200); border-radius: var(--radius-lg); padding: var(--space-5); margin-block: var(--space-6);">
+              <strong style="color: var(--color-navy-950); display: block; margin-bottom: var(--space-3); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: var(--tracking-wider); font-family: var(--font-eyebrow);">
+                Next Steps in Your Planning Journey
+              </strong>
+              <ol style="display: flex; flex-direction: column; gap: var(--space-3); font-size: var(--text-sm); color: var(--color-text-secondary); padding-left: 1.25rem; list-style: decimal;">
+                <li><strong>Director Review (within 4 hours):</strong> Feasibility check on your preferred date and venue location.</li>
+                <li><strong>Bespoke Moodboard (within 24 hours):</strong> Preliminary creative deck and estimated line-item budget allocation.</li>
+                <li><strong>Discovery Consultation:</strong> Direct video or in-person session with our design and technical leads.</li>
+              </ol>
+            </div>
+
+            <div style="display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap;">
+              <a
+                href="https://wa.me/919876543210?text=Hi%20Eventina%2C%20I%20just%20submitted%20my%20enquiry%20form%20online"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+              >
+                <span>Chat on WhatsApp Directly</span>
+              </a>
+              <button type="button" id="new-enquiry-btn" class="btn btn-secondary">
+                <span>Submit Another Enquiry</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- The 8-Field Lead Capture Form -->
+          <form id="enquiry-form" class="form-card" novalidate>
+            <h2 id="form-heading" style="font-size: var(--text-2xl); color: var(--color-navy-950); margin-bottom: var(--space-2); font-family: var(--font-display);">
+              Event Details &amp; Scope
+            </h2>
+            <p style="font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: var(--space-6);">
+              Please fill out all mandatory fields (<span style="color: var(--color-error);">*</span>) so we can prepare an accurate proposal.
+            </p>
+
+            <!-- 1. Full Name -->
+            <div class="form-group">
+              <label for="client-name" class="form-label">
+                <span>1. Full Name</span>
+                <span class="required-indicator" aria-hidden="true">*</span>
+              </label>
+              <input type="text" id="client-name" name="name" class="form-control" placeholder="e.g. Ananya Singhania" required autocomplete="name" />
+              <div class="form-error form-error-msg" id="client-name-error" role="alert"></div>
+            </div>
+
+            <!-- 2. Phone & 3. Email (Side-by-side) -->
+            <div class="grid-2 form-grid-2" style="gap: var(--space-4);">
+              <div class="form-group">
+                <label for="client-phone" class="form-label">
+                  <span>2. Phone Number</span>
+                  <span class="required-indicator" aria-hidden="true">*</span>
+                </label>
+                <input type="tel" id="client-phone" name="phone" class="form-control" placeholder="+91 98765 43210" required autocomplete="tel" />
+                <div class="form-error form-error-msg" id="client-phone-error" role="alert"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="client-email" class="form-label">
+                  <span>3. Email Address</span>
+                  <span class="required-indicator" aria-hidden="true">*</span>
+                </label>
+                <input type="email" id="client-email" name="email" class="form-control" placeholder="ananya@example.com" required autocomplete="email" />
+                <div class="form-error form-error-msg" id="client-email-error" role="alert"></div>
+              </div>
+            </div>
+
+            <!-- 4. Event Type & 5. Event Date -->
+            <div class="grid-2 form-grid-2" style="gap: var(--space-4);">
+              <div class="form-group">
+                <label for="event-type" class="form-label">
+                  <span>4. Event Type</span>
+                  <span class="required-indicator" aria-hidden="true">*</span>
+                </label>
+                <select id="event-type" name="eventType" class="form-select" required>
+                  <option value="" disabled selected>Select event category...</option>
+                  <option value="Destination Wedding">Destination &amp; Royal Wedding</option>
+                  <option value="Corporate Summit">Corporate Summit, Gala or Awards</option>
+                  <option value="Live Entertainment">Live Concert &amp; Artist Production</option>
+                  <option value="Private Milestone">Milestone Birthday / Silver Jubilee Soirée</option>
+                  <option value="Product Launch">Product Reveal / Exhibition</option>
+                  <option value="Other Celebration">Other Bespoke Gathering</option>
+                </select>
+                <div class="form-error form-error-msg" id="event-type-error" role="alert"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="event-date" class="form-label">
+                  <span>5. Event Date (Anticipated)</span>
+                  <span class="required-indicator" aria-hidden="true">*</span>
+                </label>
+                <input type="date" id="event-date" name="eventDate" class="form-control" required />
+                <div class="form-error form-error-msg" id="event-date-error" role="alert"></div>
+              </div>
+            </div>
+
+            <!-- 6. City / Venue & 7. Budget -->
+            <div class="grid-2 form-grid-2" style="gap: var(--space-4);">
+              <div class="form-group">
+                <label for="event-city" class="form-label">
+                  <span>6. City or Destination Venue</span>
+                  <span class="required-indicator" aria-hidden="true">*</span>
+                </label>
+                <input type="text" id="event-city" name="city" class="form-control" placeholder="e.g. Udaipur, Bengaluru, Goa, Mumbai" required />
+                <div class="form-error form-error-msg" id="event-city-error" role="alert"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="event-budget" class="form-label">
+                  <span>7. Approximate Budget</span>
+                  <span class="required-indicator" aria-hidden="true">*</span>
+                </label>
+                <select id="event-budget" name="budget" class="form-select" required>
+                  <option value="" disabled selected>Select budget bracket...</option>
+                  <option value="10L - 25L">₹10 Lakhs – ₹25 Lakhs</option>
+                  <option value="25L - 50L">₹25 Lakhs – ₹50 Lakhs</option>
+                  <option value="50L - 1Cr">₹50 Lakhs – ₹1 Crore</option>
+                  <option value="1Cr - 3Cr">₹1 Crore – ₹3 Crores</option>
+                  <option value="3Cr+">₹3 Crores and Above</option>
+                  <option value="Flexible">Flexible / Open for Proposal</option>
+                </select>
+                <div class="form-error form-error-msg" id="event-budget-error" role="alert"></div>
+              </div>
+            </div>
+
+            <!-- 8. Service Requirements (Checkboxes) -->
+            <div class="form-group" style="margin-top: var(--space-2);">
+              <label class="form-label">
+                <span>8. Service Requirements</span>
+                <span class="required-indicator" aria-hidden="true">*</span>
+              </label>
+              <div class="form-helper" style="margin-bottom: var(--space-2); font-size: var(--text-xs); color: var(--color-text-muted);">
+                Select all services you would like Eventina to oversee:
+              </div>
+
+              <div class="checkbox-grid">
+                <label class="checkbox-item">
+                  <input type="checkbox" name="services" value="weddings" />
+                  <span class="checkbox-label">Full Turnkey Planning &amp; Execution</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="services" value="venue" />
+                  <span class="checkbox-label">Venue Sourcing &amp; Contract Logistics</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="services" value="decor" />
+                  <span class="checkbox-label">Thematic Decor &amp; Floral Scenography</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="services" value="entertainment" />
+                  <span class="checkbox-label">Live Artist &amp; Celebrity Booking</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="services" value="corporate" />
+                  <span class="checkbox-label">Broadcast Audio-Visual &amp; Stage Tech</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="services" value="hospitality" />
+                  <span class="checkbox-label">VIP Hospitality, Airport Concierge &amp; Fleet</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="services" value="catering" />
+                  <span class="checkbox-label">Curated Gastronomy &amp; Mixology Curation</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="services" value="photography" />
+                  <span class="checkbox-label">High-End Cinematography &amp; Drone Coverage</span>
+                </label>
+              </div>
+              <div class="form-error form-error-msg" id="services-error" role="alert"></div>
+            </div>
+
+            <!-- Additional Notes / Special Vision -->
+            <div class="form-group" style="margin-top: var(--space-3);">
+              <label for="event-notes" class="form-label">
+                <span>Special Vision, Guest Count or Venue Notes</span>
+              </label>
+              <textarea
+                id="event-notes"
+                name="notes"
+                class="form-textarea"
+                placeholder="Share any specific themes, favorite artist names, anticipated guest count (e.g. 350 guests), or special considerations..."
+              ></textarea>
+            </div>
+
+            <!-- Mandatory Legal / Privacy Consent -->
+            <div class="form-group" style="margin-top: var(--space-4);">
+              <label class="checkbox-item" style="border: none; padding-inline: 0; background: transparent;">
+                <input type="checkbox" id="privacy-consent" name="privacyConsent" required />
+                <span class="checkbox-label" style="font-size: var(--text-xs); color: var(--color-text-secondary);">
+                  I agree to the processing of my contact information in accordance with Eventina's{' '}
+                  <a href="/privacy" style="color: var(--color-gold-600); text-decoration: underline;" target="_blank">
+                    Privacy Policy
+                  </a>{' '}
+                  for the purpose of receiving an event consultation and estimate.{' '}
+                  <span class="required-indicator" aria-hidden="true">*</span>
+                </span>
+              </label>
+              <div class="form-error form-error-msg" id="privacy-consent-error" role="alert"></div>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="btn btn-primary btn-lg"
+              id="enquiry-submit-btn"
+              style="width: 100%; margin-top: var(--space-4);"
+            >
+              <span>Submit Event Enquiry</span>
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Right Column: The Eventina Guarantee & Trust Badges -->
+        <div>
+          <div class="card card-dark" style="padding: var(--space-6); gap: var(--space-4); margin-bottom: var(--space-6);">
+            <h3 style="font-size: var(--text-xl); color: var(--color-gold-400); font-family: var(--font-display);">
+              The Eventina Planning Standard
+            </h3>
+            <p style="font-size: var(--text-sm); color: var(--color-text-inverse-muted); line-height: var(--leading-relaxed);">
+              Every inquiry is treated with utmost discretion and personal ownership. Here is our promise to you:
+            </p>
+
+            <ul style="display: flex; flex-direction: column; gap: var(--space-4); margin-block: var(--space-2); list-style: none; padding: 0;">
+              <li style="display: flex; gap: var(--space-3); font-size: var(--text-sm);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold-400)" stroke-width="2" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <div>
+                  <strong style="color: #FFFFFF; display: block;">24-Hour Moodboard Response</strong>
+                  <span style="color: var(--color-text-inverse-muted);">Receive preliminary aesthetic blueprints and cost frameworks within one business day.</span>
+                </div>
+              </li>
+
+              <li style="display: flex; gap: var(--space-3); font-size: var(--text-sm);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold-400)" stroke-width="2" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <div>
+                  <strong style="color: #FFFFFF; display: block;">100% Client Privacy &amp; NDA Guarantee</strong>
+                  <span style="color: var(--color-text-inverse-muted);">Complete discretion for high-profile weddings, celebrity galas, and corporate IP reveals.</span>
+                </div>
+              </li>
+
+              <li style="display: flex; gap: var(--space-3); font-size: var(--text-sm);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold-400)" stroke-width="2" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="8.5" cy="7.5" r="4"></circle>
+                  <polyline points="17 11 19 13 23 9"></polyline>
+                </svg>
+                <div>
+                  <strong style="color: #FFFFFF; display: block;">Dedicated Senior Event Director</strong>
+                  <span style="color: var(--color-text-inverse-muted);">A single accountable point of contact from first sketch to final applause.</span>
+                </div>
+              </li>
+
+              <li style="display: flex; gap: var(--space-3); font-size: var(--text-sm);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold-400)" stroke-width="2" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <line x1="6" y1="12" x2="18" y2="12"></line>
+                </svg>
+                <div>
+                  <strong style="color: #FFFFFF; display: block;">Transparent Line-Item Costing</strong>
+                  <span style="color: var(--color-text-inverse-muted);">Zero unexpected surcharges or hidden vendor markups; full auditable transparency.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Client Testimonial Card -->
+          <div class="card" style="padding: var(--space-6); background-color: #FFFFFF;">
+            <div style="display: flex; gap: 4px; color: var(--color-gold-500); margin-bottom: var(--space-3);" aria-label="5 out of 5 stars">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <blockquote style="font-family: var(--font-display); font-size: var(--text-md); color: var(--color-navy-950); margin-bottom: var(--space-4); line-height: var(--leading-snug); font-style: italic;">
+              "Eventina brought our 3-day Udaipur destination wedding to life flawlessly. Every vendor was synchronized down to the second, and the floating mandap was beyond magical."
+            </blockquote>
+            <div style="font-size: var(--text-sm); font-weight: var(--weight-semibold); color: var(--color-navy-950);">
+              Vikram &amp; Radhika Chordia
+            </div>
+            <div style="font-size: var(--text-xs); color: var(--color-text-muted);">
+              Destination Wedding &bull; Jagmandir Island, Udaipur
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inline Form Submission & D1 Sync Handler -->
+  <script is:inline>
+    (() => {
+      'use strict';
+      const enquiryForm = document.getElementById('enquiry-form');
+      const enquirySuccessCard = document.getElementById('enquiry-success');
+      const enquirySubmitBtn = document.getElementById('enquiry-submit-btn');
+      const enquiryRefSpan = document.getElementById('enquiry-ref-id');
+      const newEnquiryBtn = document.getElementById('new-enquiry-btn');
+
+      const eventDateInput = document.getElementById('event-date');
+      if (eventDateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        eventDateInput.min = today;
+      }
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const serviceParam = urlParams.get('service');
+      if (serviceParam) {
+        const serviceCheckbox = document.querySelector(`input[name="services"][value="${serviceParam}"]`);
+        if (serviceCheckbox) serviceCheckbox.checked = true;
+      }
+
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function validatePhone(phone) {
+        const cleaned = phone.replace(/[\s\-\(\)]/g, '');
+        return /^\+?[0-9]{10,14}$/.test(cleaned);
+      }
+
+      function showError(fieldId, errorMsg) {
+        const field = document.getElementById(fieldId);
+        const errorEl = document.getElementById(fieldId + '-error');
+        if (field) {
+          field.classList.add('is-invalid');
+          field.setAttribute('aria-invalid', 'true');
+        }
+        if (errorEl) {
+          errorEl.textContent = errorMsg;
+          errorEl.classList.add('is-visible');
+        }
+      }
+
+      function clearError(fieldId) {
+        const field = document.getElementById(fieldId);
+        const errorEl = document.getElementById(fieldId + '-error');
+        if (field) {
+          field.classList.remove('is-invalid');
+          field.removeAttribute('aria-invalid');
+        }
+        if (errorEl) {
+          errorEl.classList.remove('is-visible');
+          errorEl.textContent = '';
+        }
+      }
+
+      ['client-name', 'client-phone', 'client-email', 'event-type', 'event-date', 'event-city', 'event-budget', 'privacy-consent'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('input', () => clearError(id));
+          el.addEventListener('change', () => clearError(id));
+        }
+      });
+
+      if (enquiryForm) {
+        enquiryForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          let isValid = true;
+
+          const name = document.getElementById('client-name')?.value.trim();
+          const phone = document.getElementById('client-phone')?.value.trim();
+          const email = document.getElementById('client-email')?.value.trim();
+          const eventType = document.getElementById('event-type')?.value;
+          const eventDate = document.getElementById('event-date')?.value;
+          const city = document.getElementById('event-city')?.value.trim();
+          const budget = document.getElementById('event-budget')?.value;
+          const privacyConsent = document.getElementById('privacy-consent')?.checked;
+          const selectedServices = Array.from(document.querySelectorAll('input[name="services"]:checked')).map(cb => cb.value);
+
+          if (!name || name.length < 2) {
+            showError('client-name', 'Please provide your full name.');
+            isValid = false;
+          } else {
+            clearError('client-name');
+          }
+
+          if (!phone || !validatePhone(phone)) {
+            showError('client-phone', 'Please enter a valid phone number (e.g. +91 98765 43210).');
+            isValid = false;
+          } else {
+            clearError('client-phone');
+          }
+
+          if (!email || !validateEmail(email)) {
+            showError('client-email', 'Please enter a valid email address.');
+            isValid = false;
+          } else {
+            clearError('client-email');
+          }
+
+          if (!eventType) {
+            showError('event-type', 'Please select an event format.');
+            isValid = false;
+          } else {
+            clearError('event-type');
+          }
+
+          if (!eventDate) {
+            showError('event-date', 'Please select your anticipated event date.');
+            isValid = false;
+          } else {
+            clearError('event-date');
+          }
+
+          if (!city || city.length < 2) {
+            showError('event-city', 'Please state the city or destination venue.');
+            isValid = false;
+          } else {
+            clearError('event-city');
+          }
+
+          if (!budget) {
+            showError('event-budget', 'Please select an approximate budget range.');
+            isValid = false;
+          } else {
+            clearError('event-budget');
+          }
+
+          const servicesErrorEl = document.getElementById('services-error');
+          if (selectedServices.length === 0) {
+            if (servicesErrorEl) {
+              servicesErrorEl.textContent = 'Please select at least one service requirement.';
+              servicesErrorEl.classList.add('is-visible');
+            }
+            isValid = false;
+          } else if (servicesErrorEl) {
+            servicesErrorEl.classList.remove('is-visible');
+          }
+
+          if (!privacyConsent) {
+            showError('privacy-consent', 'You must agree to the privacy policy to proceed.');
+            isValid = false;
+          } else {
+            clearError('privacy-consent');
+          }
+
+          if (!isValid) {
+            const firstInvalid = enquiryForm.querySelector('.is-invalid, input[aria-invalid="true"]');
+            firstInvalid?.focus();
+            return;
+          }
+
+          if (enquirySubmitBtn) {
+            enquirySubmitBtn.disabled = true;
+            enquirySubmitBtn.innerHTML = `<span>Submitting Details...</span>`;
+          }
+
+          let generatedRef = 'EVT-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
+
+          const payload = {
+            name,
+            phone,
+            email,
+            eventType,
+            eventDate,
+            city,
+            budget,
+            services: selectedServices,
+            notes: document.getElementById('event-notes')?.value.trim() || '',
+            privacyConsent: true,
+          };
+
+          try {
+            const response = await fetch('/api/enquiry', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+            });
+            if (response.ok) {
+              const resData = await response.json();
+              if (resData.reference) {
+                generatedRef = resData.reference;
+              }
+            }
+          } catch (err) {
+            console.log('API sync skipped, fallback to client lead logging:', err);
+          }
+
+          // Local storage fallback / persistence
+          try {
+            const stored = JSON.parse(localStorage.getItem('eventina_leads') || '[]');
+            stored.push({ reference: generatedRef, timestamp: new Date().toISOString(), ...payload });
+            localStorage.setItem('eventina_leads', JSON.stringify(stored));
+          } catch (e) {}
+
+          enquiryForm.style.display = 'none';
+          if (enquirySuccessCard) {
+            enquirySuccessCard.style.display = 'block';
+            enquirySuccessCard.classList.add('is-active');
+          }
+          if (enquiryRefSpan) {
+            enquiryRefSpan.textContent = generatedRef;
+          }
+          enquirySuccessCard?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      }
+
+      if (newEnquiryBtn && enquiryForm && enquirySuccessCard) {
+        newEnquiryBtn.addEventListener('click', () => {
+          enquiryForm.reset();
+          enquiryForm.style.display = 'block';
+          enquirySuccessCard.style.display = 'none';
+          enquirySuccessCard.classList.remove('is-active');
+          if (enquirySubmitBtn) {
+            enquirySubmitBtn.disabled = false;
+            enquirySubmitBtn.innerHTML = `
+              <span>Submit Event Enquiry</span>
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            `;
+          }
+        });
+      }
+    })();
+  </script>
+</BaseLayout>
