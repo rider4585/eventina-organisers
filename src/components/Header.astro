@@ -13,7 +13,18 @@ const normalize = (path: string) => {
 
 const normalizedCurrent = normalize(currentPath);
 
-const isActive = (href: string) => {
+const isDesktopActive = (href: string) => {
+  const normalizedHref = normalize(href);
+  if (normalizedHref === '/') {
+    return normalizedCurrent === '/';
+  }
+  if (normalizedHref === '/about' && normalizedCurrent === '/founders') {
+    return true;
+  }
+  return normalizedCurrent === normalizedHref || normalizedCurrent.startsWith(normalizedHref + '/');
+};
+
+const isMobileActive = (href: string) => {
   const normalizedHref = normalize(href);
   if (normalizedHref === '/') {
     return normalizedCurrent === '/';
@@ -70,7 +81,7 @@ const mobileNavItems = [
     <nav class="nav-desktop" aria-label="Primary navigation">
       <ul class="nav-desktop-list">
         {navItems.map((item) => {
-          const active = isActive(item.href);
+          const active = isDesktopActive(item.href);
           return (
             <li>
               <a
@@ -132,7 +143,7 @@ const mobileNavItems = [
 
   <ul class="mobile-nav-list">
     {mobileNavItems.map((item) => {
-      const active = isActive(item.href);
+      const active = isMobileActive(item.href);
       return (
         <li>
           <a

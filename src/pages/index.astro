@@ -6,57 +6,365 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="Eventina Organisers | Bespoke Celebrations & Luxury Events"
   description="Premier event organisers in India crafting bespoke destination weddings, corporate galas, and milestone celebrations with artistic elegance and meticulous precision."
 >
-  <!-- Hero Section -->
-  <section class="hero-section" style="position: relative; padding: clamp(4rem, 10vw, 8rem) var(--space-4); text-align: center; background: radial-gradient(circle at 50% 20%, rgba(201, 167, 94, 0.12) 0%, transparent 70%), var(--color-cream-50);">
-    <div class="container" style="max-width: 840px; margin-inline: auto;">
-      <span class="eyebrow" style="display: inline-block; font-family: var(--font-eyebrow); font-size: var(--text-xs); font-weight: var(--weight-semibold); letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-gold-600); margin-bottom: var(--space-3);">
-        Haute-Couture Event Planning & Scenography
-      </span>
-      <h1 style="font-family: var(--font-display); font-size: var(--text-5xl); font-weight: 400; line-height: 1.1; color: var(--color-navy-900); margin-bottom: var(--space-4);">
-        Where Artistry Meets <em style="font-style: italic; color: var(--color-gold-500);">Unforgettable</em> Grandeur
-      </h1>
-      <p style="font-size: var(--text-lg); line-height: 1.6; color: var(--color-text-secondary); margin-bottom: var(--space-6); max-width: 640px; margin-inline: auto;">
-        Crafting bespoke destination weddings, royal celebrations, and prestigious corporate galas across Udaipur, Jaipur, Goa, and beyond.
-      </p>
-      <div style="display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap;">
-        <a href="/enquiry" class="btn btn-primary">
-          <span>Plan Your Celebration</span>
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width: 1rem; height: 1rem;">
+  <!-- Hero Preview Section -->
+  <section class="hero-section" aria-labelledby="hero-heading">
+    <div class="hero-bg">
+      <img
+        src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80&auto=format&fit=crop"
+        alt="Grand ballroom reception with chandeliers and luxury floral table arrangements"
+        width="1600"
+        height="900"
+        fetchpriority="high"
+      />
+    </div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="eyebrow">Luxury Wedding &amp; High-Impact Event Organisers</span>
+        <h1 id="hero-heading" class="hero-title">
+          <span class="display-airy">Crafting</span> <em class="italic-flourish">Unforgettable</em> Celebrations &amp; Bespoke Occasions
+        </h1>
+        <p class="hero-lead">
+          From royal destination weddings to monumental corporate galas, we orchestrate breathtaking occasions with tailored artistry, architectural florals, and seamless precision across India.
+        </p>
+
+        <div class="hero-actions">
+          <a href="/enquiry" class="btn btn-primary btn-lg">
+            <span>Plan Your Event</span>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="/portfolio" class="btn btn-secondary btn-lg">
+            <span>Explore Portfolio</span>
+          </a>
+        </div>
+
+        <!-- Trust & Scale Metrics -->
+        <div class="hero-stats" aria-label="Key company achievements">
+          <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Events Curated</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Destination Cities</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">99%</span>
+            <span class="stat-label">Guest Delight</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">8+</span>
+            <span class="stat-label">Years of Craft</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Pillars Section -->
+  <section class="section" aria-labelledby="pillars-heading">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow">End-to-End Orchestration</span>
+        <h2 id="pillars-heading">Signature <em class="italic-flourish">Celebration</em> Formats</h2>
+        <p>
+          Every celebration reflects our dedication to extraordinary aesthetics, seamless vendor logistics, and flawless guest experiences.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Pillar 1 -->
+        <article class="card card-interactive">
+          <div class="card-media">
+            <img
+              src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80&auto=format&fit=crop"
+              alt="Opulent wedding banquet setup with warm ambient lighting"
+              width="800"
+              height="500"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-body">
+            <span class="badge badge-gold">Weddings</span>
+            <h3>Destination &amp; Royal Weddings</h3>
+            <p>
+              Complete end-to-end management of royal ceremonies, thematic sangeets, and multi-day celebrations at India's most prestigious heritage venues.
+            </p>
+            <div style="margin-top: auto; padding-top: 0.5rem;">
+              <a href="/services" class="btn btn-ghost btn-sm" style="padding-inline: 0;">
+                <span>Explore Wedding Services</span>
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pillar 2 -->
+        <article class="card card-interactive">
+          <div class="card-media">
+            <img
+              src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80&auto=format&fit=crop"
+              alt="Corporate annual gala celebration with champagne toast"
+              width="800"
+              height="500"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-body">
+            <span class="badge badge-gold">Corporate</span>
+            <h3>Galas, Summits &amp; Awards</h3>
+            <p>
+              Turnkey corporate productions, executive retreats, product reveals, and annual award nights engineered with broadcast-grade audiovisuals.
+            </p>
+            <div style="margin-top: auto; padding-top: 0.5rem;">
+              <a href="/services" class="btn btn-ghost btn-sm" style="padding-inline: 0;">
+                <span>Explore Corporate Events</span>
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pillar 3 -->
+        <article class="card card-interactive">
+          <div class="card-media">
+            <img
+              src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=80&auto=format&fit=crop"
+              alt="Intimate outdoor milestone banquet under fairy light canopy"
+              width="800"
+              height="500"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-body">
+            <span class="badge badge-gold">Private Soirées</span>
+            <h3>Milestones &amp; Private Soirées</h3>
+            <p>
+              Intimate milestone anniversaries, birthday galas, and bespoke parties curated with exceptional gastronomy and live artist bookings.
+            </p>
+            <div style="margin-top: auto; padding-top: 0.5rem;">
+              <a href="/services" class="btn btn-ghost btn-sm" style="padding-inline: 0;">
+                <span>Explore Soirée Planning</span>
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Celebrations Section -->
+  <section class="section section-cream" aria-labelledby="featured-work-heading">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow">Portfolio Highlights</span>
+        <h2 id="featured-work-heading">Featured <em class="italic-flourish">Celebrations</em></h2>
+        <p>
+          A glimpse into the extraordinary moments, royal mandaps, and high-impact corporate summits we have brought to life.
+        </p>
+      </div>
+
+      <div class="grid-3" style="margin-bottom: var(--space-8);">
+        <!-- Showcase 1 -->
+        <article class="portfolio-card" style="aspect-ratio: 16/11;">
+          <img
+            class="portfolio-card-img"
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80&auto=format&fit=crop"
+            alt="Royal palace wedding dining setup with chandeliers"
+            width="800"
+            height="550"
+            loading="lazy"
+          />
+          <span class="portfolio-card-badge">Weddings</span>
+          <div class="portfolio-card-overlay">
+            <h3 class="portfolio-card-title">Jagmandir Island Palace Wedding</h3>
+            <div class="portfolio-card-meta">
+              <span>Udaipur, Rajasthan · 3-Day Royal Celebration</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Showcase 2 -->
+        <article class="portfolio-card" style="aspect-ratio: 16/11;">
+          <img
+            class="portfolio-card-img"
+            src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80&auto=format&fit=crop"
+            alt="Auditorium stage at tech conference with LED backdrop"
+            width="800"
+            height="550"
+            loading="lazy"
+          />
+          <span class="portfolio-card-badge">Corporate</span>
+          <div class="portfolio-card-overlay">
+            <h3 class="portfolio-card-title">Global Tech Leadership Summit</h3>
+            <div class="portfolio-card-meta">
+              <span>Bengaluru · 1,200 Delegates</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Showcase 3 -->
+        <article class="portfolio-card" style="aspect-ratio: 16/11;">
+          <img
+            class="portfolio-card-img"
+            src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80&auto=format&fit=crop"
+            alt="Concert stage illuminated with beam lights"
+            width="800"
+            height="550"
+            loading="lazy"
+          />
+          <span class="portfolio-card-badge">Live Entertainment</span>
+          <div class="portfolio-card-overlay">
+            <h3 class="portfolio-card-title">Midnight Symphony &amp; Sangeet</h3>
+            <div class="portfolio-card-meta">
+              <span>Jaipur, Rajasthan · Concert Production</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="/portfolio" class="btn btn-primary btn-lg">
+          <span>Explore Complete Portfolio (9 Celebrations)</span>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-        </a>
-        <a href="/portfolio" class="btn btn-secondary">
-          <span>Explore Portfolio</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Feature Pillars -->
-  <section style="padding: clamp(3rem, 6vw, 5rem) var(--space-4); background-color: var(--color-cream-100); border-top: 1px solid var(--color-cream-200); border-bottom: 1px solid var(--color-cream-200);">
+  <!-- Value & Trust Strip -->
+  <section class="section" aria-labelledby="value-strip-heading" style="padding-block: var(--space-8); border-block: 1px solid var(--color-cream-200); background-color: var(--color-cream-50);">
     <div class="container">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6);">
-        <div class="card" style="background: var(--color-surface); padding: var(--space-6); border-radius: var(--radius-md); border: 1px solid var(--color-cream-200); box-shadow: var(--shadow-sm);">
-          <div style="font-family: var(--font-display); font-size: var(--text-2xl); color: var(--color-gold-600); margin-bottom: var(--space-2);">01</div>
-          <h2 style="font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-navy-900); margin-bottom: var(--space-2);">Destination Weddings</h2>
-          <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6;">
-            Palatial heritage venues, private coastal enclaves, and royal hospitality curated to perfection.
-          </p>
+      <h2 id="value-strip-heading" class="sr-only">Why Choose Eventina Organisers</h2>
+      <div class="grid-4 text-center">
+        <div>
+          <div style="font-family: var(--font-display); font-size: var(--text-2xl); color: var(--color-navy-900); margin-bottom: 0.25rem;">End-to-End Planning</div>
+          <p style="font-size: var(--text-xs); color: var(--color-text-secondary); margin: 0;">Complete turn-key production from concept to teardown.</p>
         </div>
-        <div class="card" style="background: var(--color-surface); padding: var(--space-6); border-radius: var(--radius-md); border: 1px solid var(--color-cream-200); box-shadow: var(--shadow-sm);">
-          <div style="font-family: var(--font-display); font-size: var(--text-2xl); color: var(--color-gold-600); margin-bottom: var(--space-2);">02</div>
-          <h2 style="font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-navy-900); margin-bottom: var(--space-2);">Corporate Galas</h2>
-          <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6;">
-            Sophisticated corporate summits, award nights, and milestone jubilees delivered with flawless execution.
-          </p>
+        <div>
+          <div style="font-family: var(--font-display); font-size: var(--text-2xl); color: var(--color-navy-900); margin-bottom: 0.25rem;">150+ Curated Partners</div>
+          <p style="font-size: var(--text-xs); color: var(--color-text-secondary); margin: 0;">Verified culinary masters, AV engineers, and floral artisans.</p>
         </div>
-        <div class="card" style="background: var(--color-surface); padding: var(--space-6); border-radius: var(--radius-md); border: 1px solid var(--color-cream-200); box-shadow: var(--shadow-sm);">
-          <div style="font-family: var(--font-display); font-size: var(--text-2xl); color: var(--color-gold-600); margin-bottom: var(--space-2);">03</div>
-          <h2 style="font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-navy-900); margin-bottom: var(--space-2);">Scenography & Décor</h2>
-          <p style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6;">
-            Architectural floral installations, bespoke lighting designs, and custom staging crafted by master artisans.
-          </p>
+        <div>
+          <div style="font-family: var(--font-display); font-size: var(--text-2xl); color: var(--color-navy-900); margin-bottom: 0.25rem;">100% On-Time Execution</div>
+          <p style="font-size: var(--text-xs); color: var(--color-text-secondary); margin: 0;">Minute-by-minute run-of-show precision.</p>
         </div>
+        <div>
+          <div style="font-family: var(--font-display); font-size: var(--text-2xl); color: var(--color-navy-900); margin-bottom: 0.25rem;">Pan-India Reach</div>
+          <p style="font-size: var(--text-xs); color: var(--color-text-secondary); margin: 0;">Presence across 15+ destination cities in India.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Preview Section (Light & Fresh Luxury Theme) -->
+  <section class="section section-cream" aria-labelledby="testimonials-preview-heading">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow">Client Reflections</span>
+        <h2 id="testimonials-preview-heading">Words of <em class="italic-flourish">Gratitude</em> from Our Hosts</h2>
+        <p>
+          Authentic experiences shared by couples, families, and enterprise leaders across India.
+        </p>
+      </div>
+
+      <div class="grid-2" style="margin-bottom: var(--space-8);">
+        <div class="card" style="padding: var(--space-8); box-shadow: var(--shadow-md);">
+          <div style="display: flex; gap: 4px; color: var(--color-gold-500); margin-bottom: var(--space-4);" aria-label="5 out of 5 stars">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <p class="quote-editorial" style="margin-bottom: var(--space-6);">
+            &ldquo;Eventina brought our 3-day Udaipur destination wedding to life flawlessly. Every vendor was synchronized down to the second, and the floating mandap on Lake Pichola was beyond magical.&rdquo;
+          </p>
+          <div style="margin-top: auto; border-top: 1px solid var(--color-cream-200); padding-top: var(--space-4); display: flex; justify-content: space-between; align-items: flex-end;">
+            <div>
+              <div style="font-family: var(--font-display); font-size: var(--text-md); font-weight: var(--weight-bold); color: var(--color-navy-900);">Vikram &amp; Radhika Chordia</div>
+              <div style="font-family: var(--font-eyebrow); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); margin-top: 2px;">Destination Wedding · Jagmandir Island, Udaipur</div>
+            </div>
+            <span class="badge badge-gold" style="font-size: 0.65rem;">Verified Host</span>
+          </div>
+        </div>
+
+        <div class="card" style="padding: var(--space-8); box-shadow: var(--shadow-md);">
+          <div style="display: flex; gap: 4px; color: var(--color-gold-500); margin-bottom: var(--space-4);" aria-label="5 out of 5 stars">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <p class="quote-editorial" style="margin-bottom: var(--space-6);">
+            &ldquo;Managing 1,200 international executives requires military precision. Eventina delivered flawless broadcast AV, VIP logistics, and a gala dinner that received global executive accolades.&rdquo;
+          </p>
+          <div style="margin-top: auto; border-top: 1px solid var(--color-cream-200); padding-top: var(--space-4); display: flex; justify-content: space-between; align-items: flex-end;">
+            <div>
+              <div style="font-family: var(--font-display); font-size: var(--text-md); font-weight: var(--weight-bold); color: var(--color-navy-900);">Siddharth Narayanan</div>
+              <div style="font-family: var(--font-eyebrow); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); margin-top: 2px;">Vice President, Global Operations · Tech Leadership Summit</div>
+            </div>
+            <span class="badge badge-gold" style="font-size: 0.65rem;">Enterprise Host</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Business Profile Reviews Badge -->
+      <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-4); background: #FFFFFF; border: 1px solid var(--color-cream-200); border-radius: var(--radius-xl); padding: var(--space-4) var(--space-6); max-width: 520px; margin-inline: auto; box-shadow: var(--shadow-sm);">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+          <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+          <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.14-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+          <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+        </svg>
+        <div>
+          <div style="font-weight: var(--weight-bold); font-size: var(--text-sm); color: var(--color-navy-900);">
+            Rated 4.9 / 5 on Google Business Reviews
+          </div>
+          <div style="font-size: var(--text-xs); color: var(--color-text-secondary);">
+            Based on 140+ verified client testimonials across India
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global CTA Band -->
+  <section class="cta-band" aria-labelledby="cta-heading">
+    <div class="container cta-inner">
+      <span class="eyebrow">Begin Your Story</span>
+      <h2 id="cta-heading">Ready to Plan Your Next <em class="italic-flourish">Grand Occasion</em>?</h2>
+      <p>
+        Consult directly with our event directors to design a tailor-made celebration that will be remembered for years to come.
+      </p>
+      <div class="cta-actions">
+        <a href="/enquiry" class="btn btn-primary btn-lg">
+          <span>Start Your Enquiry</span>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a
+          href="https://wa.me/919876543210?text=Hi%20Eventina%20Organisers%2C%20I%20would%20like%20to%20enquire%20about%20event%20planning%20services"
+          class="btn btn-secondary btn-lg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Chat on WhatsApp</span>
+        </a>
       </div>
     </div>
   </section>
