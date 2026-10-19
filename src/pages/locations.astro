@@ -1,0 +1,605 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Event Locations Map | Eventina Organisers — Pan-India Luxury Venues"
+  description="Explore the historic palaces, coastal sanctuaries, and metropolitan ballrooms across India where Eventina Organisers crafts bespoke weddings and luxury galas."
+>
+  <Fragment slot="head">
+    <!-- Leaflet CSS loaded strictly on locations page -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+  </Fragment>
+
+  <!-- Page Hero Banner -->
+  <section class="page-hero" aria-labelledby="locations-hero-title">
+    <div class="container page-hero-inner">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li><a href="/">Home</a></li>
+          <li class="breadcrumb-separator" aria-hidden="true">/</li>
+          <li aria-current="page">Event Locations Map</li>
+        </ol>
+      </nav>
+
+      <span class="eyebrow">Pan-India Heritage &amp; Contemporary Footprint</span>
+      <h1 id="locations-hero-title" class="page-hero-title">
+        Where Splendour Meets Geography
+      </h1>
+      <p class="page-hero-lead">
+        From historic island palaces in Udaipur to sun-drenched coastal sanctuaries in Goa and palatial metropolitan ballrooms in Bengaluru, discover the curated destinations where Eventina crafts unforgettable celebrations.
+      </p>
+    </div>
+  </section>
+
+  <!-- Interactive Map Section -->
+  <section class="section" aria-labelledby="map-section-title">
+    <div class="container">
+      <h2 id="map-section-title" class="sr-only">Interactive Destination Map and Venues Directory</h2>
+
+      <!-- Toolbar: Filters, Status Count, Reset -->
+      <div class="locations-toolbar">
+        <div class="locations-filter-group" role="group" aria-label="Filter locations by region">
+          <button type="button" class="locations-filter-btn is-active" data-filter="all" aria-pressed="true">
+            All Regions
+          </button>
+          <button type="button" class="locations-filter-btn" data-filter="rajasthan" aria-pressed="false">
+            Rajasthan Palaces
+          </button>
+          <button type="button" class="locations-filter-btn" data-filter="coastal" aria-pressed="false">
+            Coastal &amp; Goa
+          </button>
+          <button type="button" class="locations-filter-btn" data-filter="metro" aria-pressed="false">
+            Metropolitan Galas
+          </button>
+          <button type="button" class="locations-filter-btn" data-filter="hills" aria-pressed="false">
+            Himalayan Retreats
+          </button>
+          <button type="button" class="locations-filter-btn" data-filter="south" aria-pressed="false">
+            Southern Heritage
+          </button>
+        </div>
+
+        <div class="locations-status-bar">
+          <span class="locations-count-badge" id="locations-count">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Showing 10 Destinations</span>
+          </span>
+          <button type="button" class="map-reset-btn" id="map-reset-btn" aria-label="Reset map viewport to whole India">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="1 4 1 10 7 10"></polyline>
+              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+            </svg>
+            <span>Reset View</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Map Container Card -->
+      <div class="locations-map-card">
+        <div id="map-container" class="locations-map-viewport" role="region" aria-label="Interactive map of Eventina destinations across India">
+          <!-- Leaflet Map Mount Point -->
+        </div>
+      </div>
+
+      <!-- Venue Directory Grid (Accessible & Progressive Enhancement) -->
+      <div class="section-header" style="margin-top: var(--space-8); margin-bottom: var(--space-6);">
+        <span class="eyebrow">Curated Destination Directory</span>
+        <h2 class="section-title" style="font-size: var(--text-3xl);">
+          Explore Our Signature Host Venues
+        </h2>
+        <p class="section-lead" style="margin-inline: 0; max-width: 60ch;">
+          Select any destination below to inspect its dedicated event photo gallery, technical parameters, and architectural highlights.
+        </p>
+      </div>
+
+      <div class="locations-grid" id="locations-directory">
+
+        <!-- Card 1: Udaipur -->
+        <article class="location-card" data-region="rajasthan">
+          <div class="location-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80&auto=format&fit=crop"
+              alt="Jagmandir Island Palace dining court"
+              class="location-card-img"
+              width="800"
+              height="500"
+              loading="lazy"
+            />
+            <span class="location-card-tag">Rajasthan Palaces</span>
+          </div>
+          <div class="location-card-body">
+            <div class="location-card-region">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Udaipur, Rajasthan</span>
+            </div>
+            <h3 class="location-card-title">Jagmandir Island Palace</h3>
+            <p class="location-card-excerpt">
+              Floating lake mandap scenography, royal flotilla guest arrival, and palatial marble court banquets.
+            </p>
+            <div class="location-card-footer">
+              <span class="location-card-guest-count">Capacity: 450 Guests</span>
+              <button type="button" class="location-card-btn" data-open-location="udaipur-jagmandir">
+                <span>Explore Gallery</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Jaipur -->
+        <article class="location-card" data-region="rajasthan">
+          <div class="location-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80&auto=format&fit=crop"
+              alt="Rambagh Palace gardens illuminated"
+              class="location-card-img"
+              width="800"
+              height="500"
+              loading="lazy"
+            />
+            <span class="location-card-tag">Rajasthan Palaces</span>
+          </div>
+          <div class="location-card-body">
+            <div class="location-card-region">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Jaipur, Rajasthan</span>
+            </div>
+            <h3 class="location-card-title">Rambagh Palace &amp; Fairmont</h3>
+            <p class="location-card-excerpt">
+              Hand-beaten brass Mughal pavilions, 20,000 glass candles, and acoustically dampened sangeet stages.
+            </p>
+            <div class="location-card-footer">
+              <span class="location-card-guest-count">Capacity: 650 Guests</span>
+              <button type="button" class="location-card-btn" data-open-location="jaipur-rambagh">
+                <span>Explore Gallery</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Jodhpur -->
+        <article class="location-card" data-region="rajasthan">
+          <div class="location-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1544077960-604201fe74bc?w=800&q=80&auto=format&fit=crop"
+              alt="Umaid Bhawan sandstone central dome"
+              class="location-card-img"
+              width="800"
+              height="500"
+              loading="lazy"
+            />
+            <span class="location-card-tag">Rajasthan Palaces</span>
+          </div>
+          <div class="location-card-body">
+            <div class="location-card-region">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Jodhpur, Rajasthan</span>
+            </div>
+            <h3 class="location-card-title">Umaid Bhawan Palace</h3>
+            <p class="location-card-excerpt">
+              Art Deco sandstone architecture, mirrored banquet staging, and private terrace sitar ensembles.
+            </p>
+            <div class="location-card-footer">
+              <span class="location-card-guest-count">Capacity: 350 Guests</span>
+              <button type="button" class="location-card-btn" data-open-location="jodhpur-umaid">
+                <span>Explore Gallery</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: South Goa -->
+        <article class="location-card" data-region="coastal">
+          <div class="location-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80&auto=format&fit=crop"
+              alt="Sunset coastal mandap on white sands"
+              class="location-card-img"
+              width="800"
+              height="500"
+              loading="lazy"
+            />
+            <span class="location-card-tag">Coastal &amp; Goa</span>
+          </div>
+          <div class="location-card-body">
+            <div class="location-card-region">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Benaulim, South Goa</span>
+            </div>
+            <h3 class="location-card-title">Taj Exotica Resort &amp; Sands</h3>
+            <p class="location-card-excerpt">
+              Natural driftwood botanical mandaps, barefoot oceanfront boardwalks, and acoustic saxophone sundowners.
+            </p>
+            <div class="location-card-footer">
+              <span class="location-card-guest-count">Capacity: 280 Guests</span>
+              <button type="button" class="location-card-btn" data-open-location="goa-taj-exotica">
+                <span>Explore Gallery</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5: North Goa -->
+        <article class="location-card" data-region="coastal">
+          <div class="location-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80&auto=format&fit=crop"
+              alt="W Goa cliffside stage lighting"
+              class="location-card-img"
+              width="800"
+              height="500"
+              loading="lazy"
+            />
+            <span class="location-card-tag">Coastal &amp; Goa</span>
+          </div>
+          <div class="location-card-body">
+            <div class="location-card-region">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Vagator, North Goa</span>
+            </div>
+            <h3 class="location-card-title">W Goa &amp; Cliffside Deck</h3>
+            <p class="location-card-excerpt">
+              Festival-level kinetic lighting, acrylic pool stages, and international DJ afterparty curation.
+            </p>
+            <div class="location-card-footer">
+              <span class="location-card-guest-count">Capacity: 400 Guests</span>
+              <button type="button" class="location-card-btn" data-open-location="goa-w-hotel">
+                <span>Explore Gallery</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6: Bengaluru -->
+        <article class="location-card" data-region="metro">
+          <div class="location-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80&auto=format&fit=crop"
+              alt="Grand Ballroom LED staging in Bengaluru"
+              class="location-card-img"
+              width="800"
+              height="500"
+              loading="lazy"
+            />
+            <span class="location-card-tag">Metropolitan Galas</span>
+          </div>
+          <div class="location-card-body">
+            <div class="location-card-region">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Bengaluru, Karnataka</span>
+            </div>
+            <h3 class="location-card-title">The Leela Palace Bengaluru</h3>
+            <p class="location-card-excerpt">
+              Curved 60-foot 8K LED staging, simultaneous global broadcast, and synchronized plenary show direction.
+            </p>
+            <div class="location-card-footer">
+              <span class="location-card-guest-count">Capacity: 1,200 Guests</span>
+              <button type="button" class="location-card-btn" data-open-location="bengaluru-leela">
+                <span>Explore Gallery</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 7: Mumbai -->
+        <article class="location-card" data-region="metro">
+          <div class="location-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=800&q=80&auto=format&fit=crop"
+              alt="Taj Mahal Palace Mumbai ballroom"
+              class="location-card-img"
+              width="800"
+              height="500"
+              loading="lazy"
+            />
+            <span class="location-card-tag">Metropolitan Galas</span>
+          </div>
+          <div class="location-card-body">
+            <div class="location-card-region">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Mumbai, Maharashtra</span>
+            </div>
+            <h3 class="location-card-title">The Taj Mahal Palace &amp; Tower</h3>
+            <p class="location-card-excerpt">
+              Harbour-facing ballroom, museum-grade fiber-optic jewelry displays, and celebrity chaperone security.
+            </p>
+            <div class="location-card-footer">
+              <span class="location-card-guest-count">Capacity: 500 Guests</span>
+              <button type="button" class="location-card-btn" data-open-location="mumbai-taj-mahal">
+                <span>Explore Gallery</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 8: Delhi NCR -->
+        <article class="location-card" data-region="metro">
+          <div class="location-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=80&auto=format&fit=crop"
+              alt="ITC Grand Bharat marquee setup"
+              class="location-card-img"
+              width="800"
+              height="500"
+              loading="lazy"
+            />
+            <span class="location-card-tag">Metropolitan Galas</span>
+          </div>
+          <div class="location-card-body">
+            <div class="location-card-region">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Gurugram, Delhi NCR</span>
+            </div>
+            <h3 class="location-card-title">ITC Grand Bharat Estate</h3>
+            <p class="location-card-excerpt">
+              15,000 sq ft climate-controlled European glasshouse, lotus pool pavilion mandap, and Sufi mehfil evenings.
+            </p>
+            <div class="location-card-footer">
+              <span class="location-card-guest-count">Capacity: 550 Guests</span>
+              <button type="button" class="location-card-btn" data-open-location="delhi-itc-bharat">
+                <span>Explore Gallery</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 9: Mussoorie -->
+        <article class="location-card" data-region="hills">
+          <div class="location-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80&auto=format&fit=crop"
+              alt="Mountain ridge wedding in Mussoorie"
+              class="location-card-img"
+              width="800"
+              height="500"
+              loading="lazy"
+            />
+            <span class="location-card-tag">Himalayan Retreats</span>
+          </div>
+          <div class="location-card-body">
+            <div class="location-card-region">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Mussoorie, Uttarakhand</span>
+            </div>
+            <h3 class="location-card-title">JW Marriott Walnut Grove</h3>
+            <p class="location-card-excerpt">
+              Mountain amphitheatre ceremony, pine forest fairy-light dining, cashmere lounges, and alpine botanicals.
+            </p>
+            <div class="location-card-footer">
+              <span class="location-card-guest-count">Capacity: 220 Guests</span>
+              <button type="button" class="location-card-btn" data-open-location="mussoorie-marriott">
+                <span>Explore Gallery</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 10: Hyderabad -->
+        <article class="location-card" data-region="south">
+          <div class="location-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80&auto=format&fit=crop"
+              alt="Taj Falaknuma Palace 101 table"
+              class="location-card-img"
+              width="800"
+              height="500"
+              loading="lazy"
+            />
+            <span class="location-card-tag">Southern Heritage</span>
+          </div>
+          <div class="location-card-body">
+            <div class="location-card-region">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Hyderabad, Telangana</span>
+            </div>
+            <h3 class="location-card-title">Taj Falaknuma Palace</h3>
+            <p class="location-card-excerpt">
+              Historic 101-seater state dining hall, horse-drawn carriage arrival, and candlelit qawwali evenings.
+            </p>
+            <div class="location-card-footer">
+              <span class="location-card-guest-count">Capacity: 300 Guests</span>
+              <button type="button" class="location-card-btn" data-open-location="hyderabad-falaknuma">
+                <span>Explore Gallery</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 11: Kerala -->
+        <article class="location-card" data-region="south">
+          <div class="location-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=80&auto=format&fit=crop"
+              alt="Kerala backwaters floating stage"
+              class="location-card-img"
+              width="800"
+              height="500"
+              loading="lazy"
+            />
+            <span class="location-card-tag">Southern Heritage</span>
+          </div>
+          <div class="location-card-body">
+            <div class="location-card-region">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Kumarakom &amp; Kochi, Kerala</span>
+            </div>
+            <h3 class="location-card-title">Kumarakom Lake Resort</h3>
+            <p class="location-card-excerpt">
+              Floating houseboat pontoons, 5,000 brass nilavilakku oil lamps, and traditional Chenda Melam celebrations.
+            </p>
+            <div class="location-card-footer">
+              <span class="location-card-guest-count">Capacity: 250 Guests</span>
+              <button type="button" class="location-card-btn" data-open-location="kerala-kumarakom">
+                <span>Explore Gallery</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide-in Event Preview Drawer -->
+  <div class="location-drawer-backdrop" id="location-drawer-backdrop" aria-hidden="true"></div>
+  <aside class="location-drawer" id="location-drawer" aria-label="Event showcase and venue details" aria-hidden="true" inert>
+    <div class="location-drawer-header">
+      <div class="location-drawer-title-group">
+        <span class="location-drawer-city" id="drawer-city">Udaipur, Rajasthan</span>
+        <h2 class="location-drawer-title" id="drawer-title">Jagmandir Island Palace</h2>
+      </div>
+      <button type="button" class="location-drawer-close" id="location-drawer-close" aria-label="Close venue details drawer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="location-drawer-content">
+      <!-- Photo Gallery Viewer -->
+      <div class="drawer-gallery">
+        <div class="drawer-main-photo-wrap">
+          <img
+            id="drawer-main-img"
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80&auto=format&fit=crop"
+            alt="Main showcase photo"
+            class="drawer-main-photo"
+          />
+          <span class="drawer-photo-counter" id="drawer-photo-counter">1 of 4</span>
+        </div>
+        <div class="drawer-thumbs-row" id="drawer-thumbs-row" role="tablist" aria-label="Venue photo thumbnails">
+          <!-- Dynamically populated thumbnails -->
+        </div>
+      </div>
+
+      <!-- Specifications Grid -->
+      <div class="drawer-specs-grid">
+        <div class="drawer-spec-item">
+          <span class="drawer-spec-label">Format</span>
+          <span class="drawer-spec-value" id="drawer-event-type">3-Day Destination Wedding</span>
+        </div>
+        <div class="drawer-spec-item">
+          <span class="drawer-spec-label">Guest Capacity</span>
+          <span class="drawer-spec-value" id="drawer-guests">450 Guests</span>
+        </div>
+        <div class="drawer-spec-item">
+          <span class="drawer-spec-label">Host Venue</span>
+          <span class="drawer-spec-value" id="drawer-venue">Jagmandir Palace</span>
+        </div>
+        <div class="drawer-spec-item">
+          <span class="drawer-spec-label">Best Window</span>
+          <span class="drawer-spec-value" id="drawer-season">October &ndash; March</span>
+        </div>
+      </div>
+
+      <!-- Production Narrative -->
+      <div>
+        <h3 class="drawer-highlights-title">Production &amp; Scenography Narrative</h3>
+        <p class="drawer-narrative" id="drawer-narrative">
+          Produced in the heart of Lake Pichola, this multi-day wedding transformed Jagmandir Island into a floating fairytale with private royal boat flotillas, floating mandaps, and synchronized fireworks.
+        </p>
+      </div>
+
+      <!-- Highlights Checklist -->
+      <div>
+        <h3 class="drawer-highlights-title">Signature Eventina Inclusions</h3>
+        <ul class="drawer-highlights-list" id="drawer-highlights">
+          <!-- Dynamically populated list -->
+        </ul>
+      </div>
+
+      <!-- Action CTAs -->
+      <div class="drawer-actions">
+        <a href="/enquiry" id="drawer-enquiry-btn" class="btn btn-primary" style="width: 100%;">
+          <span>Plan an Event at this Venue</span>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="/portfolio" class="btn btn-secondary" style="width: 100%;">
+          <span>View Full Portfolio Archive</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Leaflet JavaScript CDN strictly on locations page -->
+  <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- Interactive Map Controller -->
+  <script is:inline src="/assets/js/map.js"></script>
+</BaseLayout>

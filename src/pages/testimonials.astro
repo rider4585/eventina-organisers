@@ -1,0 +1,347 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const testimonials = [
+  {
+    category: 'weddings',
+    quote: 'From our first meeting with Ananya and Arjun, we knew we were in master hands. The Taj Falaknuma palace decor was breathtaking, and having dedicated shadow concierges for our parents made the 3 days entirely stress-free.',
+    author: 'Ananya & Karan Malhotra',
+    meta: 'Taj Falaknuma Palace, Hyderabad • Wedding',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80&auto=format&fit=crop',
+  },
+  {
+    category: 'corporate',
+    quote: 'Our Global Leadership Summit at Bengaluru Palace Grounds hosted 1,400 delegates from 18 nations. Eventina’s stagecraft, 4K screen feeds, and security coordination were on par with Davos summits.',
+    author: 'Rajeshwari Pillai',
+    meta: 'Chief of Communications • Global FinTech Conclave',
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80&auto=format&fit=crop',
+  },
+  {
+    category: 'private',
+    quote: 'For my father’s 75th birthday celebration in Coorg, Eventina turned the plantation estate into an enchanted fairyland with candlelit canopies and classical sitar acoustics. Pure elegance.',
+    author: 'Dr. Rajiv & Meenakshi Menon',
+    meta: 'Coffee Estate Villa, Coorg • Private Milestone',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80&auto=format&fit=crop',
+  },
+  {
+    category: 'weddings',
+    quote: 'Our sunset beach vows in South Goa followed by a boho sangeet under fairy light domes blew our guests away. Vikramaditya made sure the sound was crisp without deafening elderly family members.',
+    author: 'Varun & Tanya Kapoor',
+    meta: 'Alila Diwa, Goa • Destination Wedding',
+    avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80&auto=format&fit=crop',
+  },
+  {
+    category: 'corporate',
+    quote: 'The luxury SUV vehicle reveal was executed with cinematic precision — motorized scrim lifts, laser mapping, and an electric violin duo that gave goosebumps to 400 automotive dealers.',
+    author: 'Alok Kejriwal',
+    meta: 'Managing Director • National Dealer Conclave',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80&auto=format&fit=crop',
+  },
+  {
+    category: 'private',
+    quote: 'For our 50th Golden Jubilee celebration, Eventina created a heritage memory pavilion that left all four generations of our family in tears of happiness. Absolute perfection.',
+    author: 'Sunita & Vikram Chawla',
+    meta: 'Heritage Estate, Ooty • Golden Jubilee',
+    avatar: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=100&q=80&auto=format&fit=crop',
+  },
+  {
+    category: 'weddings',
+    quote: 'Producing a royal wedding in the middle of the Thar desert at Suryagarh Jaisalmer requires sheer operational brilliance. Eventina’s logistics, temperature control, and decor were impeccable.',
+    author: 'Preeti & Devendra Joshi',
+    meta: 'Suryagarh Fortress, Jaisalmer • Royal Wedding',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80&auto=format&fit=crop',
+  },
+  {
+    category: 'corporate',
+    quote: 'Organizing an international tech awards night with 800 engineers requires promptness and technical acumen. Eventina did not drop a single cue across 32 award categories.',
+    author: 'Arvind Swaminathan',
+    meta: 'VP Engineering • Tech Excellence Awards, Bengaluru',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80&auto=format&fit=crop',
+  },
+  {
+    category: 'weddings',
+    quote: 'The glasshouse conservatory wedding decor at Taj West End was like walking through a botanical dream. Guests are still talking about the floral archways and the live jazz sextet.',
+    author: 'Priya & Rohan Nair',
+    meta: 'Taj West End, Bengaluru • Luxury Wedding',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80&auto=format&fit=crop',
+  },
+];
+---
+
+<BaseLayout
+  title="Client Testimonials & Stories | Eventina Organisers — Bespoke Celebrations"
+  description="Read verified client stories and reflections from luxury weddings, palatial sangeets, and corporate galas across India crafted by Eventina Organisers."
+  ogImage="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80&auto=format&fit=crop"
+>
+  <!-- Interior Hero Banner -->
+  <section class="page-hero" aria-labelledby="testimonials-hero-title">
+    <div class="container page-hero-inner">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li><a href="/">Home</a></li>
+          <li class="breadcrumb-separator" aria-hidden="true">/</li>
+          <li aria-current="page">Testimonials</li>
+        </ol>
+      </nav>
+
+      <span class="eyebrow">Social Proof &amp; Client Words</span>
+      <h1 id="testimonials-hero-title" class="page-hero-title">
+        Words of Trust &amp; Delight
+      </h1>
+      <p class="page-hero-lead">
+        Read genuine reflections from families, enterprise executives, and prominent patrons who placed their most milestone moments in our stewardship.
+      </p>
+    </div>
+  </section>
+
+  <!-- Google Trust Badge Strip -->
+  <section class="section" aria-labelledby="reviews-heading">
+    <div class="container">
+      <h2 id="reviews-heading" class="sr-only">Verified Client Reviews and Ratings</h2>
+
+      <!-- Google Official Rating Badge -->
+      <div class="google-trust-badge">
+        <div class="google-badge-left">
+          <div class="google-icon-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.27 21.43 7.35 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.27 2.57 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+          </div>
+          <div>
+            <div style="display: flex; align-items: baseline; gap: var(--space-2);">
+              <span class="google-score-number">4.9</span>
+              <span style="font-size: var(--text-sm); color: var(--color-text-secondary); font-weight: var(--weight-medium);">/ 5.0 Rating</span>
+            </div>
+            <div class="google-stars-row" aria-label="Rated 5 out of 5 stars">
+              <svg viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+            </div>
+            <div class="google-verified-caption">Based on 128 verified Google Business reviews</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+            <span>View Google Profile &rarr;</span>
+          </a>
+          <a href="/enquiry" class="btn btn-primary btn-sm">
+            <span>Plan Your Event</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Featured In-Depth Marquee Story -->
+      <article class="featured-story-card">
+        <div>
+          <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3);">
+            <span class="eyebrow" style="color: var(--color-gold-600); margin-bottom: 0;">Spotlight Celebration</span>
+            <span class="verified-source-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <span>Verified Google Review</span>
+            </span>
+          </div>
+
+          <blockquote class="featured-story-quote">
+            &ldquo;Eventina didn&rsquo;t just meet our expectations; they orchestrated a realm of magic. Transferring five hundred guests across Lake Pichola on customized illuminated boats without a three-minute delay in dinner or ritual timing was breathtaking.&rdquo;
+          </blockquote>
+
+          <div style="display: flex; align-items: center; gap: var(--space-4);">
+            <img
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&q=80&auto=format&fit=crop"
+              alt="Radhika & Siddharth Singhania"
+              style="width: 52px; height: 52px; border-radius: var(--radius-full); object-fit: cover; border: 2px solid var(--color-gold-400);"
+              width="52"
+              height="52"
+              loading="lazy"
+            />
+            <div>
+              <strong style="display: block; font-size: var(--text-md); color: var(--color-navy-950);">
+                Radhika &amp; Siddharth Singhania
+              </strong>
+              <span style="font-size: var(--text-xs); color: var(--color-text-muted);">
+                Destination Wedding at Jagmandir Island Palace, Udaipur &bull; Winter 2025
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured-story-img-box">
+          <img
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80&auto=format&fit=crop"
+            alt="Grand palace destination wedding banquet overlooking Udaipur waters"
+            width="800"
+            height="600"
+            loading="lazy"
+          />
+        </div>
+      </article>
+
+      <!-- Category Filter Tabs -->
+      <div class="testimonials-filter-bar" role="tablist" aria-label="Filter testimonials by event category">
+        <button type="button" class="testimonials-filter-btn is-active" data-testimonial-filter="all" aria-pressed="true" role="tab">
+          <span>All Celebrations (9)</span>
+        </button>
+        <button type="button" class="testimonials-filter-btn" data-testimonial-filter="weddings" aria-pressed="false" role="tab">
+          <span>Destination Weddings (4)</span>
+        </button>
+        <button type="button" class="testimonials-filter-btn" data-testimonial-filter="corporate" aria-pressed="false" role="tab">
+          <span>Corporate Galas (3)</span>
+        </button>
+        <button type="button" class="testimonials-filter-btn" data-testimonial-filter="private" aria-pressed="false" role="tab">
+          <span>Private Soirées (2)</span>
+        </button>
+      </div>
+
+      <!-- Testimonials Grid (9 Cards) -->
+      <div class="testimonials-grid" id="testimonials-grid-container">
+        {testimonials.map((t) => (
+          <article class="testimonial-card" data-testimonial-category={t.category}>
+            <div class="testimonial-card-header">
+              <div class="stars-rating" aria-label="5 stars">
+                <svg viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              </div>
+              <span class="verified-source-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>Google Review</span>
+              </span>
+            </div>
+            <p class="testimonial-quote">
+              &ldquo;{t.quote}&rdquo;
+            </p>
+            <div class="testimonial-author-block">
+              <img
+                src={t.avatar}
+                alt={t.author}
+                class="testimonial-avatar"
+                width="44"
+                height="44"
+                loading="lazy"
+              />
+              <div>
+                <div class="testimonial-author-name">{t.author}</div>
+                <div class="testimonial-author-meta">{t.meta}</div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Video Reel Placeholder Section -->
+      <section class="section" style="padding-top: var(--space-8); padding-bottom: 0;" aria-labelledby="reel-heading">
+        <div style="background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-petal) 100%); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); align-items: center;">
+          <div>
+            <span class="eyebrow" style="color: var(--color-gold-600);">Cinematic Motion</span>
+            <h3 id="reel-heading" style="font-family: var(--font-display); font-size: var(--text-2xl); margin-bottom: var(--space-3);">
+              Celebrations in Motion &bull; 2025–2026 Showreel
+            </h3>
+            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); font-size: var(--text-sm);">
+              Witness the kinetic energy, joyful tears, and grandeur of our productions captured live on 4K cinematic film. From Udaipur lake fireworks to high-octane Bangalore sangeet concerts.
+            </p>
+            <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+              <a href="/portfolio" class="btn btn-secondary btn-sm">
+                <span>View Full Gallery</span>
+              </a>
+              <a href="/enquiry" class="btn btn-primary btn-sm">
+                <span>Commission Your Event</span>
+              </a>
+            </div>
+          </div>
+
+          <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--shadow-lg);">
+            <img
+              src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80&auto=format&fit=crop"
+              alt="Cinematic wedding and gala video reel thumbnail"
+              style="width: 100%; height: 100%; object-fit: cover;"
+              width="800"
+              height="450"
+              loading="lazy"
+            />
+            <div style="position: absolute; inset: 0; background: rgba(13, 22, 39, 0.4); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-2); color: var(--color-white); text-align: center; padding: var(--space-4);">
+              <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--color-gold-500); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(184, 146, 66, 0.6); transition: transform 0.2s ease;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-left: 3px;">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </div>
+              <span style="font-size: var(--text-xs); font-weight: var(--weight-semibold); letter-spacing: 0.1em; text-transform: uppercase;">Watch Film (3:45)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section>
+
+  <!-- Global CTA Band -->
+  <section class="cta-band" aria-labelledby="cta-heading">
+    <div class="container cta-inner">
+      <h2 id="cta-heading">Experience Uncompromising Hospitality for Your Milestone</h2>
+      <p>
+        Join hundreds of delighted families and corporate leaders. Schedule an initial consultation with our directors today.
+      </p>
+      <div class="cta-actions">
+        <a href="/enquiry" class="btn btn-primary btn-lg">
+          <span>Schedule Consultation</span>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="/portfolio" class="btn btn-secondary btn-lg">
+          <span>Browse Full Portfolio</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Testimonials category filter
+  const filterButtons = document.querySelectorAll<HTMLButtonElement>('[data-testimonial-filter]');
+  const testimonialCards = document.querySelectorAll<HTMLElement>('[data-testimonial-category]');
+
+  if (filterButtons.length && testimonialCards.length) {
+    function applyFilter(category: string) {
+      testimonialCards.forEach((card) => {
+        const itemCategory = card.getAttribute('data-testimonial-category');
+        const matches = (category === 'all' || itemCategory === category);
+
+        if (matches) {
+          card.classList.remove('is-hidden');
+          card.removeAttribute('hidden');
+        } else {
+          card.classList.add('is-hidden');
+          card.setAttribute('hidden', '');
+        }
+      });
+
+      filterButtons.forEach((btn) => {
+        const isCurrent = btn.getAttribute('data-testimonial-filter') === category;
+        btn.classList.toggle('is-active', isCurrent);
+        btn.setAttribute('aria-pressed', isCurrent ? 'true' : 'false');
+      });
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const category = button.getAttribute('data-testimonial-filter') || 'all';
+        applyFilter(category);
+      });
+    });
+  }
+</script>
