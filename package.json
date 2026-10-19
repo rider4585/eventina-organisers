@@ -1,9 +1,17 @@
 {
-  "name": "Eventina Org",
+  "name": "eventina-organisers",
   "version": "1.0.0",
-  "description": "",
+  "type": "module",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
-  "private": true
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.6.13",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^5.18.2"
+  }
 }

@@ -1,0 +1,100 @@
+---
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/components.css';
+import '../styles/pages.css';
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonicalURL?: string | URL;
+  type?: string;
+}
+
+const {
+  title = 'Eventina Organisers | Bespoke Celebrations & Luxury Events',
+  description = 'Premier event organisers in India crafting bespoke destination weddings, corporate galas, and milestone celebrations with artistic elegance and meticulous precision.',
+  ogImage = 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80&auto=format&fit=crop',
+  canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://eventina.in'),
+  type = 'website',
+} = Astro.props;
+
+const canonicalHref = typeof canonicalURL === 'string' ? canonicalURL : canonicalURL.href;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="theme-color" content="#FAF8F5" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonicalHref} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={type} />
+  <meta property="og:url" content={canonicalHref} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Google Fonts Preconnect & Stylesheet (Cormorant Garamond + Josefin Sans + Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Josefin+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Favicon & Web Manifest -->
+  <link rel="icon" type="image/svg+xml" href="/assets/img/icon-crest.svg" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Sitemap Discovery -->
+  <link rel="sitemap" href="/sitemap-index.xml" />
+
+  <!-- Speculation Rules API for instant SPA-feel navigation -->
+  <script type="speculationrules">
+  {
+    "prefetch": [
+      {
+        "source": "list",
+        "urls": ["/about", "/services", "/portfolio", "/events", "/blog", "/contact", "/enquiry"]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Page-Specific Head Injections (e.g. JSON-LD schema) -->
+  <slot name="head" />
+</head>
+<body>
+  <!-- Global Header Shell -->
+  <Header currentPath={Astro.url.pathname} />
+
+  <!-- Main Landmark -->
+  <main id="main-content">
+    <slot />
+  </main>
+
+  <!-- Global Footer Shell -->
+  <Footer />
+
+  <!-- Global WhatsApp Concierge Floating CTA -->
+  <WhatsAppButton />
+</body>
+</html>

@@ -1,56 +1,59 @@
 # Eventina Organisers — Official Website
 
-Official website for **Eventina Organisers**, premier luxury event and wedding planners in India.
+Official website for **Eventina Organisers**, premier luxury event and royal destination wedding planners in India.
 
 ## Overview
 
-A high-performance, mobile-first static multi-page website engineered with an instant "SPA-feel" navigation layer, built with zero npm runtime dependencies for maximum speed and SEO optimization.
+High-performance, content-driven static website engineered with **Astro 5** and deployed to **Cloudflare Pages**. Delivers zero client-side JavaScript by default, instant edge rendering, Astro Content Collections for blog management, and native Cloudflare D1 integration for enquiry leads.
 
-- **Stack:** Vanilla HTML5, Modern CSS (Design Tokens, Grid, Flexbox), Vanilla JS (ES Modules)
-- **External Libraries:** CDN-delivered only where required (Leaflet, GLightbox)
-- **Hosting:** Cloudflare Pages (native clean URLs, edge caching, HTTP/3)
-- **Performance Budget:** Lighthouse Mobile ≥ 95, base JS < 30 KB per page
-
-## Key Features
-
-- **Design System:** Bespoke luxury palette with Midnight Navy (`#070C16`), Champagne Gold (`#C9A75E`), and Pearl Cream (`#FAF8F5`).
-- **Instant Page Transitions:** Speculation Rules API & hover prefetching for sub-100ms perceived page loads.
-- **Accessible & Responsive:** Semantic landmarks, skip navigation, keyboard-accessible navigation drawer, and WCAG AA contrast compliance.
-- **Conversion-Focused:** Persistent floating WhatsApp CTA, enquiry flow, and trust metrics.
-
-## Site Structure
-
-- `/` — Homepage (Hero, statistics, signature formats, design verification)
-- `/about` — About Us
-- `/founders` — Founders & leadership
-- `/services` — Event services & planning tiers
-- `/artists` — Curated artist & performer directory
-- `/portfolio` — Event gallery with category filters & lightbox
-- `/events` — Upcoming and featured occasions
-- `/testimonials` — Client testimonials & Google reviews
-- `/locations` — Interactive event locations map (Leaflet)
-- `/blog` — Event planning guides & stories
-- `/faq` — Frequently asked questions
-- `/contact` — Direct contact details & social channels
-- `/enquiry` — Comprehensive event consultation booking form
+- **Framework:** [Astro 5](https://astro.build/) (Static Site Generation / Islands Architecture)
+- **Adapter:** `@astrojs/cloudflare`
+- **Hosting:** Cloudflare Pages (Edge CDN, HTTP/3, global caching)
+- **Database:** Cloudflare D1 (Serverless SQLite at the edge for enquiry submissions)
+- **Styling:** Haute-Couture Wedding Design System (Warm Silk Alabaster, Petal Linen, Champagne Gold, Cormorant Garamond, Josefin Sans)
+- **SEO & PWA:** Automated XML Sitemaps (`@astrojs/sitemap`), JSON-LD schemas (`Article`, `FAQPage`), OpenGraph, `robots.txt`, and web manifest.
 
 ## Project Structure
 
 ```
-├── index.html              # Homepage & shell preview
-├── assets/
-│   ├── css/
-│   │   ├── tokens.css      # Design tokens (colors, typography, spacing, shadows)
-│   │   └── base.css        # Base styles, layout grid, reset, component primitives
-│   ├── js/
-│   │   └── app.js          # Navigation drawer, header blur, and prefetch logic
-│   └── img/                # Responsive images
-├── partials/
-│   ├── header.html         # Global header with responsive navigation
-│   ├── footer.html         # Site footer & sitemap navigation
-│   └── whatsapp.html       # Floating WhatsApp quick-action
+├── astro.config.mjs         # Astro & Cloudflare Pages configuration
+├── d1/
+│   └── schema.sql          # Cloudflare D1 enquiries database schema
+├── functions/
+│   └── api/
+│       └── enquiry.ts      # Cloudflare Pages Function edge API for enquiries
+├── public/                 # Static assets (fonts, icons, manifest, robots.txt)
+├── src/
+│   ├── components/         # Reusable Astro components (Header, Footer, WhatsAppButton)
+│   ├── content/
+│   │   └── blog/           # Markdown articles managed via Content Layer
+│   ├── content.config.ts   # Content Collections Zod schema definitions
+│   ├── layouts/
+│   │   └── BaseLayout.astro # Global HTML document shell, meta tags, and schema slots
+│   ├── pages/              # Static routes & dynamic [slug] pages
+│   └── styles/             # Design tokens, reset, components, and page stylesheets
+└── package.json
 ```
+
+## Cloudflare Pages Deployment Settings
+
+- **Framework preset:** `Astro`
+- **Build command:** `npm run build`
+- **Build output directory:** `dist`
+- **Node.js version:** `20` (set environment variable `NODE_VERSION: 20`)
 
 ## Local Development
 
-Open `index.html` in any modern web browser or serve via a local static web server (e.g. MAMP, `python3 -m http.server`, or Cloudflare Wrangler).
+```bash
+# Install dependencies
+npm install
+
+# Start local development server
+npm run dev
+
+# Run production build
+npm run build
+
+# Preview production build locally
+npm run preview
+```

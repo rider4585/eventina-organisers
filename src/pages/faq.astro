@@ -1,0 +1,878 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    {
+      '@type': 'Question',
+      'name': 'How far in advance should we commence planning a luxury destination wedding?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'For premier heritage palace properties across Rajasthan, beachfront luxury resorts in Goa, or high-demand winter auspicious dates, we strongly recommend commencing 9 to 12 months in advance. This ensures priority access to host venues, permits, and headline talent. However, our turnkey production architecture allows us to produce extraordinary multi-day celebrations on an expedited 3-to-4-month timeframe when required.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': "What is Eventina's fee model and compensation structure?",
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'We operate on a transparent, flat professional management fee determined by event scale, guest count, and the complexity of multi-day production. Unlike traditional brokers, we pass all negotiated venue and vendor rates directly to you with zero hidden markups or back-end kickbacks, ensuring our recommendations are 100% aligned with your creative vision.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Do you coordinate with our existing vendors, or is Eventina strictly turnkey?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'While our signature strength is complete turnkey design and execution (scenography, hospitality, artist curation, and technical staging under one accountable director), we welcome collaboration with your preferred family couturiers, photographers, or culinary advisors. We integrate external partners into our master timeline seamlessly.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'How do you handle site inspections and venue negotiations across India?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'We lead comprehensive on-ground technical recce visits alongside the hosts. We audit ballroom load-bearing ceilings, generator backup redundancy, acoustic reflection coefficients, and guest transit flows, negotiating favorable buyout terms directly with general managers of luxury properties.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'What contingency protocols exist for adverse weather during outdoor palace celebrations?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': "Every outdoor event designed by Eventina incorporates a fully detailed 'Plan B' with identical aesthetic caliber. We secure pre-booked climate-controlled indoor ballrooms or maintain rapid-deployment structural marquees with underfloor heating or cooling on standby, monitored via real-time satellite meteorological radar."
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'What budget range does Eventina typically produce, and are there minimum spend thresholds?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Eventina curates bespoke celebrations starting from INR 40 Lakhs for single-day signature galas, and INR 1.5 Crores to over INR 15 Crores for multi-day residential destination weddings. During your initial consultation, we provide an itemized financial roadmap mapping design aspirations to realistic budget allocations.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'How do you handle celebrity artist bookings, riders, and technical sound requirements?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Our dedicated artist concierge handles direct talent contracts, security riders, private aviation charters, and exacting stage and acoustic riders. We eliminate intermediate booking agencies to ensure reliable talent arrival and sound-check completion hours before guest entry.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'How are guest airport transfers, private charters, and hotel rooming lists managed?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Our hospitality wing operates dedicated airport welcome desks with luxury fleet convoys, private baggage luggage tagging, and seamless digital check-in. Rooming lists are managed via a bespoke concierge system that accommodates VIP preferences, dietary profiles, and baby-care services.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'What permits, police permissions, and royal heritage clearances are required?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'We handle all statutory and administrative clearances in-house: archaeological survey clearances (ASI), local police and traffic commissioner NOCs, fire and safety certifications, excise liquor licenses, PPL and IPRS music licensing, and laser/pyrotechnics aviation approvals.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'How many events does Eventina undertake simultaneously?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'To guarantee uncompromising artisanal standards, our partners limit our calendar to a maximum of two major productions per calendar month. Our founding directors are personally on-site directing your event from preliminary setup through final guest departures.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Can you cater to international dietary requirements, sommelier curation, and Maharaj chefs?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes. We regularly curate multi-sensory culinary experiences combining traditional Maharaj vegetarian and Jain delicacies with Michelin-caliber plated Western courses, international sommelier wine pairings, and molecular mixology bars.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'How do you ensure confidentiality and non-disclosure for high-profile clients?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'We execute comprehensive non-disclosure agreements (NDAs) with all vendors, production crews, and artists. We enforce strict no-phone policies in sensitive zones, deploy private security perimeters, and prevent unauthorized social media broadcasting.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'What happens in medical or emergency situations during multi-day celebrations?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Every Eventina production includes an on-site medical officer, fully equipped emergency first-aid lounge, 24/7 on-call ambulance arrangements with top regional hospitals, and certified emergency response wardens on our floor team.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Can you curate custom musical collaborations between traditional and contemporary acts?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Bespoke musical scoring is our hallmark. We frequently pair classical Rajasthani manganiyar folk singers or sitar maestros with European electric violinists and international electronic music producers for one-of-a-kind Sangeet and Sundowner showcases.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'What is your payment milestone schedule and cancellation terms?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Our payment milestones are structured across key planning phases: 25% on engagement and date reservation, 25% upon completion of spatial design concepts, 35% 30 days prior to event move-in, and the remaining 15% during final production wrap. Flexible rescheduling terms are embedded in every client contract.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'How does the creative design process unfold from concept to 3D visualization?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'We initiate with an in-depth Creative Discovery interview to explore your personal heritage and aesthetic tastes. We translate these into moodboards, tactile material samples (brass, raw silks, marble), and photorealistic 3D spatial renders so you experience the exact lighting and decor before fabrication commences.'
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Frequently Asked Questions | Eventina Organisers — Luxury Event & Wedding Planning"
+  description="Clear answers on luxury wedding planning timelines, fee structures, artist bookings, palatial venue permits, and guest logistics with Eventina Organisers."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <!-- Page Hero Banner -->
+  <section class="page-hero" aria-labelledby="faq-hero-title">
+    <div class="container page-hero-inner">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li><a href="/">Home</a></li>
+          <li class="breadcrumb-separator" aria-hidden="true">/</li>
+          <li aria-current="page">Frequently Asked Questions</li>
+        </ol>
+      </nav>
+
+      <span class="eyebrow">Clear Answers, Transparent Standards</span>
+      <h1 id="faq-hero-title" class="page-hero-title">
+        Frequently Asked Questions
+      </h1>
+      <p class="page-hero-lead">
+        Everything you need to know regarding our bespoke wedding planning, turnkey palatial production, artist hospitality, and pricing transparency.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion & Filter Section -->
+  <section class="section" aria-labelledby="faq-section-heading">
+    <div class="container">
+      <h2 id="faq-section-heading" class="visually-hidden">Search and Browse Frequently Asked Questions</h2>
+
+      <!-- Search Bar -->
+      <div class="faq-header-search">
+        <div class="faq-search-bar">
+          <svg class="faq-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input
+            type="search"
+            id="faq-search-input"
+            class="faq-search-input"
+            placeholder="Search questions (e.g., budget, timeline, destinations, permits)..."
+            aria-label="Search questions"
+          />
+          <button
+            type="button"
+            id="faq-search-clear"
+            class="faq-search-clear"
+            aria-label="Clear search query"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="faq-filter-tabs" role="tablist" aria-label="FAQ categories">
+        <button type="button" class="faq-tab-btn is-active" data-category="all" role="tab" aria-selected="true">
+          All Questions
+        </button>
+        <button type="button" class="faq-tab-btn" data-category="planning" role="tab" aria-selected="false">
+          Planning &amp; Timeline
+        </button>
+        <button type="button" class="faq-tab-btn" data-category="pricing" role="tab" aria-selected="false">
+          Pricing &amp; Investment
+        </button>
+        <button type="button" class="faq-tab-btn" data-category="destinations" role="tab" aria-selected="false">
+          Destinations &amp; Venues
+        </button>
+        <button type="button" class="faq-tab-btn" data-category="artists" role="tab" aria-selected="false">
+          Artists &amp; Entertainment
+        </button>
+        <button type="button" class="faq-tab-btn" data-category="logistics" role="tab" aria-selected="false">
+          Logistics &amp; Hospitality
+        </button>
+      </div>
+
+      <!-- Live Counter -->
+      <div class="faq-results-counter" id="faq-results-counter" aria-live="polite">
+        Showing all 16 questions
+      </div>
+
+      <!-- Accessible Accordion Container -->
+      <div class="faq-accordion-container" id="faq-accordion">
+
+        <!-- Question 1 -->
+        <div class="faq-item" data-category="planning">
+          <button type="button" class="faq-trigger" id="faq-btn-1" aria-expanded="false" aria-controls="faq-panel-1">
+            <span class="faq-question-wrap">
+              <span class="faq-category-indicator">Planning</span>
+              <span class="faq-question-text">How far in advance should we commence planning a luxury destination wedding?</span>
+            </span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1" hidden>
+            <div class="faq-panel-inner">
+              <div class="faq-answer-content">
+                <p>
+                  For premier heritage palace properties across Rajasthan, beachfront luxury resorts in Goa, or peak winter auspicious dates, we strongly recommend commencing <strong>9 to 12 months in advance</strong>. This ensures priority access to host venues, statutory permits, and headline talent.
+                </p>
+                <p>
+                  However, our turnkey production architecture allows us to produce extraordinary multi-day celebrations on an expedited 3-to-4-month timeframe when required, utilizing our established vendor network and pre-audited technical infrastructure.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="faq-item" data-category="pricing">
+          <button type="button" class="faq-trigger" id="faq-btn-2" aria-expanded="false" aria-controls="faq-panel-2">
+            <span class="faq-question-wrap">
+              <span class="faq-category-indicator">Pricing</span>
+              <span class="faq-question-text">What is Eventina's fee model and compensation structure?</span>
+            </span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2" hidden>
+            <div class="faq-panel-inner">
+              <div class="faq-answer-content">
+                <p>
+                  We operate on a <strong>transparent, flat professional management fee</strong> determined by event scale, guest count, and the complexity of multi-day production. 
+                </p>
+                <p>
+                  Unlike traditional event brokers who inflate costs with invisible supplier commissions, we pass all negotiated venue, technical, and floral rates directly to you with <em>zero back-end markups</em>. You receive original vendor invoices and transparent ledger accounting.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="faq-item" data-category="planning">
+          <button type="button" class="faq-trigger" id="faq-btn-3" aria-expanded="false" aria-controls="faq-panel-3">
+            <span class="faq-question-wrap">
+              <span class="faq-category-indicator">Planning</span>
+              <span class="faq-question-text">Do you coordinate with our existing vendors, or is Eventina strictly turnkey?</span>
+            </span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3" hidden>
+            <div class="faq-panel-inner">
+              <div class="faq-answer-content">
+                <p>
+                  While our signature strength is complete turnkey execution (creative scenography, technical staging, and guest hospitality under one accountable director), we welcome collaboration with your preferred family couturiers, fine-art photographers, or trusted culinary advisors.
+                </p>
+                <p>
+                  We integrate external partners into our master technical cue sheets, provide them with dedicated backstage support, and coordinate power and logistical requirements smoothly.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="faq-item" data-category="destinations">
+          <button type="button" class="faq-trigger" id="faq-btn-4" aria-expanded="false" aria-controls="faq-panel-4">
+            <span class="faq-question-wrap">
+              <span class="faq-category-indicator">Destinations</span>
+              <span class="faq-question-text">How do you handle site inspections and venue negotiations across India?</span>
+            </span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4" hidden>
+            <div class="faq-panel-inner">
+              <div class="faq-answer-content">
+                <p>
+                  We conduct comprehensive on-ground technical recce visits alongside the hosts. We do not just look at aesthetics—we audit generator backup redundancy, kitchen banquet capacities, acoustic reverberation in marble courtyards, and load-in elevator dimensions.
+                </p>
+                <p>
+                  Leveraging our ongoing enterprise volume with luxury hotel chains (Taj, Oberoi, Leela, ITC, Marriott), we negotiate favorable buyout rates, complimentary room upgrades, and extended event curation curfews directly with property general managers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="faq-item" data-category="logistics">
+          <button type="button" class="faq-trigger" id="faq-btn-5" aria-expanded="false" aria-controls="faq-panel-5">
+            <span class="faq-question-wrap">
+              <span class="faq-category-indicator">Logistics</span>
+              <span class="faq-question-text">What contingency protocols exist for adverse weather during outdoor celebrations?</span>
+            </span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-panel" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5" hidden>
+            <div class="faq-panel-inner">
+              <div class="faq-answer-content">
+                <p>
+                  Every outdoor event designed by Eventina incorporates a fully detailed &ldquo;Plan B&rdquo; with matching aesthetic caliber. We do not treat indoor backups as an afterthought.
+                </p>
+                <p>
+                  We secure parallel indoor ballrooms or maintain rapid-deployment structural marquees with climate-controlled heating/cooling on standby. Our technical director tracks real-time satellite radar, making informed, seamless transition calls with the family four hours prior to guest entry if necessary.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="faq-item" data-category="pricing">
+          <button type="button" class="faq-trigger" id="faq-btn-6" aria-expanded="false" aria-controls="faq-panel-6">
+            <span class="faq-question-wrap">
+              <span class="faq-category-indicator">Pricing</span>
+              <span class="faq-question-text">What budget range does Eventina typically produce, and are there minimum spend thresholds?</span>
+            </span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-panel" id="faq-panel-6" role="region" aria-labelledby="faq-btn-6" hidden>
+            <div class="faq-panel-inner">
+              <div class="faq-answer-content">
+                <p>
+                  Our commissions typically range from <strong>INR 40 Lakhs</strong> for bespoke single-day corporate galas and private soirées, to <strong>INR 1.5 Crores to over INR 15 Crores</strong> for multi-day residential destination weddings.
+                </p>
+                <p>
+                  During your confidential initial consultation, we formulate an itemized financial framework that balances your creative vision with realistic vendor allocations, ensuring zero budgetary surprises downstream.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="faq-item" data-category="artists">
+          <button type="button" class="faq-trigger" id="faq-btn-7" aria-expanded="false" aria-controls="faq-panel-7">
+            <span class="faq-question-wrap">
+              <span class="faq-category-indicator">Artists</span>
+              <span class="faq-question-text">How do you handle celebrity artist bookings, riders, and technical sound requirements?</span>
+            </span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-panel" id="faq-panel-7" role="region" aria-labelledby="faq-btn-7" hidden>
+            <div class="faq-panel-inner">
+              <div class="faq-answer-content">
+                <p>
+                  Our artist management wing negotiates directly with celebrity talent management, cutting out secondary sub-agents. We handle legal contracts, performance riders, five-star hospitality suites, and backstage security protocols.
+                </p>
+                <p>
+                  More importantly, our in-house audio engineers review and fulfill complex digital console technical riders, providing touring artists with concert-grade sound checks completed hours before guests arrive.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="faq-item" data-category="logistics">
+          <button type="button" class="faq-trigger" id="faq-btn-8" aria-expanded="false" aria-controls="faq-panel-8">
+            <span class="faq-question-wrap">
+              <span class="faq-category-indicator">Logistics</span>
+              <span class="faq-question-text">How are guest airport transfers, private charters, and hotel rooming lists managed?</span>
+            </span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-panel" id="faq-panel-8" role="region" aria-labelledby="faq-btn-8" hidden>
+            <div class="faq-panel-inner">
+              <div class="faq-answer-content">
+                <p>
+                  We set up private airport arrival desks staffed by multilingual concierges. Guests are escorted directly into luxury chauffeur fleets, with luggage tagged and transferred to their designated suites without guest intervention.
+                </p>
+                <p>
+                  Our custom guest management desk tracks dietary preferences, elderly mobility requirements, and customized welcome gifting suites.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="faq-item" data-category="destinations">
+          <button type="button" class="faq-trigger" id="faq-btn-9" aria-expanded="false" aria-controls="faq-panel-9">
+            <span class="faq-question-wrap">
+              <span class="faq-category-indicator">Destinations</span>
+              <span class="faq-question-text">What permits, police permissions, and royal heritage clearances are required?</span>
+            </span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-panel" id="faq-panel-9" role="region" aria-labelledby="faq-btn-9" hidden>
+            <div class="faq-panel-inner">
+              <div class="faq-answer-content">
+                <p>
+                  We assume 100% legal and statutory responsibility for all event permissions. This includes Archaeological Survey of India (ASI) clearances for heritage forts, local traffic commissioner NOCs, fire department safety audits, and municipal decibel adherence approvals.
+                </p>
+                <p>
+                  We also secure excise liquor permits, PPL/IPRS music licensing, and DGCA drone aviation permissions, ensuring your celebration proceeds without statutory interruption.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="faq-item" data-category="planning">
+          <button type="button" class="faq-trigger" id="faq-btn-10" aria-expanded="false" aria-controls="faq-panel-10">
+            <span class="faq-question-wrap">
+              <span class="faq-category-indicator">Planning</span>
+              <span class="faq-question-text">How many events does Eventina undertake simultaneously?</span>
+            </span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-panel" id="faq-panel-10" role="region" aria-labelledby="faq-btn-10" hidden>
+            <div class="faq-panel-inner">
+              <div class="faq-answer-content">
+                <p>
+                  We intentionally cap our schedule to a <strong>maximum of two major celebrations per calendar month</strong>. 
+                </p>
+                <p>
+                  We are not an assembly-line agency that delegates clients to junior interns. Our three founding directors (Arjun, Ananya, and Vikramaditya) are personally present on-site from preliminary load-in through the final guest farewell.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="faq-item" data-category="logistics">
+          <button type="button" class="faq-trigger" id="faq-btn-11" aria-expanded="false" aria-controls="faq-panel-11">
+            <span class="faq-question-wrap">
+              <span class="faq-category-indicator">Logistics</span>
+              <span class="faq-question-text">Can you cater to international dietary requirements, sommelier curation, and Maharaj chefs?</span>
+            </span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-panel" id="faq-panel-11" role="region" aria-labelledby="faq-btn-11" hidden>
+            <div class="faq-panel-inner">
+              <div class="faq-answer-content">
+                <p>
+                  Yes. We bridge traditional culinary heritage with international fine dining. We coordinate authentic traditional Maharaj chefs for Marwari, Gujarati, and pure Jain feasts in dedicated sterilized banquet kitchens.
+                </p>
+                <p>
+                  Simultaneously, our hospitality directors design European plated courses, curate certified sommelier wine pairings, and deploy world-class mixologists for bespoke craft cocktail salons.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="faq-item" data-category="planning">
+          <button type="button" class="faq-trigger" id="faq-btn-12" aria-expanded="false" aria-controls="faq-panel-12">
+            <span class="faq-question-wrap">
+              <span class="faq-category-indicator">Planning</span>
+              <span class="faq-question-text">How do you ensure confidentiality and non-disclosure for high-profile clients?</span>
+            </span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-panel" id="faq-panel-12" role="region" aria-labelledby="faq-btn-12" hidden>
+            <div class="faq-panel-inner">
+              <div class="faq-answer-content">
+                <p>
+                  Discretion is foundational to our brand. We sign legally binding Non-Disclosure Agreements (NDAs) prior to detailed planning discussions and enforce strict confidentiality clauses across all vendors, artists, and setup crews.
+                </p>
+                <p>
+                  We routinely manage private airspace no-fly zones, secure tamper-proof staff badge credentials, and deploy discreet private security details for prominent business families and public figures.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 13 -->
+        <div class="faq-item" data-category="logistics">
+          <button type="button" class="faq-trigger" id="faq-btn-13" aria-expanded="false" aria-controls="faq-panel-13">
+            <span class="faq-question-wrap">
+              <span class="faq-category-indicator">Logistics</span>
+              <span class="faq-question-text">What happens in medical or emergency situations during multi-day celebrations?</span>
+            </span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-panel" id="faq-panel-13" role="region" aria-labelledby="faq-btn-13" hidden>
+            <div class="faq-panel-inner">
+              <div class="faq-answer-content">
+                <p>
+                  Every residential production is equipped with an on-site medical lounge, registered nurse, automated external defibrillators (AED), and emergency oxygen.
+                </p>
+                <p>
+                  We establish direct tie-ups with the premier regional multi-specialty hospital and maintain a dedicated on-call cardiac ambulance stationed outside the venue gates throughout the celebration.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="faq-item" data-category="artists">
+          <button type="button" class="faq-trigger" id="faq-btn-14" aria-expanded="false" aria-controls="faq-panel-14">
+            <span class="faq-question-wrap">
+              <span class="faq-category-indicator">Artists</span>
+              <span class="faq-question-text">Can you curate custom musical collaborations between traditional and contemporary acts?</span>
+            </span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-panel" id="faq-panel-14" role="region" aria-labelledby="faq-btn-14" hidden>
+            <div class="faq-panel-inner">
+              <div class="faq-answer-content">
+                <p>
+                  Custom musical curation is our creative hallmark. We frequently bridge traditional Indian masters (such as Rajasthani Manganiyars, sitar virtuosos, or Carnatic vocalists) with international cello quartets, percussionists, or electronic producers.
+                </p>
+                <p>
+                  Our technical director rehearses these custom ensembles in private studios prior to event move-in, producing bespoke live musical arrangements that exist nowhere else in the world.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="faq-item" data-category="pricing">
+          <button type="button" class="faq-trigger" id="faq-btn-15" aria-expanded="false" aria-controls="faq-panel-15">
+            <span class="faq-question-wrap">
+              <span class="faq-category-indicator">Pricing</span>
+              <span class="faq-question-text">What is your payment milestone schedule and cancellation terms?</span>
+            </span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-panel" id="faq-panel-15" role="region" aria-labelledby="faq-btn-15" hidden>
+            <div class="faq-panel-inner">
+              <div class="faq-answer-content">
+                <p>
+                  Our professional management fees are distributed across four transparent project milestones:
+                </p>
+                <ul>
+                  <li><strong>25%:</strong> Engagement confirmation and date reservation.</li>
+                  <li><strong>25%:</strong> Approval of 3D spatial design concepts and venue contracts.</li>
+                  <li><strong>35%:</strong> 30 days prior to load-in, upon locking all production blueprints.</li>
+                  <li><strong>15%:</strong> During final wrap and reconciliation.</li>
+                </ul>
+                <p>
+                  Our agreements include clear force majeure protections and favorable rescheduling clauses should family emergencies or external circumstances arise.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 16 -->
+        <div class="faq-item" data-category="planning">
+          <button type="button" class="faq-trigger" id="faq-btn-16" aria-expanded="false" aria-controls="faq-panel-16">
+            <span class="faq-question-wrap">
+              <span class="faq-category-indicator">Planning</span>
+              <span class="faq-question-text">How does the creative design process unfold from concept to 3D visualization?</span>
+            </span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-panel" id="faq-panel-16" role="region" aria-labelledby="faq-btn-16" hidden>
+            <div class="faq-panel-inner">
+              <div class="faq-answer-content">
+                <p>
+                  We begin with an in-depth Creative Discovery session to explore your family narrative, aesthetic inspirations, and hospitality values.
+                </p>
+                <p>
+                  Our design team translates this into tactile moodboards, physical textile/flower swatches, and photorealistic 3D spatial renders. You can inspect exact sightlines, floral heights, and warm candlelit illumination values months before fabrication begins.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Empty Search State -->
+      <div class="faq-empty-state" id="faq-empty-state" hidden style="display: none; max-width: 860px; margin-inline: auto;">
+        <h3 class="faq-empty-title">No Matching Questions Found</h3>
+        <p class="faq-empty-text">We couldn't find any questions matching your query. Please try different keywords or speak with our concierge.</p>
+        <button type="button" class="btn btn-secondary btn-sm" id="faq-empty-clear-btn">
+          View All Questions
+        </button>
+      </div>
+
+      <!-- Still Have Questions CTA Banner Card -->
+      <div class="faq-cta-banner">
+        <span class="eyebrow" style="color: var(--color-gold-400);">Uncompromising Personal Concierge</span>
+        <h3 class="faq-cta-title">Have a Question Not Answered Here?</h3>
+        <p class="faq-cta-lead">
+          Our founding directors and senior production architects are available for private consultations to discuss your bespoke celebration.
+        </p>
+        <div class="faq-cta-actions">
+          <a href="/enquiry" class="btn btn-primary">
+            <span>Schedule a Private Consultation</span>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="/contact" class="btn btn-secondary" style="color: #FFFFFF; border-color: rgba(255, 255, 255, 0.4);">
+            <span>Contact Our Desk Directly</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Accordion Controller Script -->
+  <script>
+    const searchInput = document.getElementById('faq-search-input') as HTMLInputElement | null;
+    const searchClearBtn = document.getElementById('faq-search-clear');
+    const resultsCounter = document.getElementById('faq-results-counter');
+    const categoryTabs = document.querySelectorAll<HTMLButtonElement>('.faq-tab-btn');
+    const faqItems = document.querySelectorAll<HTMLElement>('.faq-item');
+    const emptyState = document.getElementById('faq-empty-state');
+
+    let activeCategory = 'all';
+    let searchQuery = '';
+
+    function toggleAccordion(item: HTMLElement, expand?: boolean) {
+      const trigger = item.querySelector<HTMLButtonElement>('.faq-trigger');
+      const panel = item.querySelector<HTMLElement>('.faq-panel');
+      if (!trigger || !panel) return;
+
+      const isOpen = item.classList.contains('is-open');
+      const shouldOpen = typeof expand === 'boolean' ? expand : !isOpen;
+
+      if (shouldOpen) {
+        item.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+        panel.removeAttribute('hidden');
+      } else {
+        item.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+        panel.setAttribute('hidden', '');
+      }
+    }
+
+    function getVisibleTriggers(): HTMLButtonElement[] {
+      return Array.from(document.querySelectorAll<HTMLButtonElement>('.faq-item:not([hidden]) .faq-trigger'));
+    }
+
+    function handleTriggerKeydown(event: KeyboardEvent, trigger: HTMLButtonElement) {
+      const triggers = getVisibleTriggers();
+      const currentIndex = triggers.indexOf(trigger);
+      if (currentIndex === -1) return;
+
+      let targetIndex: number | null = null;
+
+      switch (event.key) {
+        case 'ArrowDown':
+          event.preventDefault();
+          targetIndex = (currentIndex + 1) % triggers.length;
+          break;
+        case 'ArrowUp':
+          event.preventDefault();
+          targetIndex = (currentIndex - 1 + triggers.length) % triggers.length;
+          break;
+        case 'Home':
+          event.preventDefault();
+          targetIndex = 0;
+          break;
+        case 'End':
+          event.preventDefault();
+          targetIndex = triggers.length - 1;
+          break;
+        default:
+          break;
+      }
+
+      if (targetIndex !== null && triggers[targetIndex]) {
+        triggers[targetIndex].focus();
+      }
+    }
+
+    function updateFilter() {
+      const query = searchQuery.trim().toLowerCase();
+      let visibleCount = 0;
+
+      faqItems.forEach(item => {
+        const itemCategory = item.getAttribute('data-category') || '';
+        const questionText = item.querySelector('.faq-question-text')?.textContent?.toLowerCase() || '';
+        const answerText = item.querySelector('.faq-answer-content')?.textContent?.toLowerCase() || '';
+
+        const matchesCategory = activeCategory === 'all' || itemCategory === activeCategory;
+        const matchesSearch = query === '' || questionText.includes(query) || answerText.includes(query);
+
+        if (matchesCategory && matchesSearch) {
+          item.removeAttribute('hidden');
+          item.style.display = '';
+          visibleCount++;
+
+          if (query.length >= 3 && matchesSearch) {
+            toggleAccordion(item, true);
+          }
+        } else {
+          item.setAttribute('hidden', '');
+          item.style.display = 'none';
+          toggleAccordion(item, false);
+        }
+      });
+
+      if (resultsCounter) {
+        const totalCount = faqItems.length;
+        if (query !== '' || activeCategory !== 'all') {
+          resultsCounter.textContent = `Showing ${visibleCount} of ${totalCount} question${totalCount === 1 ? '' : 's'}`;
+        } else {
+          resultsCounter.textContent = `Showing all ${totalCount} questions`;
+        }
+      }
+
+      if (emptyState) {
+        if (visibleCount === 0) {
+          emptyState.removeAttribute('hidden');
+          emptyState.style.display = 'block';
+        } else {
+          emptyState.setAttribute('hidden', '');
+          emptyState.style.display = 'none';
+        }
+      }
+
+      if (searchClearBtn) {
+        searchClearBtn.classList.toggle('is-visible', query.length > 0);
+      }
+    }
+
+    faqItems.forEach(item => {
+      const trigger = item.querySelector<HTMLButtonElement>('.faq-trigger');
+      if (trigger) {
+        trigger.addEventListener('click', () => {
+          toggleAccordion(item);
+        });
+
+        trigger.addEventListener('keydown', (e) => {
+          handleTriggerKeydown(e, trigger);
+        });
+      }
+    });
+
+    searchInput?.addEventListener('input', (e) => {
+      searchQuery = (e.target as HTMLInputElement).value;
+      updateFilter();
+    });
+
+    searchClearBtn?.addEventListener('click', () => {
+      if (searchInput) {
+        searchInput.value = '';
+        searchQuery = '';
+        searchInput.focus();
+      }
+      updateFilter();
+    });
+
+    categoryTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const cat = tab.getAttribute('data-category') || 'all';
+        activeCategory = cat;
+
+        categoryTabs.forEach(t => {
+          const isSelected = t === tab;
+          t.classList.toggle('is-active', isSelected);
+          t.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+        });
+
+        updateFilter();
+      });
+    });
+
+    document.getElementById('faq-empty-clear-btn')?.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      searchQuery = '';
+      activeCategory = 'all';
+      categoryTabs.forEach((t, idx) => {
+        t.classList.toggle('is-active', idx === 0);
+        t.setAttribute('aria-selected', idx === 0 ? 'true' : 'false');
+      });
+      updateFilter();
+    });
+
+    updateFilter();
+  </script>
+</BaseLayout>

@@ -1,0 +1,417 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const artists = [
+  {
+    name: 'Meera & The Sufi String Ensemble',
+    category: 'vocalists',
+    badge: 'Vocalist & Ensemble',
+    genreSubtitle: 'Acoustic Sufi Fusion & Ghazal Melodies',
+    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80&auto=format&fit=crop',
+    alt: 'Meera and The Sufi String Ensemble performing on a luxury stage',
+    desc: 'An ethereal tapestry of soul-stirring Sufi poetry, harmonium, sarangi, and acoustic percussion. Renowned for creating intimate, sacred atmospheres during royal Sangeets and palace evenings.',
+    highlights: [
+      { text: 'Featured at Udaipur City Palace & Jodhpur RIFF', icon: 'star' },
+      { text: 'Set Duration: 90 – 120 mins | 6-Piece Live Ensemble', icon: 'clock' },
+    ],
+    enquiryParam: 'Meera-Sufi',
+  },
+  {
+    name: 'DJ Kabir & The Live Brass',
+    category: 'djs',
+    badge: 'Celebrity DJ',
+    genreSubtitle: 'Deep House, Commercial Beats & Live Saxophone',
+    image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80&auto=format&fit=crop',
+    alt: 'DJ Kabir performing live with brass accompaniment',
+    desc: 'Pioneering high-energy afterparty sets that blend festival-grade electronic beats with live trumpet and saxophone riffs, keeping guests captivated till sunrise.',
+    highlights: [
+      { text: 'Headline DJ for destination weddings in Goa & Dubai', icon: 'star' },
+      { text: 'Set Duration: 3 – 4 Hours | Live Sax & Percussion Add-on', icon: 'clock' },
+    ],
+    enquiryParam: 'DJ-Kabir',
+  },
+  {
+    name: 'The Royale Symphony Strings',
+    category: 'instrumental',
+    badge: 'Symphony Chamber',
+    genreSubtitle: 'Cinematic Film Scores & Pop Reinterpretations',
+    image: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=800&q=80&auto=format&fit=crop',
+    alt: 'The Royale Symphony String Quartet performing at a champagne gala',
+    desc: 'An 8-piece classical chamber ensemble rendering Bollywood classics, Bridgerton-style pop covers, and Western symphonies for grand walk-ins and cocktail receptions.',
+    highlights: [
+      { text: 'Resident ensemble at Taj West End & Bengaluru Glasshouse', icon: 'star' },
+      { text: 'Set Duration: 2 Hours | Acoustic or Amplified Audio', icon: 'clock' },
+    ],
+    enquiryParam: 'Royale-Strings',
+  },
+  {
+    name: 'Rhea Sen Sharma',
+    category: 'anchors',
+    badge: 'Celebrity Emcee',
+    genreSubtitle: 'Bilingual Luxury Host & Protocol Master',
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80&auto=format&fit=crop',
+    alt: 'Rhea Sen Sharma, luxury celebrity emcee and host',
+    desc: 'Poised, witty, and effortlessly engaging across English, Hindi, and Bengali. Expert in guiding high-stakes corporate award galas and multi-generational sangeets with warmth and elegance.',
+    highlights: [
+      { text: 'Host for 200+ luxury destination sangeets & CXO summits', icon: 'star' },
+      { text: 'Full Evening Curation | Custom Scripting & Family Liaison', icon: 'clock' },
+    ],
+    enquiryParam: 'Rhea-Sen',
+  },
+  {
+    name: 'Agni Kathak Collective',
+    category: 'dancers',
+    badge: 'Dance Ensemble',
+    genreSubtitle: 'Classical Kathak & Kinetic Light Choreography',
+    image: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800&q=80&auto=format&fit=crop',
+    alt: 'Agni Contemporary Kathak Troupe performing with dramatic lighting',
+    desc: 'A 10-dancer fusion ensemble combining classical ghungroo rhythmics with cinematic stage lighting, theatrical props, and soaring musical compositions for high-impact opening acts.',
+    highlights: [
+      { text: 'Specialists in bespoke couple reveal & sangeet openers', icon: 'star' },
+      { text: 'Performance: 3 Curated Sets | Custom Costumes & Storyboards', icon: 'clock' },
+    ],
+    enquiryParam: 'Agni-Kathak',
+  },
+  {
+    name: 'The Velvet Jazz Quintet',
+    category: 'instrumental',
+    badge: 'Acoustic Jazz',
+    genreSubtitle: 'Vintage Swing, Bossa Nova & Gatsby Melodies',
+    image: 'https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=800&q=80&auto=format&fit=crop',
+    alt: 'The Velvet Jazz Quintet performing acoustic swing at a sundowner',
+    desc: 'Double bass, jazz guitar, trumpet, brushed drums, and vocals delivering sophisticated, relaxed glamour for sunset cocktail hours, rehearsal dinners, and networking soirées.',
+    highlights: [
+      { text: 'Regular headliners at private luxury villas in Coorg & Alibaug', icon: 'star' },
+      { text: 'Set Duration: 2 – 3 Hours | Sophisticated Background Ambiance', icon: 'clock' },
+    ],
+    enquiryParam: 'Velvet-Jazz',
+  },
+  {
+    name: 'Zack & The Frequency Project',
+    category: 'vocalists',
+    badge: 'Live Rock Band',
+    genreSubtitle: 'Bollywood Indie-Rock & Stadium Anthems',
+    image: 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800&q=80&auto=format&fit=crop',
+    alt: 'Zack and The Frequency Project performing live rock fusion',
+    desc: 'High-voltage arena energy with driving guitar riffs, thunderous drums, and charismatic vocals. Masters of turning cocktail evenings into unforgettable communal singalongs.',
+    highlights: [
+      { text: 'Headliners for prominent corporate festivals and luxury sangeets', icon: 'star' },
+      { text: 'Set Duration: 120 Minutes | 5-Piece Live Electric Band', icon: 'clock' },
+    ],
+    enquiryParam: 'Zack-Frequency',
+  },
+  {
+    name: 'DJ Nyx',
+    category: 'djs',
+    badge: 'Electronic Artist',
+    genreSubtitle: 'Melodic Techno & Curated Sunset Grooves',
+    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80&auto=format&fit=crop',
+    alt: 'DJ Nyx delivering electronic atmospheric soundscapes',
+    desc: 'Specializing in seamless musical transitions from ethereal deep house during the golden hour to pulsating progressive beats for late-night pool parties and after-hours lounges.',
+    highlights: [
+      { text: 'Resident sound curator for luxury brand launches & VIP soirées', icon: 'star' },
+      { text: 'Set Duration: 3 – 5 Hours | Immersive Sound Architecture', icon: 'clock' },
+    ],
+    enquiryParam: 'DJ-Nyx',
+  },
+  {
+    name: 'Kunal Vardhan',
+    category: 'anchors',
+    badge: 'Arena Emcee',
+    genreSubtitle: 'Corporate Summit & High-Impact Gala Host',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80&auto=format&fit=crop',
+    alt: 'Kunal Vardhan, dynamic corporate and sports event anchor',
+    desc: 'Commanding, sharp, and impeccably articulate. Kunal brings gravitas and quick spontaneity to leadership galas, automotive reveals, and dynamic baraat grand entries.',
+    highlights: [
+      { text: '10+ years hosting Fortune 500 summits across India & Singapore', icon: 'star' },
+      { text: 'Teleprompter Ready | Audience Engagement Architect', icon: 'clock' },
+    ],
+    enquiryParam: 'Kunal-Vardhan',
+  },
+  {
+    name: 'Pandit Shridhar & Hariprasad',
+    category: 'instrumental',
+    badge: 'Classical Jugalbandi',
+    genreSubtitle: 'Sitar & Santoor Royal Duet',
+    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80&auto=format&fit=crop',
+    alt: 'Classical Sitar and Santoor jugalbandi performance',
+    desc: 'Sublime classical ragas that evoke royal durbars and timeless tranquility. Perfect for serene mandap pheras, holy rituals, and high-elegance welcome ceremonies.',
+    highlights: [
+      { text: 'Disciple lineage of legendary Indian instrumental gharanas', icon: 'star' },
+      { text: 'Set Duration: 2 – 3 Hours | Accompanied by Tabla & Tanpura', icon: 'clock' },
+    ],
+    enquiryParam: 'Shridhar-Sitar',
+  },
+  {
+    name: 'Ruhani Qawwali Brothers',
+    category: 'vocalists',
+    badge: 'Sufi Qawwali',
+    genreSubtitle: 'Ecstatic Traditional & Contemporary Qawwali',
+    image: 'https://images.unsplash.com/photo-1520523839898-507125cd53c1?w=800&q=80&auto=format&fit=crop',
+    alt: 'Ruhani Qawwali Brothers performing ecstatic Sufi music',
+    desc: 'A 7-member troupe delivering spellbinding verses of divine romance, syncopated clapping, and powerful vocal harmonies that lift the entire audience into shared euphoria.',
+    highlights: [
+      { text: 'Performed across royal forts in Rajasthan & heritage estates', icon: 'star' },
+      { text: 'Set Duration: 120 Mins | Authentic Acoustic Stage Setup', icon: 'clock' },
+    ],
+    enquiryParam: 'Ruhani-Qawwali',
+  },
+  {
+    name: 'Mayuri Theatrical Folk Ensemble',
+    category: 'dancers',
+    badge: 'Folk & Cultural',
+    genreSubtitle: 'Ghoomar, Chari Fire Dance & Royal Dhol Acts',
+    image: 'https://images.unsplash.com/photo-1547153760-18fc86324498?w=800&q=80&auto=format&fit=crop',
+    alt: 'Mayuri Theatrical Folk Dance Ensemble in vibrant traditional costumes',
+    desc: 'Splendid cultural pageantry featuring swirling Ghoomar skirts, balancing brass fire urns, and thunderous Nagada drums that provide unmatched ceremonial grandeur for baraats and welcomes.',
+    highlights: [
+      { text: 'Authentic Rajasthani and Gujarati heritage performers', icon: 'star' },
+      { text: '12 Performer Troupe | Grand Entrance & Interactive Dance', icon: 'clock' },
+    ],
+    enquiryParam: 'Mayuri-Folk',
+  },
+];
+---
+
+<BaseLayout
+  title="Artists & Curated Talent Roster | Eventina Organisers"
+  description="Explore Eventina's curated directory of master musicians, Sufi ensembles, symphony quartets, celebrity DJs, emcees, and dance troupes for luxury events across India."
+  ogImage="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&q=80&auto=format&fit=crop"
+>
+  <!-- Interior Hero Banner -->
+  <section class="page-hero" aria-labelledby="artists-hero-title">
+    <div class="container page-hero-inner">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li><a href="/">Home</a></li>
+          <li class="breadcrumb-separator" aria-hidden="true">/</li>
+          <li aria-current="page">Artists</li>
+        </ol>
+      </nav>
+
+      <span class="eyebrow">Entertainment &amp; Live Performances</span>
+      <h1 id="artists-hero-title" class="page-hero-title">
+        Curated Talent &amp; Master Ensembles
+      </h1>
+      <p class="page-hero-lead">
+        Electrify your celebrations with India’s most distinguished classical maestros, Sufi ensembles, symphony quartets, celebrity DJs, and charismatic emcees.
+      </p>
+    </div>
+  </section>
+
+  <!-- Artists Showcase Section -->
+  <section class="section" aria-labelledby="showcase-heading">
+    <div class="container">
+      
+      <!-- Filter Controls -->
+      <div class="artists-filter-wrapper">
+        <h2 id="showcase-heading" class="sr-only">Filter Artists by Genre</h2>
+        <div class="artist-filter-container" role="toolbar" aria-label="Filter artists by discipline">
+          <button type="button" class="artist-filter-btn is-active" data-artist-filter="all" aria-pressed="true">
+            <span>All Talents</span>
+            <span class="artist-filter-count">12</span>
+          </button>
+          <button type="button" class="artist-filter-btn" data-artist-filter="vocalists" aria-pressed="false">
+            <span>Vocalists &amp; Bands</span>
+            <span class="artist-filter-count">3</span>
+          </button>
+          <button type="button" class="artist-filter-btn" data-artist-filter="djs" aria-pressed="false">
+            <span>DJs &amp; Electronic</span>
+            <span class="artist-filter-count">2</span>
+          </button>
+          <button type="button" class="artist-filter-btn" data-artist-filter="instrumental" aria-pressed="false">
+            <span>Classical &amp; Instrumental</span>
+            <span class="artist-filter-count">3</span>
+          </button>
+          <button type="button" class="artist-filter-btn" data-artist-filter="anchors" aria-pressed="false">
+            <span>Anchors &amp; Emcees</span>
+            <span class="artist-filter-count">2</span>
+          </button>
+          <button type="button" class="artist-filter-btn" data-artist-filter="dancers" aria-pressed="false">
+            <span>Dancers &amp; Troupes</span>
+            <span class="artist-filter-count">2</span>
+          </button>
+        </div>
+
+        <!-- Live Status Indicator -->
+        <div class="artists-live-status" id="artist-count-display" aria-live="polite">
+          Showing all 12 master talents &amp; performance ensembles
+        </div>
+      </div>
+
+      <!-- Empty State Container -->
+      <div id="artist-empty-state" class="artist-empty-state" hidden>
+        <h3 style="font-size: var(--text-xl); color: var(--color-navy-950); margin-bottom: var(--space-2);">No Artists Found</h3>
+        <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4);">We frequently commission custom acts and international guest performers not listed here.</p>
+        <a href="/enquiry?service=entertainment" class="btn btn-primary">
+          <span>Enquire with Talent Concierge</span>
+        </a>
+      </div>
+
+      <!-- Artists Grid -->
+      <div class="artists-grid" id="artists-grid-container">
+        {artists.map((artist) => (
+          <article class="artist-card" data-artist-category={artist.category}>
+            <div class="artist-media-box">
+              <img
+                src={artist.image}
+                alt={artist.alt}
+                width="800"
+                height="550"
+                loading="lazy"
+              />
+              <span class="artist-badge-pill">{artist.badge}</span>
+            </div>
+            <div class="artist-body">
+              <h3 class="artist-name">{artist.name}</h3>
+              <div class="artist-genre-subtitle">{artist.genreSubtitle}</div>
+              <p class="artist-desc">{artist.desc}</p>
+              <ul class="artist-highlights">
+                {artist.highlights.map((hl) => (
+                  <li class="artist-highlight-item">
+                    {hl.icon === 'star' ? (
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                      </svg>
+                    ) : (
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                      </svg>
+                    )}
+                    <span>{hl.text}</span>
+                  </li>
+                ))}
+              </ul>
+              <div class="artist-actions">
+                <a href={`/enquiry?service=entertainment&artist=${artist.enquiryParam}`} class="btn btn-primary btn-sm" style="width: 100%;">
+                  <span>Book for Event</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Talent Concierge Box -->
+      <div class="artist-talent-concierge">
+        <div>
+          <span class="eyebrow" style="color: var(--color-gold-400);">Turnkey Talent Management</span>
+          <h2>Why Commission Talent Through Eventina?</h2>
+          <p>
+            Securing high-profile performers requires far more than just a phone call. We manage every technical acoustic rider, soundcheck timeline, PPL/IPRS copyright license, VIP backstage suite, and travel manifest — ensuring seamless, stress-free performances.
+          </p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: var(--space-3); justify-content: center;">
+          <div style="display: flex; align-items: center; gap: var(--space-3); color: var(--color-gold-300); font-size: var(--text-sm);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>100% Contract &amp; Date Guarantees</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: var(--space-3); color: var(--color-gold-300); font-size: var(--text-sm);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Custom Musical Mashups &amp; Rehearsals</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: var(--space-3); color: var(--color-gold-300); font-size: var(--text-sm);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Full Audio-Visual &amp; Monitor Redundancy</span>
+          </div>
+          <a href="/enquiry?service=entertainment" class="btn btn-primary" style="margin-top: var(--space-2);">
+            <span>Consult Our Talent Desk</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Global CTA Band -->
+  <section class="cta-band" aria-labelledby="cta-heading">
+    <div class="container cta-inner">
+      <h2 id="cta-heading">Seeking a Specific Headline Celebrity or Performer?</h2>
+      <p>
+        Through our proprietary booking network, we coordinate directly with India's leading playback singers, stand-up comedians, and international acts.
+      </p>
+      <div class="cta-actions">
+        <a href="/enquiry?service=entertainment" class="btn btn-primary btn-lg">
+          <span>Request Talent Availability</span>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="/portfolio" class="btn btn-secondary btn-lg">
+          <span>Explore Past Stages</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Artist filter & URL query handling
+  const filterButtons = document.querySelectorAll<HTMLButtonElement>('[data-artist-filter]');
+  const artistCards = document.querySelectorAll<HTMLElement>('[data-artist-category]');
+  const countDisplay = document.getElementById('artist-count-display');
+  const emptyState = document.getElementById('artist-empty-state');
+  const totalCount = artistCards.length;
+
+  if (filterButtons.length && artistCards.length) {
+    function applyFilter(category: string) {
+      let visibleCount = 0;
+
+      artistCards.forEach((card) => {
+        const itemCategory = card.getAttribute('data-artist-category');
+        const matches = (category === 'all' || itemCategory === category);
+
+        if (matches) {
+          card.classList.remove('is-hidden');
+          card.removeAttribute('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('is-hidden');
+          card.setAttribute('hidden', '');
+        }
+      });
+
+      filterButtons.forEach((btn) => {
+        const isCurrent = btn.getAttribute('data-artist-filter') === category;
+        btn.classList.toggle('is-active', isCurrent);
+        btn.setAttribute('aria-pressed', isCurrent ? 'true' : 'false');
+      });
+
+      if (countDisplay) {
+        if (category === 'all') {
+          countDisplay.textContent = `Showing all ${totalCount} master talents & performance ensembles`;
+        } else {
+          countDisplay.textContent = `Showing ${visibleCount} of ${totalCount} talents in this genre`;
+        }
+      }
+
+      if (emptyState) {
+        if (visibleCount === 0) {
+          emptyState.classList.add('is-visible');
+          emptyState.removeAttribute('hidden');
+        } else {
+          emptyState.classList.remove('is-visible');
+          emptyState.setAttribute('hidden', '');
+        }
+      }
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const category = button.getAttribute('data-artist-filter') || 'all';
+        applyFilter(category);
+      });
+    });
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const genreParam = urlParams.get('genre');
+    if (genreParam) {
+      const targetBtn = document.querySelector<HTMLButtonElement>(`[data-artist-filter="${genreParam}"]`);
+      if (targetBtn) {
+        applyFilter(genreParam);
+      }
+    }
+  }
+</script>

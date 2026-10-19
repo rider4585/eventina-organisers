@@ -1,0 +1,450 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const portfolioItems = [
+  {
+    category: 'weddings',
+    badge: 'Weddings',
+    title: 'Jagmandir Island Palace Wedding',
+    locationMeta: 'Udaipur, Rajasthan · 3-Day Celebration',
+    thumbImg: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80&auto=format&fit=crop',
+    lightboxImg: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1400&q=85&auto=format&fit=crop',
+    alt: 'Regal palace wedding dining setup illuminated by warm chandeliers',
+    lightboxTitle: 'The Royal Palace Wedding at Jagmandir Island, Udaipur',
+    lightboxDesc: 'A 3-day royal celebration orchestrated across Lake Pichola featuring floating mandap scenography, royal boat flotilla guest arrival, and custom floral canopies for 450 global guests.',
+  },
+  {
+    category: 'weddings',
+    badge: 'Weddings',
+    title: 'Sunset Beachfront Vows',
+    locationMeta: 'South Goa · Coastal Destination',
+    thumbImg: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80&auto=format&fit=crop',
+    lightboxImg: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1400&q=85&auto=format&fit=crop',
+    alt: 'Beachfront wedding ceremony setup with white floral arch',
+    lightboxTitle: 'Sunset Beachfront Vows at Heritage Village, South Goa',
+    lightboxDesc: 'Bespoke boho-luxe coastal wedding featuring natural driftwood mandap structures, barefoot sundowner acoustic sets, and an illuminated seaside reception dinner under fairy lights.',
+  },
+  {
+    category: 'corporate',
+    badge: 'Corporate',
+    title: 'Global Tech Leadership Summit',
+    locationMeta: 'Bengaluru · 1,200 Delegates',
+    thumbImg: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80&auto=format&fit=crop',
+    lightboxImg: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1400&q=85&auto=format&fit=crop',
+    alt: 'Corporate tech convention auditorium with audience and illuminated main stage',
+    lightboxTitle: 'Global Tech Leadership Summit & Annual Gala, Bengaluru',
+    lightboxDesc: 'Turnkey corporate production for 1,200 delegates featuring custom seamless curved LED stage backdrops, multi-track breakout technical setups, and a black-tie awards banquet.',
+  },
+  {
+    category: 'private',
+    badge: 'Private Soirées',
+    title: 'Silver Jubilee Grand Soirée',
+    locationMeta: 'Mumbai · Heritage Estate',
+    thumbImg: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=80&auto=format&fit=crop',
+    lightboxImg: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1400&q=85&auto=format&fit=crop',
+    alt: 'Intimate banquet tables adorned with crystal stemware and white roses',
+    lightboxTitle: 'The 25th Silver Jubilee Grand Soirée, Mumbai',
+    lightboxDesc: 'An intimate yet grand milestone anniversary dinner in South Mumbai. Vintage champagne fountains, custom mirror-top banquet tables, and an acoustic string quartet accompaniment.',
+  },
+  {
+    category: 'entertainment',
+    badge: 'Live Entertainment',
+    title: 'Midnight Symphony & Sangeet',
+    locationMeta: 'Jaipur, Rajasthan · Concert Production',
+    thumbImg: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80&auto=format&fit=crop',
+    lightboxImg: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1400&q=85&auto=format&fit=crop',
+    alt: 'Electrifying live stage with performer and dynamic beam lighting',
+    lightboxTitle: 'The Midnight Symphony & Sangeet Celebration, Jaipur',
+    lightboxDesc: 'A royal fort courtyard transformed into a high-octane concert arena with a 24-piece live fusion orchestra, headline playback singer performance, and dynamic laser scenography.',
+  },
+  {
+    category: 'corporate',
+    badge: 'Corporate',
+    title: 'Automobile Brand Reveal Expo',
+    locationMeta: 'Aerocity, New Delhi · Press Launch',
+    thumbImg: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80&auto=format&fit=crop',
+    lightboxImg: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1400&q=85&auto=format&fit=crop',
+    alt: 'Automotive product launch stage with blue neon accents and audience',
+    lightboxTitle: 'Automobile Brand Reveal & Immersive Expo, New Delhi',
+    lightboxDesc: 'Flagship vehicle reveal engineered with kinetic projection mapping, automated scrim reveals, precision spotlight tracking, and VIP reception for 800 international press and executives.',
+  },
+  {
+    category: 'weddings',
+    badge: 'Weddings',
+    title: 'Heritage Haveli Sangeet',
+    locationMeta: 'Jodhpur, Rajasthan · Haveli Curation',
+    thumbImg: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=800&q=80&auto=format&fit=crop',
+    lightboxImg: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1400&q=85&auto=format&fit=crop',
+    alt: 'Warm golden banquet reception with glowing candelabras',
+    lightboxTitle: 'Heritage Haveli Sangeet & Mehendi, Jodhpur',
+    lightboxDesc: 'Rich marigold floral installations, authentic Rajasthani folk artist stages, artisanal food bazaar stations, and traditional brass lamp scenography inside a 200-year-old sandstone haveli.',
+  },
+  {
+    category: 'private',
+    badge: 'Private Soirées',
+    title: 'Rooftop Birthday Extravaganza',
+    locationMeta: 'Hyderabad · Skyline Terrace',
+    thumbImg: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80&auto=format&fit=crop',
+    lightboxImg: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1400&q=85&auto=format&fit=crop',
+    alt: 'Night rooftop party with crystal glasses and celebration ambience',
+    lightboxTitle: 'Private Rooftop Birthday Extravaganza, Hyderabad',
+    lightboxDesc: 'Celebrity-curated private 40th birthday celebration on a luxury penthouse terrace overlooking the city skyline. Features custom molecular cocktail bar and European jazz trio.',
+  },
+  {
+    category: 'entertainment',
+    badge: 'Live Entertainment',
+    title: 'Fusion Music & Light Night',
+    locationMeta: 'Chennai · Open-air Amphitheater',
+    thumbImg: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80&auto=format&fit=crop',
+    lightboxImg: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1400&q=85&auto=format&fit=crop',
+    alt: 'Vibrant concert stage illuminated with saturated colors and crowd silhouette',
+    lightboxTitle: 'Contemporary Fusion Music Night, Chennai',
+    lightboxDesc: 'An open-air amphitheater musical experience merging Carnatic instrumentalists with contemporary electronic beats, accompanied by synchronized kinetic water fountain lighting.',
+  },
+];
+---
+
+<BaseLayout
+  title="Portfolio & Celebrations Showcase | Eventina Organisers"
+  description="Explore the portfolio of Eventina Organisers: luxury destination weddings in Udaipur and Goa, high-profile corporate galas, and bespoke private soirées across India."
+  ogImage="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80&auto=format&fit=crop"
+>
+  <!-- Page Hero Banner -->
+  <section class="page-hero" aria-labelledby="portfolio-page-title">
+    <div class="page-hero-bg">
+      <img
+        src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1600&q=80&auto=format&fit=crop"
+        alt="Champagne glasses raised at an evening celebration under fairy lights"
+        width="1600"
+        height="700"
+      />
+    </div>
+    <div class="page-hero-scrim" aria-hidden="true"></div>
+
+    <div class="container page-hero-content">
+      <nav class="breadcrumbs" aria-label="Breadcrumbs">
+        <a href="/">Home</a>
+        <span class="breadcrumbs-separator" aria-hidden="true">/</span>
+        <span class="breadcrumbs-current" aria-current="page">Portfolio</span>
+      </nav>
+
+      <h1 id="portfolio-page-title" class="page-hero-title">
+        Portfolio &amp; Celebrations Showcase
+      </h1>
+      <p class="page-hero-lead">
+        A visual chronicle of regal destination weddings, electrifying corporate galas, and bespoke milestone celebrations orchestrated across India's most breathtaking venues.
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery & Filter Section -->
+  <section class="section" aria-labelledby="gallery-heading">
+    <div class="container">
+      <h2 id="gallery-heading" class="sr-only">Celebration Showcase Gallery</h2>
+
+      <!-- Interactive Filter Chips -->
+      <div class="filter-bar" role="toolbar" aria-label="Filter portfolio projects by category">
+        <button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true">
+          All Celebrations
+        </button>
+        <button type="button" class="filter-chip" data-filter="weddings" aria-pressed="false">
+          Destination Weddings
+        </button>
+        <button type="button" class="filter-chip" data-filter="corporate" aria-pressed="false">
+          Corporate Galas
+        </button>
+        <button type="button" class="filter-chip" data-filter="entertainment" aria-pressed="false">
+          Live Entertainment
+        </button>
+        <button type="button" class="filter-chip" data-filter="private" aria-pressed="false">
+          Private Soirées
+        </button>
+      </div>
+
+      <!-- Portfolio Cards Grid -->
+      <div class="grid-3" id="portfolio-grid">
+        {portfolioItems.map((item) => (
+          <article
+            class="portfolio-card"
+            tabindex="0"
+            role="button"
+            aria-label={`View ${item.title} gallery`}
+            data-category={item.category}
+            data-lightbox-img={item.lightboxImg}
+            data-lightbox-title={item.lightboxTitle}
+            data-lightbox-desc={item.lightboxDesc}
+          >
+            <img
+              class="portfolio-card-img"
+              src={item.thumbImg}
+              alt={item.alt}
+              width="800"
+              height="600"
+              loading="lazy"
+            />
+            <span class="portfolio-card-badge">{item.badge}</span>
+            <div class="portfolio-card-overlay">
+              <h3 class="portfolio-card-title">{item.title}</h3>
+              <div class="portfolio-card-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>{item.locationMeta}</span>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Scale & Trust Banner -->
+  <section class="section section-dark" aria-labelledby="portfolio-stats-heading">
+    <div class="container">
+      <h2 id="portfolio-stats-heading" class="sr-only">Our Execution Track Record</h2>
+      <div class="grid-4 text-center">
+        <div>
+          <div style="font-family: var(--font-display); font-size: var(--text-4xl); color: var(--color-gold-400); font-weight: var(--weight-bold); margin-bottom: 0.25rem;">
+            500+
+          </div>
+          <div style="font-size: var(--text-sm); color: var(--color-text-inverse-muted);">
+            Celebrations Curated
+          </div>
+        </div>
+        <div>
+          <div style="font-family: var(--font-display); font-size: var(--text-4xl); color: var(--color-gold-400); font-weight: var(--weight-bold); margin-bottom: 0.25rem;">
+            15+
+          </div>
+          <div style="font-size: var(--text-sm); color: var(--color-text-inverse-muted);">
+            Destination Cities in India
+          </div>
+        </div>
+        <div>
+          <div style="font-family: var(--font-display); font-size: var(--text-4xl); color: var(--color-gold-400); font-weight: var(--weight-bold); margin-bottom: 0.25rem;">
+            100%
+          </div>
+          <div style="font-size: var(--text-sm); color: var(--color-text-inverse-muted);">
+            On-Time Run of Show
+          </div>
+        </div>
+        <div>
+          <div style="font-family: var(--font-display); font-size: var(--text-4xl); color: var(--color-gold-400); font-weight: var(--weight-bold); margin-bottom: 0.25rem;">
+            4.9 / 5
+          </div>
+          <div style="font-size: var(--text-sm); color: var(--color-text-inverse-muted);">
+            Client Satisfaction Rating
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global CTA Band -->
+  <section class="cta-band" aria-labelledby="cta-heading">
+    <div class="container cta-inner">
+      <h2 id="cta-heading">Envisioning a Similar Celebration?</h2>
+      <p>
+        Let our creative team craft a bespoke production tailored to your location, guest count, and aesthetic vision.
+      </p>
+      <div class="cta-actions">
+        <a href="/enquiry" class="btn btn-primary btn-lg">
+          <span>Enquire for Your Date</span>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="/contact" class="btn btn-secondary btn-lg">
+          <span>Talk to an Event Director</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accessible Lightbox Modal Dialog -->
+  <div class="lightbox-backdrop" id="lightbox-backdrop" role="dialog" aria-modal="true" aria-label="Celebration photo viewer" aria-hidden="true">
+    <div class="lightbox-dialog" id="lightbox-dialog">
+      <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close image showcase">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      <button type="button" class="lightbox-nav-btn lightbox-prev" id="lightbox-prev" aria-label="View previous celebration photograph">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+
+      <button type="button" class="lightbox-nav-btn lightbox-next" id="lightbox-next" aria-label="View next celebration photograph">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+
+      <div class="lightbox-media-wrap">
+        <img class="lightbox-img" id="lightbox-img" src="" alt="Event showcase full view" />
+      </div>
+
+      <div class="lightbox-details">
+        <h3 class="lightbox-title" id="lightbox-title"></h3>
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  // Filter functionality & accessible lightbox modal
+  const filterButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+  const galleryItems = document.querySelectorAll<HTMLElement>('[data-category]');
+
+  if (filterButtons.length > 0 && galleryItems.length > 0) {
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const selectedFilter = button.getAttribute('data-filter');
+
+        filterButtons.forEach((btn) => {
+          btn.classList.remove('is-active');
+          btn.setAttribute('aria-pressed', 'false');
+        });
+        button.classList.add('is-active');
+        button.setAttribute('aria-pressed', 'true');
+
+        galleryItems.forEach((item) => {
+          const itemCategory = item.getAttribute('data-category');
+          if (selectedFilter === 'all' || itemCategory === selectedFilter) {
+            item.classList.remove('is-hidden');
+            item.removeAttribute('hidden');
+          } else {
+            item.classList.add('is-hidden');
+            item.setAttribute('hidden', '');
+          }
+        });
+      });
+    });
+  }
+
+  // Accessible Lightbox Modal
+  const lightboxBackdrop = document.getElementById('lightbox-backdrop');
+  const lightboxDialog = document.getElementById('lightbox-dialog');
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxCloseBtn = document.getElementById('lightbox-close') as HTMLButtonElement | null;
+  const lightboxPrevBtn = document.getElementById('lightbox-prev') as HTMLButtonElement | null;
+  const lightboxNextBtn = document.getElementById('lightbox-next') as HTMLButtonElement | null;
+
+  if (lightboxBackdrop && lightboxDialog) {
+    let activeIndex = -1;
+    let triggerElement: HTMLElement | null = null;
+
+    const getVisibleItems = (): HTMLElement[] => {
+      return Array.from(document.querySelectorAll<HTMLElement>('.portfolio-card:not([hidden]):not(.is-hidden)'));
+    };
+
+    const openLightbox = (index: number) => {
+      const visibleItems = getVisibleItems();
+      if (index < 0 || index >= visibleItems.length) return;
+
+      activeIndex = index;
+      triggerElement = document.activeElement as HTMLElement | null;
+
+      const currentItem = visibleItems[activeIndex];
+      const fullImgUrl = currentItem.getAttribute('data-lightbox-img') || currentItem.querySelector<HTMLImageElement>('img')?.src || '';
+      const title = currentItem.getAttribute('data-lightbox-title') || currentItem.querySelector('h3, .portfolio-card-title')?.textContent || '';
+      const caption = currentItem.getAttribute('data-lightbox-desc') || '';
+
+      if (lightboxImg) {
+        lightboxImg.src = fullImgUrl;
+        lightboxImg.alt = title || 'Event showcase photograph';
+      }
+      if (lightboxTitle) lightboxTitle.textContent = title;
+      if (lightboxCaption) lightboxCaption.textContent = caption;
+
+      lightboxBackdrop.classList.add('is-open');
+      lightboxBackdrop.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      setTimeout(() => {
+        lightboxCloseBtn?.focus();
+      }, 50);
+
+      document.addEventListener('keydown', handleLightboxKeydown);
+    };
+
+    const closeLightbox = () => {
+      if (!lightboxBackdrop.classList.contains('is-open')) return;
+
+      lightboxBackdrop.classList.remove('is-open');
+      lightboxBackdrop.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+
+      document.removeEventListener('keydown', handleLightboxKeydown);
+
+      if (triggerElement && typeof triggerElement.focus === 'function') {
+        triggerElement.focus();
+      }
+    };
+
+    const showPrev = () => {
+      const visibleItems = getVisibleItems();
+      if (visibleItems.length === 0) return;
+      const newIndex = (activeIndex - 1 + visibleItems.length) % visibleItems.length;
+      openLightbox(newIndex);
+    };
+
+    const showNext = () => {
+      const visibleItems = getVisibleItems();
+      if (visibleItems.length === 0) return;
+      const newIndex = (activeIndex + 1) % visibleItems.length;
+      openLightbox(newIndex);
+    };
+
+    const handleLightboxKeydown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeLightbox();
+      } else if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        showPrev();
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        showNext();
+      }
+    };
+
+    document.querySelectorAll<HTMLElement>('.portfolio-card').forEach((card) => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        const visibleItems = getVisibleItems();
+        const index = visibleItems.indexOf(card);
+        if (index !== -1) {
+          openLightbox(index);
+        }
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const visibleItems = getVisibleItems();
+          const index = visibleItems.indexOf(card);
+          if (index !== -1) {
+            openLightbox(index);
+          }
+        }
+      });
+    });
+
+    lightboxCloseBtn?.addEventListener('click', closeLightbox);
+    lightboxPrevBtn?.addEventListener('click', showPrev);
+    lightboxNextBtn?.addEventListener('click', showNext);
+
+    lightboxBackdrop.addEventListener('click', (e) => {
+      if (e.target === lightboxBackdrop) {
+        closeLightbox();
+      }
+    });
+  }
+</script>

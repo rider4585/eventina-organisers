@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+allPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+// Identify featured post
+const featuredPost = allPosts.find((p) => p.data.featured) || allPosts[0];
+const gridPosts = allPosts.filter((p) => p.id !== featuredPost.id);
+
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('en-US', {
+    month: 'short',
+    day: '2-digit',
+    year: 'numeric',
+  });
+};
+
+const formatFullDate = (date: Date) => {
+  return date.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+};
+---
+
+<BaseLayout
+  title="The Eventina Journal | Luxury Event Perspectives & Industry Craft"
+  description="Dispatches on couture scenography, palatial architecture, celebration acoustics, and bespoke luxury production across the Indian subcontinent."
+  canonicalURL="https://eventina.in/blog"
+>
+  <!-- Page Hero Banner -->
+  <section class="page-hero" aria-labelledby="blog-hero-title">
+    <div class="container page-hero-inner">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li><a href="/">Home</a></li>
+          <li class="breadcrumb-separator" aria-hidden="true">/</li>
+          <li aria-current="page">The Eventina Journal</li>
+        </ol>
+      </nav>
+
+      <span class="eyebrow">Curated Perspectives &amp; Industry Craft</span>
+      <h1 id="blog-hero-title" class="page-hero-title">
+        The Eventina Journal
+      </h1>
+      <p class="page-hero-lead">
+        Dispatches on couture scenography, palatial architecture, celebration acoustics, and bespoke luxury production across the Indian subcontinent.
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog Index Body Section -->
+  <section class="section" aria-labelledby="journal-dispatches-heading">
+    <div class="container">
+      <h2 id="journal-dispatches-heading" class="visually-hidden">Latest Articles &amp; Insights</h2>
+
+      <!-- Search & Filter Toolbar -->
+      <div class="blog-toolbar">
+        <div style="display: flex; flex-direction: column; gap: var(--space-4); justify-content: space-between; align-items: stretch;">
+          <div style="display: flex; flex-direction: column; gap: var(--space-4); justify-content: space-between;">
+            <div class="blog-search-box">
+              <svg class="blog-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input
+                type="search"
+                id="blog-search-input"
+                class="blog-search-input"
+                placeholder="Search dispatches by topic, venue, or keyword..."
+                aria-label="Search blog articles"
+              />
+            </div>
+
+            <!-- Categories Filter Strip -->
+            <div class="blog-categories-strip" role="group" aria-label="Filter journal articles by category">
+              <button type="button" class="blog-cat-btn is-active" data-category="all" aria-pressed="true">
+                All Dispatches
+              </button>
+              <button type="button" class="blog-cat-btn" data-category="weddings" aria-pressed="false">
+                Destination Weddings
+              </button>
+              <button type="button" class="blog-cat-btn" data-category="decor" aria-pressed="false">
+                Scenography &amp; Decor
+              </button>
+              <button type="button" class="blog-cat-btn" data-category="entertainment" aria-pressed="false">
+                Live Entertainment
+              </button>
+              <button type="button" class="blog-cat-btn" data-category="production" aria-pressed="false">
+                Production &amp; Tech
+              </button>
+              <button type="button" class="blog-cat-btn" data-category="hospitality" aria-pressed="false">
+                Gastronomy &amp; Hospitality
+              </button>
+            </div>
+          </div>
+
+          <div style="font-size: var(--text-xs); color: var(--color-text-muted); font-family: var(--font-eyebrow); letter-spacing: var(--tracking-wider); text-transform: uppercase;">
+            <span id="blog-count-badge">Showing all {allPosts.length} Dispatches</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Editorial Hero Card -->
+      {featuredPost && (
+        <article class="blog-featured-card" data-category={featuredPost.data.categorySlug || 'weddings'}>
+          <div class="blog-featured-media">
+            <img
+              src={featuredPost.data.image}
+              alt={featuredPost.data.imageAlt || featuredPost.data.title}
+              class="blog-featured-img"
+              width="1200"
+              height="700"
+              loading="eager"
+            />
+          </div>
+          <div class="blog-featured-body">
+            <div class="blog-featured-header">
+              <span class="blog-badge">{featuredPost.data.category}</span>
+              <span class="blog-meta-time">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>{featuredPost.data.readTime} · {formatFullDate(featuredPost.data.pubDate)}</span>
+              </span>
+            </div>
+
+            <h3 class="blog-featured-title">
+              <a href={`/blog/${featuredPost.id}`}>
+                {featuredPost.data.title}
+              </a>
+            </h3>
+
+            <p class="blog-featured-excerpt">
+              {featuredPost.data.description}
+            </p>
+
+            <div class="blog-featured-footer">
+              <div class="blog-author-strip">
+                <img
+                  src={featuredPost.data.authorImage}
+                  alt={`${featuredPost.data.author} portrait`}
+                  class="blog-author-avatar"
+                  width="44"
+                  height="44"
+                />
+                <div class="blog-author-info">
+                  <span class="blog-author-name">{featuredPost.data.author}</span>
+                  <span class="blog-author-role">{featuredPost.data.authorRole}</span>
+                </div>
+              </div>
+
+              <a href={`/blog/${featuredPost.id}`} class="btn btn-primary btn-sm">
+                <span>Read Full Journal Entry</span>
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      )}
+
+      <!-- Articles Grid -->
+      <div class="blog-grid" id="blog-grid">
+        {gridPosts.map((post) => (
+          <article class="blog-card" data-category={post.data.categorySlug || 'weddings'}>
+            <div class="blog-card-media">
+              <img
+                src={post.data.image}
+                alt={post.data.imageAlt || post.data.title}
+                class="blog-card-img"
+                width="800"
+                height="500"
+                loading="lazy"
+              />
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-header">
+                <span class="blog-badge">{post.data.category}</span>
+                <span class="blog-card-date">{post.data.readTime} · {formatDate(post.data.pubDate)}</span>
+              </div>
+              <h3 class="blog-card-title">
+                <a href={`/blog/${post.id}`}>
+                  {post.data.title}
+                </a>
+              </h3>
+              <p class="blog-card-excerpt">
+                {post.data.description}
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-author-role">By {post.data.author}</span>
+                <a href={`/blog/${post.id}`} class="blog-card-read-link">
+                  <span>Read Article</span>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Empty State (Live Filter Handler) -->
+      <div class="faq-empty-state" id="blog-empty-state" hidden style="display: none; margin-bottom: var(--space-12);">
+        <h3 class="faq-empty-title">No Dispatches Match Your Search</h3>
+        <p class="faq-empty-text">We couldn't find any articles matching your search query or selected filter.</p>
+        <button type="button" class="btn btn-secondary btn-sm" id="blog-empty-clear-btn">
+          Clear Filters &amp; View All Dispatches
+        </button>
+      </div>
+
+      <!-- Newsletter Subscription Box -->
+      <div class="blog-newsletter-card">
+        <span class="eyebrow" style="color: var(--color-gold-700);">Private Dispatches</span>
+        <h3 class="blog-newsletter-title">The Eventina Gazette</h3>
+        <p class="blog-newsletter-lead">
+          Curated quarterly notes on bespoke celebration design, secret heritage venues, and luxury hospitality trends, delivered directly to your inbox.
+        </p>
+        <form class="blog-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to The Eventina Gazette.');">
+          <input type="email" class="blog-newsletter-input" placeholder="Enter your email address" required aria-label="Email address for newsletter" />
+          <button type="submit" class="btn btn-primary" style="white-space: nowrap;">
+            <span>Subscribe</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client-side Interactive Filtering Script -->
+  <script is:inline src="/assets/js/blog.js"></script>
+</BaseLayout>

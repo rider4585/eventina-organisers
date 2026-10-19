@@ -15,3 +15,7 @@ roster-backups/
 
 # Node
 node_modules/
+
+# Astro
+dist/
+.astro/

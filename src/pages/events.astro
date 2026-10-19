@@ -1,0 +1,289 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const eventFormats = [
+  {
+    id: 'destination-weddings',
+    reversed: false,
+    formatNum: 'Format 01 &bull; Multi-Day Royal Celebrations',
+    title: 'Destination & Royal Weddings',
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1000&q=80&auto=format&fit=crop',
+    alt: 'Grand palace destination wedding mandap setup overlooking royal gardens',
+    lead: 'Multi-day matrimonial celebrations woven with cultural authenticity, palatial architecture, and white-glove hospitality across royal forts in Rajasthan, beachfront resorts in Goa, and luxury estates.',
+    inclusions: [
+      'Architectural Mandap & Floral Artistry',
+      'Multi-Day Sangeet & Mehendi Stagecraft',
+      'Airport Welcome Desks & Luxury Fleet',
+      'Dedicated Bridal & Family Shadow Concierges',
+      'Curated Gastronomy & Mixology Pairing',
+      'Bespoke Gifting & Welcome Hampers',
+    ],
+    meta: {
+      scale: '150 – 1,200 Guests',
+      leadTime: '4 – 12 Months',
+      venues: 'Udaipur, Jaipur, Goa, Bengaluru',
+    },
+    ctaText: 'Plan Your Wedding',
+    ctaLink: '/enquiry?service=weddings',
+  },
+  {
+    id: 'corporate-galas',
+    reversed: true,
+    formatNum: 'Format 02 &bull; High-Impact Enterprises',
+    title: 'Corporate Galas & Leadership Summits',
+    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=1000&q=80&auto=format&fit=crop',
+    alt: 'High-impact corporate leadership summit auditorium and awards gala stage',
+    lead: 'Annual award galas, CXO conclaves, international partner conventions, and company milestones produced with broadcast-grade audio-visual infrastructure and seamless executive protocol.',
+    inclusions: [
+      'Seamless 4K LED Screen Backdrops & Trusses',
+      'Minute-by-Minute Stage & Cue Teleprompting',
+      'Digital QR Registration & VIP Badging',
+      'Keynote Speaker Technical Green Rooms',
+      'Corporate Banquet & Seated Dinner Direction',
+      'Global Hybrid Live Streaming & Multi-Cam',
+    ],
+    meta: {
+      scale: '150 – 2,500 Delegates',
+      leadTime: '2 – 6 Months',
+      venues: 'Bengaluru, Mumbai, Hyderabad, Delhi',
+    },
+    ctaText: 'Plan Corporate Summit',
+    ctaLink: '/enquiry?service=corporate',
+  },
+  {
+    id: 'brand-activations',
+    reversed: false,
+    formatNum: 'Format 03 &bull; Experiential Storytelling',
+    title: 'Luxury Brand Launches & Pop-Ups',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1000&q=80&auto=format&fit=crop',
+    alt: 'Luxury automotive reveal and brand activation experience with architectural lighting',
+    lead: 'Immersive, share-worthy experiential retail spaces for automotive reveals, haute-joaillerie showcases, fashion runway shows, and premium consumer brand debuts.',
+    inclusions: [
+      'Custom Spatial Fabrication & Holograms',
+      'VIP Influencer Lounges & Photo Moments',
+      'High-Security Product Concealment & Reveal',
+      'Press Conference Audio Riser & Media Kit Bay',
+      'Thematic Canapé & Mixology Storytelling',
+      'Bespoke Ambient Scenting & Soundscape',
+    ],
+    meta: {
+      scale: '100 – 800 VIP Guests',
+      leadTime: '6 – 16 Weeks',
+      venues: 'Mumbai, Bengaluru, Delhi NCR',
+    },
+    ctaText: 'Plan Brand Activation',
+    ctaLink: '/enquiry?service=corporate',
+  },
+  {
+    id: 'private-soirees',
+    reversed: true,
+    formatNum: 'Format 04 &bull; Intimate Milestone Occasions',
+    title: 'Milestone Anniversaries & Private Soirées',
+    image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1000&q=80&auto=format&fit=crop',
+    alt: 'Intimate private villa celebration with candlelit tables and warm fairy light canopy',
+    lead: 'Golden jubilees, landmark milestone birthdays, private estate celebrations, and luxury yacht parties curated with heartfelt sentiment, culinary excellence, and absolute discretion.',
+    inclusions: [
+      'Warm Architectural Illumination & Fairy Lights',
+      'Acoustic Chamber Strings & Sunset Jazz',
+      'Plated Fine-Dining Direction & Sommelier Pairings',
+      'Tribute Memory Gallerias & Retrospective Films',
+      'Strict Non-Disclosure & Security Protocol',
+      'Valet Logistics & Door-to-Door Concierge',
+    ],
+    meta: {
+      scale: '40 – 300 Cherished Guests',
+      leadTime: '4 – 12 Weeks',
+      venues: 'Private Estates, Coorg Coffee Plantations, Coastal Villas',
+    },
+    ctaText: 'Plan Private Soirée',
+    ctaLink: '/enquiry?service=weddings',
+  },
+  {
+    id: 'cultural-festivals',
+    reversed: false,
+    formatNum: 'Format 05 &bull; Monumental Public Gatherings',
+    title: 'Cultural Festivals & Arena Concerts',
+    image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1000&q=80&auto=format&fit=crop',
+    alt: 'Large format cultural concert arena with professional stage lighting and crowd',
+    lead: 'Large-format cultural baithaks, public music festivals, and open-air pageants engineered with heavy-duty structural trussing, certified crowd safety, and acoustic mastery.',
+    inclusions: [
+      'Line-Array Concert Sound & Heavy Truss Staging',
+      'Multi-Tier Police & Fire Regulatory Licences',
+      'Engineered Barricading, Turnstiles & Medical Bays',
+      'VIP Artist Village & Executive Green Rooms',
+      'Dual Redundancy Genset Power Grids',
+      'On-Ground Crowd Marshal Protocol',
+    ],
+    meta: {
+      scale: '1,000 – 10,000+ Attendees',
+      leadTime: '3 – 9 Months',
+      venues: 'Convention Grounds, Open-Air Amphitheatres',
+    },
+    ctaText: 'Plan Large-Scale Festival',
+    ctaLink: '/enquiry?service=entertainment',
+  },
+];
+
+const lifecycleStages = [
+  {
+    phase: 'Phase 1 • Alignment',
+    title: 'Brief & Spatial Audit',
+    desc: 'Venue walkthroughs, acoustic tests, regulatory feasibility, and budget framework finalization.',
+  },
+  {
+    phase: 'Phase 2 • Design',
+    title: 'Scenography Blueprint',
+    desc: '3D renders, floral palettes, stage drawings, lighting simulations, and vendor contracting.',
+  },
+  {
+    phase: 'Phase 3 • Rehearsal',
+    title: 'Technical Dry Runs',
+    desc: 'Sound riders tested, cue sheets locked, artist hospitality prepped, and shadow concierges briefed.',
+  },
+  {
+    phase: 'Phase 4 • Showtime',
+    title: 'Live Command Post',
+    desc: 'On-ground execution, live cue firing, discreet VIP care, and seamless post-event strike.',
+  },
+];
+---
+
+<BaseLayout
+  title="Bespoke Event Formats | Eventina Organisers — Signature Experiences"
+  description="Explore Eventina's bespoke event formats: multi-day royal weddings, high-impact corporate summits, brand activations, private soirées, and arena concerts."
+  ogImage="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80&auto=format&fit=crop"
+>
+  <!-- Interior Hero Banner -->
+  <section class="page-hero" aria-labelledby="events-hero-title">
+    <div class="container page-hero-inner">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li><a href="/">Home</a></li>
+          <li class="breadcrumb-separator" aria-hidden="true">/</li>
+          <li aria-current="page">Events</li>
+        </ol>
+      </nav>
+
+      <span class="eyebrow">Signature Formats &amp; Event Scales</span>
+      <h1 id="events-hero-title" class="page-hero-title">
+        Bespoke Event Formats
+      </h1>
+      <p class="page-hero-lead">
+        From intimate royal wedding pheras at historic forts to arena-scale summits and private estate soirées, discover our turnkey production formats.
+      </p>
+    </div>
+  </section>
+
+  <!-- Events Intro Strip & Showcase Cards -->
+  <section class="section" aria-labelledby="formats-intro-heading">
+    <div class="container">
+      <div class="events-intro-strip">
+        <span class="eyebrow">Tailored Production Frameworks</span>
+        <h2 id="formats-intro-heading" style="font-size: var(--text-3xl); margin-bottom: var(--space-4);">
+          Every Format Engineered from Ground Up
+        </h2>
+        <p>
+          While our <a href="/services" style="color: var(--color-gold-600); text-decoration: underline;">Services</a> detail our technical disciplines and our <a href="/portfolio" style="color: var(--color-gold-600); text-decoration: underline;">Portfolio</a> showcases visual archives, here we present our end-to-end event formats — detailing what is included, typical lead times, and logistical scale.
+        </p>
+      </div>
+
+      <!-- Event Formats List -->
+      {eventFormats.map((format) => (
+        <article class:list={['event-format-card', { 'is-reversed': format.reversed }]} id={format.id}>
+          <div class="event-format-media">
+            <img
+              src={format.image}
+              alt={format.alt}
+              width="1000"
+              height="700"
+              loading="lazy"
+            />
+          </div>
+          <div class="event-format-content">
+            <div>
+              <span class="eyebrow" style="color: var(--color-gold-600);" set:html={format.formatNum} />
+              <h3 class="event-format-title">{format.title}</h3>
+            </div>
+            <p class="event-format-lead">{format.lead}</p>
+
+            <div>
+              <strong style="display: block; font-size: var(--text-sm); color: var(--color-navy-950); margin-bottom: var(--space-2);">
+                Signature Inclusions:
+              </strong>
+              <div class="event-inclusions-grid">
+                {format.inclusions.map((inclusion) => (
+                  <div class="event-inclusion-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span>{inclusion}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div class="event-meta-strip">
+              <span class="event-meta-item"><strong>Scale:</strong> {format.meta.scale}</span>
+              <span class="event-meta-item"><strong>Lead Time:</strong> {format.meta.leadTime}</span>
+              <span class="event-meta-item"><strong>Venues:</strong> {format.meta.venues}</span>
+            </div>
+
+            <div>
+              <a href={format.ctaLink} class="btn btn-primary">
+                <span>{format.ctaText}</span>
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+
+      <!-- Lifecycle Section -->
+      <div class="events-lifecycle-card">
+        <div class="text-center" style="max-width: 680px; margin-inline: auto;">
+          <span class="eyebrow">The Timeline</span>
+          <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-2);">
+            The Lifecycle of an Eventina Commission
+          </h2>
+          <p style="font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: 0;">
+            Our structured production cadence ensures that from initial mood boards to post-event breakdown, every transition is clear, transparent, and completely on schedule.
+          </p>
+        </div>
+
+        <div class="lifecycle-stages-grid">
+          {lifecycleStages.map((stage) => (
+            <div class="lifecycle-stage-item">
+              <span class="lifecycle-stage-time">{stage.phase}</span>
+              <h3 class="lifecycle-stage-title">{stage.title}</h3>
+              <p class="lifecycle-stage-desc">{stage.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Global CTA Band -->
+  <section class="cta-band" aria-labelledby="cta-heading">
+    <div class="container cta-inner">
+      <h2 id="cta-heading">Envisioning a Custom Event Format?</h2>
+      <p>
+        Let our directors create a bespoke production framework tailored to your guest profile, location, and aesthetic expectations.
+      </p>
+      <div class="cta-actions">
+        <a href="/enquiry" class="btn btn-primary btn-lg">
+          <span>Enquire for Your Event</span>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="/portfolio" class="btn btn-secondary btn-lg">
+          <span>Explore Past Productions</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
