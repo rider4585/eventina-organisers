@@ -49,12 +49,6 @@ A high-performance, mobile-first static multi-page website engineered with an in
 │   ├── header.html         # Global header with responsive navigation
 │   ├── footer.html         # Site footer & sitemap navigation
 │   └── whatsapp.html       # Floating WhatsApp quick-action
-└── docs/                   # Architectural & planning specifications
-    ├── 01-sitemap-and-content.md
-    ├── 02-tech-stack.md
-    ├── 03-development-plan.md
-    ├── 04-skill-recommendation.md
-    └── README.md
 ```
 
 ## Local Development
