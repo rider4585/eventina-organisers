@@ -1,0 +1,16 @@
+{
+  "name": "Eventina Organisers",
+  "short_name": "Eventina",
+  "description": "Bespoke Event Management, Luxury Destination Weddings & Galas across India",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF8F5",
+  "theme_color": "#FAF8F5",
+  "icons": [
+    {
+      "src": "/assets/img/icon-crest.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
