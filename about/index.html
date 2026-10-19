@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Eventina Organisers — Luxury Event & Wedding Planners</title>
+  <meta name="description" content="Discover the story and craft behind Eventina Organisers. We design and produce bespoke destination weddings, corporate galas, and private celebrations with timeless artistry across India.">
+  <meta name="theme-color" content="#FAF8F5">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eventina.in/about">
+  <meta property="og:title" content="About Us | Eventina Organisers — Luxury Event & Wedding Planners">
+  <meta property="og:description" content="Discover the story and craft behind Eventina Organisers. Bespoke destination weddings, corporate galas, and private celebrations with timeless artistry across India.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80&auto=format&fit=crop">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Us | Eventina Organisers — Luxury Event & Wedding Planners">
+  <meta name="twitter:description" content="Discover the story and craft behind Eventina Organisers. Bespoke destination weddings, corporate galas, and private celebrations across India.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80&auto=format&fit=crop">
+
+  <!-- Google Fonts Preconnect & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Josefin+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Design System Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <!-- Speculation Rules API for instant SPA-feel navigation -->
+  <script type="speculationrules">
+  {
+    "prefetch": [
+      {
+        "source": "list",
+        "urls": ["/", "/about", "/founders", "/services", "/artists", "/portfolio", "/events", "/testimonials", "/blog", "/contact", "/enquiry"]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Skip to Main Content (Screen Readers & Keyboard Navigation) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Global Header Component -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="/" class="site-logo" aria-label="Eventina Organisers: Return to homepage">
+        <svg class="logo-crest" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="20" cy="20" r="18.5" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3"/>
+          <path d="M20 7L24 16L33 20L24 24L20 33L16 24L7 20L16 16L20 7Z" fill="currentColor" opacity="0.9"/>
+          <circle cx="20" cy="20" r="2.5" fill="#B89242"/>
+        </svg>
+        <div class="logo-text-group">
+          <span class="logo-brand">Eventina</span>
+          <span class="logo-tagline">Organisers</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop" aria-label="Primary navigation">
+        <ul class="nav-desktop-list">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/about" class="nav-link is-active" aria-current="page">About Us</a></li>
+          <li><a href="/services" class="nav-link">Services</a></li>
+          <li><a href="/portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="/events" class="nav-link">Events</a></li>
+          <li><a href="/blog" class="nav-link">Blogs</a></li>
+          <li><a href="/contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="/enquiry" class="btn btn-primary btn-sm header-cta-desktop">
+          <span>Enquire Now</span>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button type="button" class="nav-toggle-btn" id="nav-toggle-btn" aria-expanded="false" aria-controls="mobile-nav-drawer" aria-label="Open main menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer Backdrop -->
+  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop" aria-hidden="true"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <nav class="mobile-drawer" id="mobile-nav-drawer" aria-label="Mobile navigation" aria-hidden="true" inert>
+    <div class="mobile-drawer-header">
+      <div class="logo-text-group">
+        <span class="logo-brand">Eventina</span>
+        <span class="logo-tagline">Organisers</span>
+      </div>
+      <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <ul class="mobile-nav-list">
+      <li><a href="/" class="mobile-nav-link"><span>Home</span></a></li>
+      <li><a href="/about" class="mobile-nav-link is-active" aria-current="page"><span>About Us</span></a></li>
+      <li><a href="/founders" class="mobile-nav-link"><span>Founders</span></a></li>
+      <li><a href="/services" class="mobile-nav-link"><span>Services</span></a></li>
+      <li><a href="/artists" class="mobile-nav-link"><span>Artists</span></a></li>
+      <li><a href="/portfolio" class="mobile-nav-link"><span>Portfolio</span></a></li>
+      <li><a href="/events" class="mobile-nav-link"><span>Events</span></a></li>
+      <li><a href="/testimonials" class="mobile-nav-link"><span>Testimonials</span></a></li>
+      <li><a href="/locations" class="mobile-nav-link"><span>Event Locations</span></a></li>
+      <li><a href="/blog" class="mobile-nav-link"><span>Blogs</span></a></li>
+      <li><a href="/faq" class="mobile-nav-link"><span>FAQ</span></a></li>
+      <li><a href="/contact" class="mobile-nav-link"><span>Contact Us</span></a></li>
+    </ul>
+
+    <div class="mobile-drawer-footer">
+      <a href="/enquiry" class="btn btn-primary" style="width: 100%;">
+        <span>Plan Your Event</span>
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <div style="font-size: var(--text-xs); color: var(--color-text-secondary); text-align: center; margin-top: 0.5rem;">
+        <p style="margin-bottom: 0.25rem;">Direct Desk: <a href="tel:+919876543210" style="color: var(--color-gold-600); font-weight: var(--weight-semibold);">+91 98765 43210</a></p>
+        <p>Email: <a href="mailto:hello@eventina.in" style="color: var(--color-gold-600); font-weight: var(--weight-semibold);">hello@eventina.in</a></p>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Landmark -->
+  <main id="main-content">
+
+    <!-- Interior Hero Banner -->
+    <section class="page-hero" aria-labelledby="about-hero-title">
+      <div class="container page-hero-inner">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+          <ol class="breadcrumb-list">
+            <li><a href="/">Home</a></li>
+            <li class="breadcrumb-separator" aria-hidden="true">/</li>
+            <li aria-current="page">About Us</li>
+          </ol>
+        </nav>
+
+        <span class="eyebrow">The Story &amp; Ethos of Eventina</span>
+        <h1 id="about-hero-title" class="page-hero-title">
+          Architects of Emotion, Craftsmen of Grandeur
+        </h1>
+        <p class="page-hero-lead">
+          We bring extraordinary celebrations to life across India — pairing couture visual scenography with the uncompromising precision of luxury hospitality.
+        </p>
+      </div>
+    </section>
+
+    <!-- Company Story & Vision Section -->
+    <section class="section" aria-labelledby="story-heading">
+      <div class="container">
+        <div class="story-split">
+          <div class="about-story-text">
+            <span class="eyebrow">Who We Are</span>
+            <h2 id="story-heading" style="font-size: var(--text-3xl); margin-bottom: var(--space-4);">
+              Born in Bengaluru, Celebrated Across Palaces &amp; Destinations
+            </h2>
+            <p class="about-intro-lead">
+              Eventina Organisers was founded on a simple conviction: monumental scale should never compromise emotional intimacy. A royal wedding with eight hundred guests should feel as heartfelt as a candlelit dinner; a high-impact corporate gala should inspire awe without losing its human pulse.
+            </p>
+            <p>
+              Over the past eight years, our studio has expanded from curating distinguished gatherings in Karnataka to orchestrating landmark destination weddings in Udaipur, Jaipur, and Goa, as well as prestigious corporate summits and private soirées across India’s major metropolitan hubs.
+            </p>
+            <p>
+              We operate not as transactional vendors, but as your trusted creative partners. Every fabric drapery, acoustic frequency, floral installation, and lighting cue is orchestrated in harmony — ensuring the hosts can surrender to the moment, completely confident that every detail is moving to an exquisite rhythm.
+            </p>
+
+            <div style="margin-top: var(--space-6); display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
+              <a href="/portfolio" class="btn btn-secondary">
+                <span>View Curated Work</span>
+              </a>
+              <a href="/founders" class="btn btn-ghost" style="color: var(--color-gold-600);">
+                <span>Meet Our Directors &rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="story-image-composition">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1000&q=80&auto=format&fit=crop" 
+                 alt="Luxury wedding banquet with chandeliers and opulent floral arrangements curated by Eventina" 
+                 width="1000" 
+                 height="750" 
+                 loading="lazy">
+            <div class="story-image-badge" aria-hidden="true">
+              <span class="badge-number">8+</span>
+              <span class="badge-text">Years of Curatorial Mastery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Differentiators Section -->
+    <section class="section about-differentiators-section" aria-labelledby="differentiators-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow">Why Discerning Hosts Choose Us</span>
+          <h2 id="differentiators-heading">What Sets Eventina Apart</h2>
+          <p>Four pillars that define our standards of artistic vision, production discipline, and guest hospitality.</p>
+        </div>
+
+        <div class="values-grid">
+          <!-- Pillar 1 -->
+          <article class="value-card">
+            <div class="value-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+            </div>
+            <h3>Couture Scenography</h3>
+            <p>Zero recycled templates or generic decor packages. Every aesthetic concept, floral palette, and spatial layout is conceived from scratch to reflect your distinctive heritage and personality.</p>
+          </article>
+
+          <!-- Pillar 2 -->
+          <article class="value-card">
+            <div class="value-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3>Military Run of Show</h3>
+            <p>A production timeline mapped down to the minute. Backstage audio-visual cues, artist green-room management, and banquet synchronisation operate with quiet, clockwork precision.</p>
+          </article>
+
+          <!-- Pillar 3 -->
+          <article class="value-card">
+            <div class="value-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                <line x1="8" y1="2" x2="8" y2="18"></line>
+                <line x1="16" y1="6" x2="16" y2="22"></line>
+              </svg>
+            </div>
+            <h3>Pan-India Vendor Guild</h3>
+            <p>Pre-vetted, direct relationships with premier heritage palaces, master sound engineers, bespoke caterers, and renowned floral botanists across 15+ destination cities.</p>
+          </article>
+
+          <!-- Pillar 4 -->
+          <article class="value-card">
+            <div class="value-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <h3>White-Glove Hospitality</h3>
+            <p>Personalized airport meet-and-greets, luxury guest transport logistics, discreet bridal and VIP shadow concierges, and instant round-the-clock family support throughout the celebration.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How We Work Process Strip -->
+    <section class="section" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow">Our Methodology</span>
+          <h2 id="process-heading">How We Work: From Vision to Grandeur</h2>
+          <p>A rigorous four-stage framework designed to give you complete creative clarity and total peace of mind.</p>
+        </div>
+
+        <div class="process-strip">
+          <!-- Step 01 -->
+          <div class="process-step-card">
+            <div class="process-step-header">
+              <span class="process-step-num">01</span>
+              <span class="process-step-duration">Weeks 1 – 2</span>
+            </div>
+            <h3 class="process-step-title">Discovery &amp; Creative Curation</h3>
+            <p class="process-step-desc">
+              We immerse ourselves in your vision, cultural rituals, aesthetic preferences, and budget priorities to establish a bespoke design thesis.
+            </p>
+            <ul class="process-step-tags" aria-label="Deliverables for stage 1">
+              <li class="process-step-tag">Mood Board Concept</li>
+              <li class="process-step-tag">Budget Framework</li>
+              <li class="process-step-tag">Venue Feasibility</li>
+            </ul>
+          </div>
+
+          <!-- Step 02 -->
+          <div class="process-step-card">
+            <div class="process-step-header">
+              <span class="process-step-num">02</span>
+              <span class="process-step-duration">Weeks 3 – 6</span>
+            </div>
+            <h3 class="process-step-title">Scenography &amp; Master Blueprint</h3>
+            <p class="process-step-desc">
+              Our architects translate the creative vision into detailed 3D spatial renders, structural stage drawings, floral mockups, and menu pairings.
+            </p>
+            <ul class="process-step-tags" aria-label="Deliverables for stage 2">
+              <li class="process-step-tag">3D Walkthrough Renders</li>
+              <li class="process-step-tag">Lighting &amp; Audio Riders</li>
+              <li class="process-step-tag">Vendor Contracts</li>
+            </ul>
+          </div>
+
+          <!-- Step 03 -->
+          <div class="process-step-card">
+            <div class="process-step-header">
+              <span class="process-step-num">03</span>
+              <span class="process-step-duration">Weeks 7 – 10</span>
+            </div>
+            <h3 class="process-step-title">Technical Orchestration</h3>
+            <p class="process-step-desc">
+              We run cue-to-cue technical rehearsals, manage artist hospitality riders, synchronize logistics schedules, and finalize permits.
+            </p>
+            <ul class="process-step-tags" aria-label="Deliverables for stage 3">
+              <li class="process-step-tag">Minute-by-Minute Cue Sheet</li>
+              <li class="process-step-tag">Guest Concierge Desk</li>
+              <li class="process-step-tag">Permits &amp; Compliance</li>
+            </ul>
+          </div>
+
+          <!-- Step 04 -->
+          <div class="process-step-card">
+            <div class="process-step-header">
+              <span class="process-step-num">04</span>
+              <span class="process-step-duration">Live Event</span>
+            </div>
+            <h3 class="process-step-title">Flawless Live Execution</h3>
+            <p class="process-step-desc">
+              Our on-ground production command post coordinates every movement, catering course, live artist cue, and guest transfer with invisible perfection.
+            </p>
+            <ul class="process-step-tags" aria-label="Deliverables for stage 4">
+              <li class="process-step-tag">On-Ground Command Desk</li>
+              <li class="process-step-tag">Shadow Concierges</li>
+              <li class="process-step-tag">Wrap &amp; Reconciliation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- By-The-Numbers Stats Band -->
+    <section class="about-stats-band" aria-labelledby="stats-band-heading">
+      <div class="container">
+        <h2 id="stats-band-heading" class="sr-only">Eventina Performance Metrics &amp; Experience Scale</h2>
+        <div class="about-stats-grid">
+          <div class="about-stat-box">
+            <span class="about-stat-num">500+</span>
+            <span class="about-stat-lbl">Celebrations Curated</span>
+          </div>
+          <div class="about-stat-box">
+            <span class="about-stat-num">15+</span>
+            <span class="about-stat-lbl">Destination Cities</span>
+          </div>
+          <div class="about-stat-box">
+            <span class="about-stat-num">99%</span>
+            <span class="about-stat-lbl">Guest Delight Score</span>
+          </div>
+          <div class="about-stat-box">
+            <span class="about-stat-num">100%</span>
+            <span class="about-stat-lbl">On-Time Run of Show</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founders Teaser Section -->
+    <section class="section" aria-labelledby="founders-teaser-heading">
+      <div class="container">
+        <div class="founders-teaser-box">
+          <div>
+            <span class="eyebrow">Creative Direction &amp; Leadership</span>
+            <h2 id="founders-teaser-heading" style="font-size: var(--text-3xl); margin-bottom: var(--space-4);">
+              Meet the Visionaries Behind Every Masterpiece
+            </h2>
+            <p style="font-size: var(--text-md); color: var(--color-text-secondary); line-height: var(--leading-relaxed); margin-bottom: var(--space-4);">
+              From architectural scenography to multi-city hospitality logistics, our founding directors personally oversee each commission, ensuring that your celebration receives our undivided focus, artistry, and discretion.
+            </p>
+            <a href="/founders" class="btn btn-primary">
+              <span>Read Founders' Profiles</span>
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
+          <div style="background-color: var(--color-cream-50); border: 1px solid var(--color-cream-200); border-radius: var(--radius-xl); padding: var(--space-6);">
+            <div class="founders-teaser-avatars">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80&auto=format&fit=crop" 
+                   alt="Arjun Mehta, Co-Founder and Creative Director" 
+                   class="teaser-avatar-img" 
+                   width="64" 
+                   height="64" 
+                   loading="lazy">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80&auto=format&fit=crop" 
+                   alt="Ananya Rao, Co-Founder and Managing Director" 
+                   class="teaser-avatar-img" 
+                   width="64" 
+                   height="64" 
+                   loading="lazy">
+              <div>
+                <strong style="display: block; font-size: var(--text-sm); color: var(--color-navy-950);">Arjun Mehta &amp; Ananya Rao</strong>
+                <span style="font-size: var(--text-xs); color: var(--color-text-muted);">Founding Directors</span>
+              </div>
+            </div>
+            <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-md); color: var(--color-navy-900); line-height: var(--leading-normal); margin-bottom: 0;">
+              &ldquo;We don&rsquo;t simply organize an event; we sculpt a memory that echoes for generations.&rdquo;
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global CTA Band -->
+    <section class="cta-band" aria-labelledby="cta-heading">
+      <div class="container cta-inner">
+        <h2 id="cta-heading">Envisioning an Extraordinary Occasion?</h2>
+        <p>
+          Let our creative team craft a bespoke production tailored to your location, guest count, and aesthetic vision.
+        </p>
+        <div class="cta-actions">
+          <a href="/enquiry" class="btn btn-primary btn-lg">
+            <span>Schedule a Consultation</span>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/919876543210?text=Hi%20Eventina%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20event%20services" 
+             class="btn btn-secondary btn-lg" 
+             target="_blank" 
+             rel="noopener noreferrer">
+            <span>Chat on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Column 1: Brand & Philosophy -->
+        <div class="footer-brand">
+          <a href="/" class="site-logo" aria-label="Eventina Organisers: Return to homepage">
+            <svg class="logo-crest" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="20" cy="20" r="18.5" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3"/>
+              <path d="M20 7L24 16L33 20L24 24L20 33L16 24L7 20L16 16L20 7Z" fill="currentColor" opacity="0.9"/>
+              <circle cx="20" cy="20" r="2.5" fill="#B89242"/>
+            </svg>
+            <div class="logo-text-group">
+              <span class="logo-brand">Eventina</span>
+              <span class="logo-tagline">Organisers</span>
+            </div>
+          </a>
+          <p>
+            Curating bespoke celebrations, grand destination weddings, and high-impact corporate galas with uncompromising precision and creative passion across India.
+          </p>
+          <div class="footer-social-strip" aria-label="Follow Eventina Organisers on social media">
+            <a href="https://instagram.com" class="social-icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Eventina on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://facebook.com" class="social-icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Eventina on Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://linkedin.com" class="social-icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Eventina on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="https://youtube.com" class="social-icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Eventina on YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div>
+          <h2 class="footer-col-title">Company</h2>
+          <ul class="footer-nav-list">
+            <li><a href="/" class="footer-nav-link">Home</a></li>
+            <li><a href="/about" class="footer-nav-link">About Us</a></li>
+            <li><a href="/founders" class="footer-nav-link">Founders</a></li>
+            <li><a href="/services" class="footer-nav-link">Services</a></li>
+            <li><a href="/artists" class="footer-nav-link">Artists</a></li>
+            <li><a href="/portfolio" class="footer-nav-link">Portfolio Showcase</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Experiences -->
+        <div>
+          <h2 class="footer-col-title">Experiences</h2>
+          <ul class="footer-nav-list">
+            <li><a href="/events" class="footer-nav-link">Event Formats</a></li>
+            <li><a href="/testimonials" class="footer-nav-link">Testimonials &amp; Reviews</a></li>
+            <li><a href="/locations" class="footer-nav-link">Locations Map</a></li>
+            <li><a href="/blog" class="footer-nav-link">Articles &amp; Stories</a></li>
+            <li><a href="/faq" class="footer-nav-link">Frequently Asked Questions</a></li>
+            <li><a href="/enquiry" class="footer-nav-link">Enquiry Form</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Hours -->
+        <div>
+          <h2 class="footer-col-title">Get in Touch</h2>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Central Avenue, Commercial District, Bengaluru, Karnataka 560001</span>
+            </li>
+            <li class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <a href="tel:+919876543210">+91 98765 43210</a>
+            </li>
+            <li class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <a href="mailto:hello@eventina.in">hello@eventina.in</a>
+            </li>
+            <li class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Consultations: Mon &ndash; Sat, 10:00 AM &ndash; 7:30 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar: Copyright & Legal -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; 2026 Eventina Organisers. All rights reserved.
+        </p>
+        <div class="footer-legal-links">
+          <a href="/privacy" class="footer-legal-link">Privacy Policy</a>
+          <a href="/terms" class="footer-legal-link">Terms of Use</a>
+          <a href="/cookies" class="footer-legal-link">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Action -->
+  <a href="https://wa.me/919876543210?text=Hi%20Eventina%20Organisers%2C%20I%20would%20like%20to%20enquire%20about%20event%20planning%20services" 
+     class="whatsapp-float" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat with Eventina Organisers on WhatsApp">
+    <span class="whatsapp-pulse" aria-hidden="true"></span>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+    <span class="whatsapp-float-label">Chat with us</span>
+  </a>
+
+  <!-- Application Script -->
+  <script src="/assets/js/app.js" defer></script>
+</body>
+</html>
