@@ -14,17 +14,17 @@
      1. COLOR SYSTEM (Light & Fresh Luxury Wedding Palette)
      ========================================================================== */
 
-  /* Luxury Silk Alabaster & Petal Linen (Primary Canvas & Surfaces) */
-  --color-cream-50:  #FAF8F5; /* Warm Silk Alabaster — Main Page Background */
-  --color-cream-100: #FBF2ED; /* Petal Linen — Alternate Sections & Subtle Warm Tint */
-  --color-cream-200: #EFE8E0; /* Hairline Warm Border & Subtle Dividers */
-  --color-cream-300: #E2D7CC;
-  --color-cream-400: #C7B8A8;
+  /* Luxury Silk Alabaster & Crisp Light Surfaces (Unified Light Luxury Palette) */
+  --color-cream-50:  #FAF9F6; /* Luminous Warm Silk Alabaster — Primary Canvas */
+  --color-cream-100: #F5F3EF; /* Delicate Porcelain Tint — Alternate Section Canvas */
+  --color-cream-200: #EAE6DF; /* Whisper-Thin Hairline Border & Subtle Dividers */
+  --color-cream-300: #DDD8CF;
+  --color-cream-400: #C2BBB0;
 
   /* Crisp White & Light Surfaces */
   --color-surface:      #FFFFFF; /* Pure Crisp White (Cards, Overlays, Floating Nav) */
-  --color-surface-alt:  #FBF2ED; /* Petal Linen Surface */
-  --color-surface-warm: #F7F3EE; /* Subtle Warm Card Surface */
+  --color-surface-alt:  #FAF9F6; /* Luminous Alabaster Surface */
+  --color-surface-warm: #F7F5F1; /* Subtle Warm Card Surface */
 
   /* Espresso Charcoal & Velvet Dark Accents (Structural Contrast & Anchors) */
   --color-navy-950: #141210; /* Deepest Espresso Charcoal */
@@ -78,17 +78,17 @@
   --font-body:    'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono:    ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace;
 
-  /* Fluid Type Scale (clamp: min at 360px viewport -> max at 1280px) */
+  /* Fluid Type Scale (Optimized for Mobile Haute-Couture Elegance -> Desktop) */
   --text-xs:   clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem); /* 12px - 13px */
   --text-sm:   clamp(0.8125rem, 0.78rem + 0.18vw, 0.875rem); /* 13px - 14px */
   --text-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);      /* 15px - 16px */
-  --text-md:   clamp(1.0625rem, 1rem + 0.28vw, 1.125rem);   /* 17px - 18px */
-  --text-lg:   clamp(1.1875rem, 1.1rem + 0.4vw, 1.3125rem); /* 19px - 21px */
-  --text-xl:   clamp(1.375rem, 1.25rem + 0.6vw, 1.5625rem); /* 22px - 25px */
-  --text-2xl:  clamp(1.625rem, 1.45rem + 0.85vw, 1.9375rem);/* 26px - 31px */
-  --text-3xl:  clamp(2rem, 1.7rem + 1.4vw, 2.5rem);         /* 32px - 40px */
-  --text-4xl:  clamp(2.375rem, 1.95rem + 2vw, 3.25rem);     /* 38px - 52px */
-  --text-5xl:  clamp(2.875rem, 2.25rem + 2.8vw, 4.25rem);   /* 46px - 68px */
+  --text-md:   clamp(1rem, 0.96rem + 0.25vw, 1.125rem);      /* 16px - 18px */
+  --text-lg:   clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);     /* 17px - 20px */
+  --text-xl:   clamp(1.1875rem, 1.1rem + 0.5vw, 1.45rem);    /* 19px - 23px */
+  --text-2xl:  clamp(1.35rem, 1.2rem + 0.65vw, 1.75rem);     /* 21.6px - 28px */
+  --text-3xl:  clamp(1.5rem, 1.3rem + 1vw, 2.15rem);         /* 24px - 34.4px */
+  --text-4xl:  clamp(1.75rem, 1.5rem + 1.5vw, 2.75rem);      /* 28px - 44px */
+  --text-5xl:  clamp(1.95rem, 1.6rem + 2.2vw, 3.65rem);      /* 31.2px - 58px */
 
   /* Font Weights */
   --weight-regular: 400;
