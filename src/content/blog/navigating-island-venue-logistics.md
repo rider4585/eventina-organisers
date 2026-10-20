@@ -2,7 +2,7 @@
 title: "Navigating 500+ Guest Logistics Across Lake Pichola's Island Sanctuaries"
 description: "A deep dive into waterborne supply chains, custom jetty docks, marine safety protocol, and five-star hospitality staging without vehicular road access."
 pubDate: 2026-09-19
-author: "Arjun Mehta"
+author: "Ashwini Digole"
 authorRole: "Co-Founder & Creative Director"
 authorImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80&auto=format&fit=crop"
 authorLink: "/founders"

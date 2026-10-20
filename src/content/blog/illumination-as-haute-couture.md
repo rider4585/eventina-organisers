@@ -2,8 +2,8 @@
 title: "Illumination as Haute Couture: Lighting Design that Transforms Ancient Fortresses into Dreamscapes"
 description: "Color temperature, shadow mapping, and candlelit balance. The hidden physics behind lighting palatial stone without creating artificial glare."
 pubDate: 2026-08-24
-author: "Vikramaditya Sengupta"
-authorRole: "Head of Technical Production & Talent Curation"
+author: "Aditya Bagade"
+authorRole: "Co-Founder & Managing Director"
 authorImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80&auto=format&fit=crop"
 authorLink: "/founders"
 category: "Scenography & Decor"
