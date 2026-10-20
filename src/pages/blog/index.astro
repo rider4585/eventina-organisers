@@ -62,7 +62,7 @@ const formatFullDate = (date: Date) => {
         <div style="display: flex; flex-direction: column; gap: var(--space-4); justify-content: space-between; align-items: stretch;">
           <div style="display: flex; flex-direction: column; gap: var(--space-4); justify-content: space-between;">
             <div class="blog-search-box">
-              <svg class="blog-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <svg class="blog-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
@@ -121,7 +121,7 @@ const formatFullDate = (date: Date) => {
             <div class="blog-featured-header">
               <span class="blog-badge">{featuredPost.data.category}</span>
               <span class="blog-meta-time">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <circle cx="12" cy="12" r="10"></circle>
                   <polyline points="12 6 12 12 16 14"></polyline>
                 </svg>
@@ -156,7 +156,7 @@ const formatFullDate = (date: Date) => {
 
               <a href={`/blog/${featuredPost.id}`} class="btn btn-primary btn-sm">
                 <span>Read Full Journal Entry</span>
-                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path d="M4 10H16M11 5L16 10L11 15" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>
@@ -196,7 +196,7 @@ const formatFullDate = (date: Date) => {
                 <span class="blog-author-role">By {post.data.author}</span>
                 <a href={`/blog/${post.id}`} class="blog-card-read-link">
                   <span>Read Article</span>
-                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                   </svg>
                 </a>
