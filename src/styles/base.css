@@ -20,6 +20,9 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: calc(var(--header-height) + 1.5rem);
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -53,7 +56,9 @@ body {
   background-color: var(--color-cream-50);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -303,8 +308,10 @@ a {
 }
 
 .section-dark {
-  background-color: var(--color-navy-900);
-  color: var(--color-text-inverse);
+  background-color: var(--color-surface-warm);
+  color: var(--color-navy-900);
+  border-top: 1px solid var(--color-cream-200);
+  border-bottom: 1px solid var(--color-cream-200);
 }
 
 .section-dark h1,
@@ -312,11 +319,11 @@ a {
 .section-dark h3,
 .section-dark h4,
 .section-dark strong {
-  color: var(--color-text-inverse);
+  color: var(--color-navy-900);
 }
 
 .section-dark p {
-  color: var(--color-text-inverse-muted);
+  color: var(--color-text-secondary);
 }
 
 /* Section Header (Centered or Left-aligned) */
@@ -437,18 +444,31 @@ a {
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
   letter-spacing: var(--tracking-wide);
-  line-height: var(--leading-none);
+  line-height: var(--leading-snug);
   border-radius: var(--radius-pill);
   border: 1px solid transparent;
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
+  max-width: 100%;
+  box-sizing: border-box;
   transition: transform var(--duration-fast) var(--ease-out),
               background-color var(--duration-fast) var(--ease-out),
               color var(--duration-fast) var(--ease-out),
               border-color var(--duration-fast) var(--ease-out),
               box-shadow var(--duration-fast) var(--ease-out);
   user-select: none;
+}
+
+@media (max-width: 640px) {
+  .btn {
+    white-space: normal;
+    text-align: center;
+    max-width: 100%;
+    text-wrap: balance;
+    padding: 0.75rem 1.25rem;
+    word-break: normal;
+  }
 }
 
 .btn:active {
@@ -523,12 +543,12 @@ a {
 }
 
 .section-dark .btn-ghost {
-  color: var(--color-text-inverse);
+  color: var(--color-navy-900);
 }
 
 .section-dark .btn-ghost:hover {
-  background-color: var(--color-navy-800);
-  color: var(--color-gold-300);
+  background-color: var(--color-cream-100);
+  color: var(--color-gold-600);
 }
 
 /* Button Sizing */
@@ -539,9 +559,17 @@ a {
 }
 
 .btn-lg {
-  min-height: 54px;
-  padding: 1rem 2.25rem;
+  min-height: 52px;
+  padding: 0.9rem 2.25rem;
   font-size: var(--text-base);
+}
+
+@media (max-width: 640px) {
+  .btn-lg {
+    min-height: 48px;
+    padding: 0.85rem 1.35rem;
+    font-size: var(--text-sm);
+  }
 }
 
 /* Icon inside button */
@@ -550,6 +578,13 @@ a {
   height: 18px;
   flex-shrink: 0;
   transition: transform var(--duration-fast) var(--ease-out);
+}
+
+@media (max-width: 640px) {
+  .btn svg {
+    width: 15px;
+    height: 15px;
+  }
 }
 
 .btn:hover svg {
@@ -591,7 +626,7 @@ a {
   width: 100%;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background-color: var(--color-navy-950);
+  background-color: var(--color-cream-100);
 }
 
 .card-media img {
@@ -605,26 +640,26 @@ a {
   transform: scale(1.05);
 }
 
-/* Dark Card */
+/* Light Unified Card */
 .card-dark {
-  background-color: var(--color-navy-900);
-  border-color: var(--color-navy-700);
-  color: var(--color-text-inverse);
-  box-shadow: var(--shadow-dark-card);
+  background-color: #FFFFFF;
+  border-color: rgba(184, 146, 66, 0.25);
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-sm);
 }
 
 .card-dark h3,
 .card-dark h4 {
-  color: var(--color-text-inverse);
+  color: var(--color-navy-900);
 }
 
 .card-dark p {
-  color: var(--color-text-inverse-muted);
+  color: var(--color-text-secondary);
 }
 
 .card-dark.card-interactive:hover {
   border-color: var(--color-gold-500);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  box-shadow: var(--shadow-md);
 }
 
 /* ==========================================================================
@@ -1341,6 +1376,7 @@ a {
   line-height: var(--leading-tight);
   margin-bottom: var(--space-4);
   letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
 }
 
 .hero-title em {
@@ -1358,6 +1394,14 @@ a {
   max-width: 62ch;
 }
 
+@media (max-width: 640px) {
+  .hero-lead {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-6);
+  }
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1366,12 +1410,32 @@ a {
   margin-bottom: var(--space-12);
 }
 
+@media (max-width: 640px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+    margin-bottom: var(--space-8);
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+}
+
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-6);
   padding-top: var(--space-8);
   border-top: 1px solid var(--color-cream-200);
+}
+
+@media (max-width: 640px) {
+  .hero-stats {
+    gap: var(--space-4);
+    padding-top: var(--space-6);
+  }
 }
 
 @media (min-width: 768px) {
@@ -1445,6 +1509,19 @@ a {
   margin-top: var(--space-4);
 }
 
+@media (max-width: 640px) {
+  .cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: var(--space-3);
+  }
+
+  .cta-actions .btn {
+    width: 100%;
+  }
+}
+
 /* ==========================================================================
    15. DESIGN SYSTEM PREVIEW MODULES
    ========================================================================== */
@@ -1486,4 +1563,39 @@ a {
   font-family: var(--font-mono);
   color: var(--color-text-muted);
 }
+
+/* ==========================================================================
+   16. SCROLL REVEAL & LUXURY MOTION SYSTEM
+   ========================================================================== */
+
+.reveal-init {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal-init.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Soft image scale transition on cards */
+.card-media img,
+.portfolio-card-img img,
+.service-card-media img,
+.artist-media-box img {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 

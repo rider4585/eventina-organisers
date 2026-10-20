@@ -51,10 +51,10 @@
 
 .page-hero {
   position: relative;
-  background-color: var(--color-navy-950);
-  color: var(--color-text-inverse);
-  padding-block: clamp(4rem, 8vw, 6.5rem);
-  border-bottom: 1px solid rgba(184, 146, 66, 0.2);
+  background-color: var(--color-cream-50);
+  color: var(--color-navy-900);
+  padding-block: clamp(3.5rem, 6vw, 5rem);
+  border-bottom: 1px solid var(--color-cream-200);
   overflow: hidden;
 }
 
@@ -62,7 +62,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  opacity: 0.25;
+  opacity: 0.12;
 }
 
 .page-hero-bg img {
@@ -75,7 +75,7 @@
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: radial-gradient(circle at center, rgba(13, 22, 39, 0.75) 0%, rgba(7, 12, 22, 0.95) 100%);
+  background: radial-gradient(circle at center, rgba(250, 249, 246, 0.75) 0%, rgba(250, 249, 246, 0.95) 100%);
 }
 
 .page-hero-content {
@@ -85,15 +85,16 @@
 }
 
 .page-hero-title {
-  color: var(--color-text-inverse);
+  color: var(--color-navy-900);
   font-size: var(--text-4xl);
   margin-bottom: var(--space-3);
   line-height: var(--leading-tight);
+  text-wrap: balance;
 }
 
 .page-hero-lead {
   font-size: var(--text-md);
-  color: var(--color-text-inverse-muted);
+  color: var(--color-text-secondary);
   line-height: var(--leading-relaxed);
   max-width: 68ch;
 }
@@ -126,7 +127,7 @@
   width: 100%;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background-color: var(--color-navy-950);
+  background-color: var(--color-cream-100);
 }
 
 .service-card-media img {
@@ -275,10 +276,10 @@
 }
 
 .filter-chip.is-active {
-  background-color: var(--color-navy-900);
-  color: var(--color-gold-400);
-  border-color: var(--color-navy-900);
-  box-shadow: var(--shadow-sm);
+  background-color: var(--color-gold-500);
+  color: var(--color-gold-contrast);
+  border-color: var(--color-gold-500);
+  box-shadow: var(--shadow-gold);
 }
 
 /* Portfolio Card */
@@ -286,7 +287,7 @@
   position: relative;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  background-color: var(--color-navy-950);
+  background-color: var(--color-cream-100);
   cursor: pointer;
   display: block;
   text-decoration: none;
@@ -1032,7 +1033,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 4/5;
-  background-color: var(--color-navy-950);
+  background-color: var(--color-cream-100);
   overflow: hidden;
 }
 
@@ -1189,10 +1190,10 @@
 
 .artist-filter-btn.is-active,
 .artist-filter-btn[aria-pressed="true"] {
-  background-color: var(--color-navy-950);
-  border-color: var(--color-navy-950);
-  color: #FFFFFF;
-  box-shadow: var(--shadow-sm);
+  background-color: var(--color-gold-500);
+  border-color: var(--color-gold-500);
+  color: var(--color-gold-contrast);
+  box-shadow: var(--shadow-gold);
 }
 
 .artist-filter-count {
@@ -1254,7 +1255,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16/11;
-  background-color: var(--color-navy-950);
+  background-color: var(--color-cream-100);
   overflow: hidden;
 }
 
@@ -1393,7 +1394,7 @@
 
 .event-format-media {
   position: relative;
-  background-color: var(--color-navy-950);
+  background-color: var(--color-cream-100);
   min-height: 280px;
 }
 
@@ -1657,4 +1658,81 @@
   font-size: var(--text-xs);
   color: var(--color-text-muted);
 }
+
+/* ==========================================================================
+   12. MOBILE LUXURY REFINEMENTS (Touch Ergonomics & Delicate Scaled Icons)
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  /* Delicate scaled icon containers */
+  .value-icon-box,
+  .contact-icon-wrapper,
+  .google-icon-box,
+  .pillar-icon-box,
+  .assurance-icon {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    border-radius: var(--radius-md) !important;
+    margin-bottom: var(--space-2);
+  }
+
+  /* Fine hairline SVGs */
+  .value-icon-box svg,
+  .contact-icon-wrapper svg,
+  .google-icon-box svg,
+  .pillar-icon-box svg,
+  .assurance-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+    stroke-width: 1.5px;
+  }
+
+  /* Star rating sizing on mobile */
+  .google-stars-row svg,
+  .stars-row svg,
+  .stars-rating svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* Social icon buttons */
+  .founder-social-btn,
+  .social-icon-btn {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .founder-social-btn svg,
+  .social-icon-btn svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  /* Mobile Card Spacing & Typography */
+  .card-body {
+    padding: var(--space-4) !important;
+    gap: var(--space-2) !important;
+  }
+
+  .card-body h3 {
+    font-size: var(--text-md) !important;
+    line-height: var(--leading-snug) !important;
+  }
+
+  .card-body p {
+    font-size: var(--text-sm) !important;
+    line-height: var(--leading-relaxed) !important;
+  }
+
+  /* Section Padding Restraint for Phones */
+  .section {
+    padding-block: clamp(2.5rem, 6vw, 3.5rem);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-6);
+  }
+}
+
 
