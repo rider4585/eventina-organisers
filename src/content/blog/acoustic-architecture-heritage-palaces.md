@@ -2,8 +2,8 @@
 title: "The Acoustic Architecture of Heritage Palaces: Mastering Sound in Marble Courtyards"
 description: "Heritage marble and sandstone create severe sonic reflections. How our engineering team deploys directional line arrays and hidden acoustic absorption panels."
 pubDate: 2026-10-08
-author: "Vikramaditya Sengupta"
-authorRole: "Head of Technical Production & Talent Curation"
+author: "Aditya Bagade"
+authorRole: "Co-Founder & Managing Director"
 authorImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80&auto=format&fit=crop"
 authorLink: "/founders"
 category: "Production & Tech"

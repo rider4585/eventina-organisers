@@ -2,8 +2,8 @@
 title: "Haute Scenography: Replacing Single-Use Florals with Botanical Sculptures & Artisanal Brass"
 description: "The shift toward heirloom decor materials. Hand-beaten brass screens, potted living tree canopies, and zero-single-use floral conservation."
 pubDate: 2026-09-28
-author: "Ananya Rao"
-authorRole: "Head of Experiential Design & Guest Curation"
+author: "Ashwini Digole"
+authorRole: "Co-Founder & Creative Director"
 authorImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80&auto=format&fit=crop"
 authorLink: "/founders"
 category: "Scenography & Decor"

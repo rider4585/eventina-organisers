@@ -2,8 +2,8 @@
 title: "Curating Live Entertainment: The Symphony of High-Energy Sangeets & Palatial Acoustic Fusion"
 description: "Mastering entertainment curation for luxury weddings. From heritage sitar fusion to international DJs, sound engineering in marble palaces, and celebration pacing."
 pubDate: 2026-10-14
-author: "Vikramaditya Sengupta"
-authorRole: "Head of Technical Production & Talent Curation"
+author: "Aditya Bagade"
+authorRole: "Co-Founder & Managing Director"
 authorImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80&auto=format&fit=crop"
 authorLink: "/founders"
 category: "Live Entertainment"
@@ -23,7 +23,7 @@ Music is the emotional nervous system of a celebration. Too many wedding planner
 At Eventina, we curate entertainment not as a sequence of disjointed acts, but as a continuous three-act dramatic narrative. From the serene acoustic nuances of morning sitar ragas beside a temple pool to the electrifying crescendo of an international percussion ensemble at 2:00 AM, every decibel level and frequency band is engineered to match the physiological energy of your guests.
 
 > “Great celebration sound is not about volume; it is about dynamic range. When the quieter moments possess profound warmth, the crescendo feels truly transcendent.”  
-> — *Vikramaditya Sengupta, Head of Technical Production*
+> — *Aditya Bagade, Co-Founder & Managing Director*
 
 ---
 

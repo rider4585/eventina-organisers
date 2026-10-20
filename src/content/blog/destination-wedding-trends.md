@@ -2,7 +2,7 @@
 title: "The Definitive Guide to Indian Destination Weddings: Heritage Splendour & Intimate Haute Scenography"
 description: "An exhaustive masterclass on curating luxury destination weddings in India. Heritage palaces, sustainable floral architecture, and multi-day waterborne guest logistics."
 pubDate: 2026-10-18
-author: "Arjun Mehta"
+author: "Ashwini Digole"
 authorRole: "Co-Founder & Creative Director"
 authorImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80&auto=format&fit=crop"
 authorLink: "/founders"
@@ -23,7 +23,7 @@ There was a season in Indian weddings when magnificence was calculated solely by
 Couples today are bringing between 180 and 450 of their most cherished inner circle across continents to celebrate over three to four curated days. The design imperative shifts from sheer quantity to emotional granularity: How does the evening scent evolve between the sunset vows and midnight digestifs? How does acoustic architecture preserve the human voice over dinner? And how does an ancient fortress facade become a storytelling canvas rather than a mere backdrop?
 
 > “True palatial grandeur does not shout over its venue; it listens to the stone, honors the water, and elevates human connection to an art form.”  
-> — *Arjun Mehta, Creative Director*
+> — *Ashwini Digole, Co-Founder & Creative Director*
 
 ---
 

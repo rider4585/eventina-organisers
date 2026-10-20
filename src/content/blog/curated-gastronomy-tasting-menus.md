@@ -2,8 +2,8 @@
 title: "Curated Gastronomy: Designing Multi-Sensory Tasting Menus for High-Profile Galas"
 description: "Why modern luxury hosts are moving from endless generic buffets to hyper-personalized plated courses with curated sommelier pairings and heritage spice narratives."
 pubDate: 2026-09-05
-author: "Ananya Rao"
-authorRole: "Head of Experiential Design & Guest Curation"
+author: "Ashwini Digole"
+authorRole: "Co-Founder & Creative Director"
 authorImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80&auto=format&fit=crop"
 authorLink: "/founders"
 category: "Gastronomy & Hospitality"
