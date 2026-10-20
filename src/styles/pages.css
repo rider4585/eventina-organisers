@@ -3980,42 +3980,58 @@
    13. FAQ PAGE STYLES (/faq)
    ========================================================================== */
 
-/* FAQ Hero Search Input */
+/* FAQ Search Input */
+.faq-header-search,
 .faq-search-wrapper {
-  max-width: 680px;
+  max-width: 640px;
   margin-inline: auto;
-  margin-top: var(--space-8);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-8);
   position: relative;
+  width: 100%;
+}
+
+.faq-search-bar {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .faq-search-input {
   width: 100%;
-  padding: 1.15rem 3.5rem 1.15rem 3.25rem;
+  padding: 0.85rem 3rem 0.85rem 2.85rem;
   background: #FFFFFF;
   border: 1px solid var(--color-cream-300);
   border-radius: var(--radius-pill);
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   font-family: var(--font-body);
   color: var(--color-navy-950);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   transition: all var(--transition-fast);
+  box-sizing: border-box;
 }
 
 .faq-search-input:focus {
   outline: none;
   border-color: var(--color-gold-500);
-  box-shadow: 0 0 0 4px rgba(184, 146, 66, 0.18), var(--shadow-lg);
+  box-shadow: 0 0 0 3px rgba(184, 146, 66, 0.15), var(--shadow-md);
 }
 
+.faq-search-icon,
 .faq-search-icon-left {
   position: absolute;
-  left: 1.25rem;
+  left: 1rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  color: var(--color-gold-500);
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  color: var(--color-gold-600);
   pointer-events: none;
+  flex-shrink: 0;
+  z-index: 2;
 }
 
 .faq-search-clear {
