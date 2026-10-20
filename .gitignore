@@ -8,6 +8,7 @@ hallways.json
 restore-gate.json
 roster.json
 roster-backups/
+tunnels.json
 
 # OS / editor
 .DS_Store
